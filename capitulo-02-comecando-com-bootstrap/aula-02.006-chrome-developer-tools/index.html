@@ -1,0 +1,308 @@
+<!-- 
+
+    Aula 02.006. Chrome Developer Tools
+
+1. A gente ja aprendeu bastante sobre a tipografia do Bootstrap, e, agora, antes de a gente continuar, o instrutor vai mostrar para nos uma ferramenta que, para o instrutor, ela eh salvadora de vidas enquanto a gente esta desenvolvendo.
+
+2. Ela eh a ferramenta de desenvolvedores que o Google Chrome tem. Paa a gente acessar ela, nos vamos clicar no botao de menu de 3 barras do lado direito, topo do Google Chrome, depois, clicar em Mais ferramentas e aqui em Ferramentas do desenvolvedor.
+
+3. Ele tambem tem um atalho aqui, como nos podemos ver, que eh Ctrl + Shift + I, para abrir esse painel.
+
+4. Quando nos clicarmos, esse painel aqui se abrira. Ele eh o que vai nos ajudar muito no nosso Desenvolvimento.
+
+5. Nos vamos ver o instrutor utilizando bastante ele durante o curso. Entao, o instrutor vai nos mostrar algumas das suas funcionalidades. Estamos vendo que ele tem um bocado de Abas, mas nos vamos usar, para os termos deste Workshop, so essa Aba Elements. O que ue ela vai nos mostrar aqui? 
+
+6. Aqui, ela nos da o html dessa pagina, e nos podemos navegar pelas tags aqui em baixo na Aba Elements, e ele, automaticamente, vai ressaltar o elemento que essa tag corresponde. 
+
+7. Entao, aqui, eu tenho essa div container, quando eu boto o mouse em cima, ela me mostra o container.
+
+8. Se eu abro ela aqui em body, eu posso botar o mouse no h1, h2, e ele vai me mostrar. E ele nao vai so ressaltar o elemento, mas nos podemos ver que ele esta me mostrando ali a largura, a altura e aquela parte em laranja ali eh a margem que foi colocado no elemento.
+
+9. Isso vai dar para a gente ver direitinho mais para frente, quando o instrutor mostrar uma outra funcionalidade que essa ferramenta tem.
+
+10. Entao, alem de ele nos mostrar onde esta o elemento, ele nos permite que nos possamos alterar esse elemento aqui mesmo na tela, sem precisar abrir o codigo.
+
+11. Por exemplo, eu clico duas vezes aqui em,
+
+<small>>>>Texto Secundario<<<</small>
+
+, e posso trocar esse nome aqui, vamos apagar a palavra 'Secundario'' e deixar so 'Texto'.
+
+12. Quando eu der <Enter>, olha la, aqui, na Pagina no Browser, ficou, agora, so 'Texto'.
+
+13. Agora, vamos para uma outra funcionalidade muito boa tambem. Essa daqui, oh, na Guia Styles, no canto inferior direito do Chrome DevTools. Aqui, ele me mostra todos os estilos que estao sendo aplicados nesse elemento, no caso, eu estou selecionando esse texto aqui,
+
+<small>Texto Secundario/small>
+
+14. O que que ele esta me dando aqui, oh?
+
+15. Ele esta dizendo que, neste arquivo, bootstrap.min.css, na linha 5, tem essa regra aui, onde ele esta selecionando, oh, um small que esta dentro do h1, e esta dando uma fonte de 65% para esse small, ou seja, ele so vai ter 65% do tamanho que a letra, normalmente, teria.
+
+16. Entao, se a letra que nos vimos ali eh de 36 pixels, ele vai ter so 65% desses 36 pixels.
+
+17. Outra coisa, outra regra que ele esta dando eh que o small tambem, dentro do h1, ele vai ter um font-weight, ou seja, peso, uma grossura da fonte de 400, uma altura de linha de 1, ou seja, vai ser so o mesmo tamanho da fonte, e essa cor aqui, #777.
+
+18. Olha, tinha outras regras, como essa aqui, por exemplo, de um samall generico, mas, como a gente pode ver, ela nao foi tao importante quanto a outra, a outra foi muito mais especifica,, porque ela disse que era um small dentro de um h1. Esse aqui,
+
+.small, small {
+    ----font-size: 85%;----
+}
+
+esta mostrando para qualquer small, entao, ela foi riscada, porque ela nao esta sendo utilizada.
+
+19. Essa aqui tambem,
+
+small {
+    font-size: 80%;
+}
+
+, e muitas outras.
+
+20. Okay? Entao, com isso aqui, a gente vai poder ver qual eh o CSS que esta sendo aplicado neste momento.
+
+21. E nos podemos, tambem, mudar essas regras, por exemplo, aqui, vou trocar de 65% para 70%,
+
+h1 small {
+    font-size: 70%;
+}
+
+, e a regra foi alterada e o texto mudou.
+
+22. Eu posso, tambem, alterar usando os botoes do teclado, as setas para cima, onde eu aumento a porcentagem, e para baixo, onde eu diminuo a porcentagem.
+
+23. Beleza, aqui embaixo, na Guia Styles, depois das Regras CSS, nos temos isso aqui, que eh muito bom tambem. Isso aqui eh o que nos chamamos de Box Model.
+
+24. Ele vai me dar as dimensoes desse meu elemento, contando nao so com o elemento em si, mas com os paddings, que eh o espacamento interno, border, que eh a borda do elemento, e o margin, que eh a margem, ou espacamento externo, do elemento. 
+
+25. Okay? Quando nos botamos o mouse em cima, ele vai destacando a parte que tem algum valor.
+
+26. Entao, vamos pegar, aqui, algum elemento nde nos possamos fazer um teste.
+
+27. Vamos fazer um teste nesse elemento de Citacao aqui, okay?
+
+28. Se voce clicar com o botao direito em qualquer elemento, e clicar aqui em 'Inspecionar', voce abre o Chrome DevTools em cima do elemento que voce quer.
+
+29. Okay?, entao, neste caso, a gente esta aqui no elemento <blockquote>, e a gente pode ver, aqui, o Box Model dele.
+
+30. Ele tem essa margem aqui, oh, esta mostrando que eh so uma margem embaixo, de 20 pixels. Ele tem essa borda aqui, eh uma borda so do lado esquerdo, de 5 pixels, ele tem esse padding aqui, espacamento interno, na esquerda e na direita, de 20 pixels e superior e inferior de 10 pixels, e esse aqui, no meio, eh o elemento em si, com 1095 pixels de largura e 80 pixels de altura.
+
+31. Legal, nao eh? Agora, vamos para a nossa proxima ferramenta, que tambem eh muito boa.
+
+32. Aqui, nesse botao, 3 pontos na parte inferior direita, nos podemos mudar o local onde essa aba vai ficar. entao, aqui, ela esta embaixo, como nos podemos ver, nos podemos coloca-la, por exemplo, do lado direito. Isso vai dar uma realinhada, aqui, nas coisas, o texto vai ficar um pouco mais espremido, mas tem uma funcionalidade que, com isso, vem, que eh muito legal, que nos podemos, aqui, redimensionar a largura da tela, ele nos da, aqui em cima, oh, a largura que esta atualmente.
+
+33. E nos podemos fazer testes das diferentes larguras de tela.
+
+34. Outro meio tambem eh nos clicarmos no primeiro botao a esquerda, em Dock side, o que el evai fazer? Ele vai destacar do navegador e vai se tornar uma janela, onde nos podemos ve bastante o texto. Okay, vamos voltar aqui para o lado direito, Dock side - Dock to right, e mostrar a proxima funcionalidade.
+
+35. O instrutor gosta muito dessa daqui, oh, Toggle device mode, eh o modo device, ou seja, o modo dispositivo. Quando eu clico, eu posso simular diversos dispositivos moveis, entoa, aqui, nos temos o Nexus, o Galaxy, o iPhone, e, ate memso, o iPad. Todos esses dispositivos, eles vao ser simulados, tanto em pe quanto deitados tambem, se eu preferir, clicando no botao Rotate.
+
+36. A gente ve que ele esta mostrando como esse texto apareceria em um dispositivo desse tamanho, e a resolucao ele da aqui para a gente.
+
+37. Entao, qual eh a resolucao de um iPhone 6 Plus? Eh essa aqui, oh, 414 de largura por 736 de altura, ta vendo?
+
+38. Por que que o texto, aqui, nao esta bem alinhado, se o Bootstrap eh responsivo?
+
+39. Eh por causa desse nosso colega aqui, aquele paragrafo que nao quebra linha, ele esta ocupando uma largura maior do que aqui era para ter, e, ai, o celular vai tentar permitir que essa largura seja toda visivel.
+
+40. Okay, entao, vamos desligar esse Modo Device aqui, e o instrutor vai nos mostrar uma ultima funcionalidade, que eh muito boa tambem, que essa daqui, oh, o botao 'Select an element in the page to inspect it'. Aqui, quando nos clicamos, nos podemos selecionar o elemento que nos queremos, ao inves de procurar ali no codigo html.
+
+41. Quando nos clicamos no elemento na tela, ele mesmo vai selecionar ali no codigo o elemento.
+
+42. Isso vai ajudar bastante a gente enquanto a gente estiver fazendo as outras aulas do nosso Workshop.
+
+43. Fim da Aula 02.006. Chrome Developer Tools.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tipografia</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>H1 Semibold (seminegrito) 40px <small>Texto Secundario</small></h1>
+        <h2>H2 Semibold (seminegrito) 32px <small>Texto Secundario</small></h2>
+        <h3>H3 Semibold (seminegrito) 28px <small>Texto Secundario</small></h3>
+        <h4>H4 Semibold (seminegrito) 24px <small>Texto Secundario</small></h4>
+        <h5>H5 Semibold (seminegrito) 20px <small>Texto Secundario</small></h5>
+        <h6>H6 Semibold (seminegrito) 16px <small>Texto Secundario</small></h6>
+    </div>
+
+    <div class="container">
+        <p class="h1">H1 Semibold (seminegrito) 36px <small>Texto Secundario</small></p>
+        <p class="h2">H2 Semibold (seminegrito) 30px <small>Texto Secundario</small></p>
+        <p class="h3">H3 Semibold (seminegrito) 24px <small>Texto Secundario</small></p>
+        <p class="h4">H4 Semibold (seminegrito) 18px <small>Texto Secundario</small></p>
+        <p class="h5">H5 Semibold (seminegrito) 14px <small>Texto Secundario</small></p>
+        <p class="h6">H6 Semibold (seminegrito) 12px <small>Texto Secundario</small></p>
+    </div>
+
+    <div class="container">
+        <h1>Texto</h1>
+
+        <h2>Tamanho Padrao</h2>
+
+        <p>
+            Tenho 16px, a linha tem 22px
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. In elementis mé pra quem é amistosis quis leo. Quem num gosta di mim que vai caçá sua turmis! Si num tem leite então bota uma pinga aí cumpadi!
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Quem manda na minha terra sou euzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+        </p>
+
+        <p class="lead">Eu me sobressaio, tenho 21px</p>
+
+        <p>Tem pequeno tambem: <small>eu sou pequeno, so tenho 80% do tamanho do texto onde eu for colocado</small>. <span class="small">Eu tambem.</span></p>
+
+        <h2>Estilizacao</h2>
+
+        <p>Temos textos em varios estilos: <mark>iluminado</mark>, <del>deletado</del>, <s>riscado</s>, <ins>inserido</ins>, <u>sublinhado</u>, <strong>forte</strong>, <b>negrito</b>, <em>enfatizado</em>, <i>italico</i></p>
+
+        <h2>Indentacao</h2>
+
+        <p class="text-left"><strong>Eu sou um texto alinhado a esquerda. </strong>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Detraxit consequat et quo num tendi nada. Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-right"><strong>Eu sou um texto alinhado a direita. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Pra lá , depois divoltis porris, paradis. Viva Forevis aptent taciti sociosqu ad litora torquent. Atirei o pau no gatis, per gatis num morreus.</p>
+
+        <p class="text-center"><strong>Eu sou um texto alinhado ao centro. </strong>Mussum Ipsum, cacilds vidis litro abertis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Mé faiz elementum girarzis, nisi eros vermeio. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+
+        <p class="text-justify"><strong>Eu sou um texto justificado. </strong>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-nowrap"><strong>Eu sou um texto sem quebra de linha. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Diuretics paradis num copo é motivis de denguis. Suco de cevadiss deixa as pessoas mais interessantis. Manduma pindureta quium dia nois paga.</p>
+
+        <h2>Transformacao</h2>
+
+        <p class="text-lowercase">Eu sou todo em MiNuScUlO</p>
+
+        <p class="text-uppercase">Eu sou todo em MaIuScUlO</p>
+
+        <p class="text-capitalize">minhas primeiras letras sao em maiusculo, o resto fica como eu deIxEi</p>
+
+        <h2>Abreviação</h2>
+
+        <p>A abreviação da palavra "abreviação" é <abbr title="abreviação">abbr</abbr></p>
+
+        <p><abbr title="Associação Brasileira Beneficente de Reabilitação" class="initialism">ABBR</abbr> também é a abreviação de Associação Brasileira Beneficente de Reabilitação.</p>
+
+        <h2>Citação</h2>
+
+        <p>
+            Veja a seguinte citação:<br>
+            <blockquote>
+                <p>Citações nos ajudam a entender, inspirar, motivar, esclarecer e mostrar nossa opinião sobre o que está à nossa volta. É por isso que as pessoas e eu adoramos citações.</p>
+                <footer>Takyou Allah Cheikh Malaynine</footer>
+            </blockquote>
+        </p>
+
+        <p>
+            Ou essa: <br>
+            <blockquote class="blockquote-reverse">
+                <p>Citação: A arte de repetir erroneamente as palavras de outrem.</p>
+                <footer>Ambrose Bierce</footer>
+            </blockquote>
+        </p>
+
+        <h2>Listas</h2>
+
+        <h3>Desordenadas</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ul>
+
+        <h3>Ordenadas</h3>
+        <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ol>
+
+        <h3>Sem estilo</h3>
+
+        <ul class="list-unstyled">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>            
+        </ul>
+
+        <h3>Alinhadas</h3>
+
+        <ul class="list-inline">
+            <li>Lorem ipsum dolor</li>
+            <li>Consectetur adipiscing</li>
+            <li>Integer molestie</li>
+        </ul>
+
+        <h3>Descritivas</h3>
+
+        <dl>
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Quem num gosta di mim que vai caçá sua turmis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Viva Forevis aptent taciti sociosqu ad litora torquent. Quem manda na minha terra sou euzis!</dd>
+
+            <dt>Mais um</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. A ordem dos tratores não altera o pão duris. Casamentiss faiz malandris se pirulitá. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.</dd>
+        </dl>
+
+        <h4>Descrição horizontal</h4>
+
+        <dl class="dl-horizontal">
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Casamentiss faiz malandris se pirulitá.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Manduma pindureta quium dia nois paga.</dd>
+
+            <dt>Mais um termo longo demais para caber</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Casamentiss faiz malandris se pirulitá. Detraxit consequat et quo num tendi nada. Quem manda na minha terra sou euzis!</dd>
+        </dl>
+
+    </div>   
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

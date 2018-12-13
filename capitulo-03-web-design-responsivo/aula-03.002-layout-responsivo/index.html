@@ -1,0 +1,230 @@
+<!-- 
+
+Aula 03.002. Layout Responsivo.
+
+1. Nos ja aprendemos, na aula passada, o que que eh um Web Design Responsivo, entao, diz que nos temos que ter o conteudo do site adaptado para todo o tipo de tela. 
+
+2. Mas, e na pratica? Como eh que isso funciona?
+
+3. Bom, o instrutor preparou, aqui, para esta nossa aula, esta Noticia Super Impactante. Entao, com ela, nos vamos poder aprender um pouco sobre como funcioona a Responsividade na pratica.
+
+4. Entao, vamos ver. Essa noticia aqui, oh, que esta sendo exibida na Pagina Html no Browser, ela esta bem legal, nao eh? Ela esta cabendo direitinho na tela, nao tem barra de rolagem, a gente consegue ler direitinho os paragrafos, e o titulo tambem esta bem proporcional. 
+
+5. Mas, e agora? Como sera que fica com outras resolucoes? Vamos abrir, entao, aqui, o nosso Chrome DevTools. 
+
+6. Entao, aqui, ja mostra como ficaria em um computador um pouco menor, nao eh?.
+
+7. Nos temos, aqui, ja mais aperetadinho os paragrafos, o titulo ja desceu, essa Noticia Super Impactante ja nao esta tao Impactante assim.
+
+8. E agora? E se a gente estivesse, entao, no celular? Clicar em Toggle device toolbar. 
+
+9. O que voce acha? Voce ia gostar de ver uma noticia com esse tipo de formatacao no seu celular?
+
+10. Nao da ne?
+
+11. Entao, Eh ai que nos vamos aplicar, entao, a responsividade. E, para isso, nos vamos utilizar uma das melhores amigas da Responsividade no CSS, sao conhecidas como Media Queries.
+
+12. Entao, antes, vamos dar uma olhada no nosso codigo, como eh que ele esta.
+
+13. No HTML, entao, nos temos, aqui, um <article>, que define um artigo, um <header>, que eh o cabecalho desse artigo, e, aqui, tem um <h1>, que eh o nosso titulo de Noticia Super Impactante.
+
+14. Depois, nos temos, aqui, uma div, que nada mais eh do que uma tag html para definir um bloco qualquer.
+
+15. E colocamos uma classe nela chamada conteudo. Nesse conteudo, nos temos varios paragrafos, que eh a nossa noticia.
+
+16. Okay, fechamos a div, o artigo e o body e o html.
+
+17. Entoa, nos vemos que, aqui,
+
+<link rel="stylesheet" href="css/style.css">
+
+, nos chamamos uma folha de estilos, um CSS, que esta aqui, oh, na pasta css, o style.css.
+
+18. Vamos ve que tipo de estilos foram colocados em style.css.
+
+19. Entao, nos temos aqui, no nosso body, o tamanho da fonte, eh 18 pixels, e ele du um fundo cinza, para parecer um jornal, 
+
+background-color: #F5F5F5;
+
+20. Todo artigo tem uma largura de 80% do elemento no qual ele esta contido. No nosso caso, aqui, o artigo esta diretamente dentro do body. Entao, 80% do tamanho que o body tiver.
+
+21. Eh por isso que, qando a gente tem, aqui na Pagina Html, o artigo, a gente tem esse espacamento na esquerda e na direita. E tem uma margem, quando nos colocamos 2 valores na margem, esse primeiro valor significa superior e inferior, e esse outro valor, significa esquerda e direita, vai ter o mesmo valor,
+
+    margin: 20px auto;
+
+22. Entao, aqui, a gente esta dando para cima e para baixo uma margem de 20 pixels. Vamos ver la na pagina, vamos inspecionar o article.  Vemos que ha uma margem, em cima e embaixo de 20 pixels.
+
+23. E, na esquerda e na direita, nos estamos dando essa margem automatica,
+
+    margin: 20px >>>auto<<<;
+
+, isso aqui eh um truque que no temos para nos podermos alinhar no centro blocos. Entao, essa margem esta dividindo aqueles 80% em dois aqui. Vamos ver o que aconteceria se nos colocassemos uma margem 0 aqui,
+
+    margin: 20px 0;
+
+24. Ao Recarregar a Pagina Html, vemos que o texto foi todo para a esquerda. Mas, quando a gente deixa ele calcular automaticamente a margem, ele vai dividir o espaco que esta sobrando em dois e vai dar um pedaco para cada e, assim, a gente tem centralizado.
+
+25. Aqui nos temos o seletor descendente h1 de header em article, onde nos demos uma fonte de 50 pixels, e deixamos-na capitalizada, ou seja, a primeira letra de cada palavra esta em maiusculo,
+
+article header h1 {
+        font-size: 50px;
+        text-transform: capitalize;
+}
+
+26. Aqui, no seletor descendente da classe conteudo em article, nos dividimos-no em 3 colunas e demos um espacamento de 40 pixels para cada coluna, e deixamos o texto justificado,
+
+article .conteudo {
+    columns: 3;
+    column-gap: 40px;
+    text-align: justify;
+}
+
+27. Para o seletor descendente p da classe conteudo em article, nos temos uma margem, 
+
+article .conteudo p {
+    margin: 0 0 20px 0;
+}
+
+, quando nos temos 4 valores na margem, o primeiro valor eh o superior, o segundo valor eh na direita, o terceiro valor eh o inferior, e o quarto valor eh na esquerda. Entao, todo paragrafo tem uma margem inferior de 20 pixels. e o resto nao tem margem.
+
+28. E o proximo seletor eh um truque bem legal, nos pegamos, aqui, o p, o paragrafo do conteudo do artigo eh um pseudo-elemento, chamado primeiro filho, ou seja, ele vai pegar o primeiro p que estiver dentro de conteudo. E, alem disso, a gente esta usando outro seletor aqui, chamado primeira letra, entao, ele so vai aplicar esse estilo aqui para a primeira letra do primeiro paragrafo, que esta dentro da classe conteudo, que esta dentro de artigo,
+
+article .conteudo p:fist-child:fist-letter {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+29. Entao, estamos colocando um tamanho de fonte de 50 pixels nela e deixamos-na em negrito.
+
+30. Vamos ver isso aqui em acao? Recarregar a Pagina Html, eh o primeira letra do primeiro paragrafo, ou seja, o primeiro 'M' em Mussum, inspecionando o elemento p, vemos o pseudo-elemento :first-letter para p na classe conteudo em article.
+
+31. Okay, entao, agora, vamos fazer essa nossa pagina fixcar Responsiva.
+
+32. Vamos deixar aqui no formato do Celular, clicar em 'Toggle device toolbar'.
+
+33. Vamos aplicar o que nos chamamos de Media Queries.
+
+34. Entao, ela funciona assim, oh, colocamos
+
+@media () {
+
+}
+
+, e a gente da aqui um valor para ela, uma condicao ara ela. Vamos colocar em que a largura maxima vai ser de 767 pixels,
+
+@media (max-width: 767px) {
+
+}
+
+, porque, normalmente, os tablets, quando eles estao em pe, eles tem uma largura de 768 pixels. Entao, quando eu coloco 767 aqui, eu estou dizendo, basicamente, que sao telefones.
+
+35. Okay, entao, vamos abrir aqui, nos estamos dizendo, entao, que, se for ate essa largura aqui, 767 pixels, ele vai aplicar essa regra que esta aqui dentro.
+
+36. Agora, se nao tiver essa largura, se passas dessa largura maxima aqui, ele nao aplica essa regra.
+
+37. E qual regra que vai ser que nos vamos aplicar? A primeira coisa que nos vamos fazer eh dimimuir um pouco esse titulo dessa noticia, nao eh?
+
+38. Entao, vamos pegar aqui esse seletor aqui oh, 
+
+article header h1 {}
+
+, o seletor descendente h1, do header do artigo, 
+
+@media (max-width: 767px) {
+    article header h1 {
+
+    }
+}
+
+, e vamos colocar um novo font-size para ele, vamos dar, agora, um font-size de 24 pixels e vamos ver como eh que fica, 
+
+@media (max-width: 767px) {
+    article header h1 {
+        font-size: 24px;
+    }
+}
+
+, vamos salvar e vamos Recarregar a Pagina Html. Vamos aumentar para 28 pixels. 
+
+39. Pronto, nos ja temos um Titulo de Noticia Super Impactante.
+
+40. O que mais que a gente pode fazer para melhorar essa nossa noticia aqui no celular?
+
+41. O instrutor aha que o melhor eh nos tirarmos essas colunas, nao eh?, porque elas que estao atrapalhando aqui. Se o texto ficar em uma coluna so, vai ficar muito melhor.
+
+42. Entao, vamos pegar esse seletor onde nos colocamos as colunas, que eh o conteudo dentro do article, 
+
+article .conteudo {
+    columns: 3;
+    column-gap: 40px;
+    text-align: justify;
+}
+
+, e vamos colar na Media Query,
+
+@media (max-width: 767px) {
+    article header h1 {
+        font-size: 24px;
+    }
+    article .conteudo {
+        columns: 1;
+    }
+}
+
+43. Agora, eu estou dizendo que ele so vai ter uma coluna. Vamos Recarregar a Pagina Html.
+
+44. Olha ai, ja da para ler bem melhor, nao eh? Agora, esse 'M' aqui, ele ficou muito grande, comparado ao noso titulo da noticia, nao eh? Vamos dar um ajeitadinha nele, diminui-lo um pouco.
+
+45. Entao, vamos pegar esse seletor aqui, vamos colocar o font-size dele para 28 pixels tambem.
+
+article .conteudo p:first-child:first-letter {}
+
+, e vamos colar na Media Query,
+
+@media (max-width: 767px) {
+    article header h1 {
+        font-size: 24px;
+    }
+    article .conteudo {
+        columns: 1;
+    }
+    article .conteudo p:first-child:first-letter {
+        font-size: 28px;
+    }
+}
+
+46. Vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+47. Pronto, agora, nos temos uma noticia bem melhor. esse eh o poder das Media Queries.
+
+48. Fim da Aula 03.002. Layout Responsivo.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Minha Pagina</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Título de notícia super impactante!</h1>
+        </header>
+        <div class="conteudo">
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Leite de capivaris, leite de mula manquis sem cabeça. Si num tem leite então bota uma pinga aí cumpadi!</p> 
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Aenean aliquam molestie leo, vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Manduma pindureta quium dia nois paga. Quem num gosta di mé, boa gentis num é. Paisis, filhis, espiritis santis.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantis. Paisis, filhis, espiritis santis. Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Atirei o pau no gatis, per gatis num morreus. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. In elementis mé pra quem é amistosis quis leo. Diuretics paradis num copo é motivis de denguis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Delegadis gente finis, bibendum egestas augue arcu ut est.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.</p>
+           <p>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! In elementis mé pra quem é amistosis quis leo. Casamentiss faiz malandris se pirulitá. Paisis, filhis, espiritis santis.</p>
+        </div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!-- 
+
+    Aula 01.004. Introducao ao CSS
+
+1. Agora que nos aprendemos um pouco sobre HTML, nos vamos pegar aqui uma introducao do CSS.
+
+2. Entao, o que que eh o CSS?
+
+3. Ele eh uma abreviacao para Cascading Style Sheet, que significa Folha de Estilos em Cascata.
+
+4. Entao, isso tambem eh uma coisa importante para a gente frisar, ela nao eh uma linguagem de programacao, eh uma Folha de Estilos, isso quer dizer que ele vai, basicamente, dizer qual a estilizacao que o conteudo do HTML vai ter.
+
+5. Okay? Mas o que que significa, ali, Em Cascata?
+
+6. Bom, o instrutor ira tentar explicar para nos com um exemplo, aqui.
+
+7. Digamos que nos tenhamos um quadro em branco ali, nao eh?, e contrataram um artista para desenhar uma flor. 
+
+8. Entao, o gerente que contratou a pessoa olha essa flor e fala, 'Ah, eu gostaria que essa flor fosse vermelha'. Beleza, o pintor iria fazer a flor vermelha, mas o que acontece eh que o dono do estabelecimento parou e falou, 'Nossa, que flor bonita, ela tem uma cara de flor amarela, faz amarela'. E, ai?, quem eh que o pintor vai obedecer?
+
+9. Na cabeca dele, ele deve ter imaginado uma cascata mental ali, nao eh?, onde, entre o dono e o gerente, o dono tem muito mais autoridade do que o gerente, ele ja sabia quem que ele iria obedecer.
+
+10. Na folha de estilos, serve, tambem, da mesma maneira. Aquela instrucao que for Mais especifica, ela tem mais autoridade sobre aquela instrucao que eh Menos especifica.
+
+11. Entao, vamos ver isso com um exemplo,
+
+h1 {
+    font-size: 18px;
+}
+
+.cabecalho {
+    font-size: 20px;
+}
+
+#tituloDoSite {
+    font-size: 25px;
+}
+
+, isso aqui eh um exemplo de uma estilizacao em CSS. Essa parte aqui, oh, 
+
+>>>h1<<< {
+    font-size: 18px;
+}
+
+>>>.cabecalho<<< {
+    font-size: 20px;
+}
+
+>>>#tituloDoSite<<< {
+    font-size: 25px;
+}  
+
+, nos chamamos de seletor. Essa parte aqui, oh,
+
+h1 {
+    >>>font-size<<<: 18px;
+}
+
+.cabecalho {
+    >>>font-size<<<: 20px;
+}
+
+#tituloDoSite {
+    >>>font-size<<<: 25px;
+}
+
+, eh chamada de atributo. E esse aqui,
+
+h1 {
+    font-size: >>>18px<<<;
+}
+
+.cabecalho {
+    font-size: >>>20px<<<;
+}
+
+#tituloDoSite {
+    font-size: >>>25px<<<;
+}
+
+, eh o valor do atributo.
+
+12. Entao, aqui, 
+
+h1 {
+    font-size: 18px;
+}
+
+, nos estamos selecionando qualquer elemento que seja h1, que aquela tag que nos vimos no exemplo de HTML, que faz um Titulo, e nos estamos colocando um tamanho de fonte de 18 pixels para esse elemento h1.
+
+13. Nesse debaixo aqui,
+
+.cabecalho {
+    font-size: 20px;
+}
+
+, esse ponto ali na frente esta mostrando que nos estamos selecionando qualquer elemento que tenha uma classe chamada cabecalho. Estamos dando para ela um tamanho de fonte de 20 pixels. 'Ah, mas o que que eh uma classe?', calma, que nos ja vamos explicar. Nesse terceiro aqui, nessa terceira instrucao,
+
+#tituloDoSite {
+    font-size: >>>25px<<<;
+}
+
+, nos estamos selecionando um elemento que tem um ID, ou seja, uma identificacao com o valor tituloDoSite. Nos estamos dando para esse elemento um tamanho de fonte de 25 pixels. Entao, vamos imaginar que nos temos aqui um elemento,
+
+<h1 class="cabecalho" id="tituloDoSite">Titulo</h1>
+
+h1, com uma classe cabecalho, olha ali, eh assim que nos fazemos uma classe, ta vendo, eh um atributo dentro da tag html. Uma classe, ela pode ser usada em varos elementos, e, ali, temos, tambem, o ID, que tambem eh um atributo dentro da tag html. So que um ID tem que ser unico, so um elemento pode ter aquele mesmo ID. Certo? Entao, digamos que a gente tenha esse elemento, ai, ele tem a class cabecalho, e tem o ID tituloDosite. Com essas tres instrucoes que nos demos ai, qual, entao, seria a que ficaria por cima, ou seja, qual seria o tamanho do titulo desse site?
+
+14. Entao, se voce pensou que eh aquela que tem o ID tituloDoSite, voce estava certo, por que? Porque ele eh o mais especifico.
+
+15. Se a gente parar para pensar, h1, nos podemos colocar quantos nos quisermos. Depois, nos especificamos que tem uma classe cabecalho, entao, a gente esta sendo um pouco mais especifico, mas, classe cabecalho, tambem, varios elementos podem ter. Ai, no final, eu disse que tem que ser com o ID tituloDoSite, esse ID eh unico. Entao, eu estou falando de um elemento so, sendo assim, essa regra, ela ganha precedencia sobre todas as outras, e, a partir dai, ela esta no topo da cascata e vai ser a regra que vai ser aplicada, esse titulo vai ter 25 pixels.
+
+16. Bom, isso eh uma introducao sobre o CSS, espera-se que tenhamos entendido.  
+
+17. Nao se preocupa, que esse atributos e seletores, o instrutor vai usar bastante durante este WorkShop, entao, se voce quiser saber um pouco mais sobre algum, ou, se voce nao entendeu algum que o instrutor colocar, o instrutor ira tentar explicar, na maior parte das vezes, mas, se voce quiser saber um pouco mais, entre nesse site, https://developer.mozilla.org/pt-BR, ai, que esta na tela. Quando voce entrar, vai aparecer esse site ai, voce vai clicar bem ali, oh, Tecnologias - CSS, ele vai para essa pagina, https://developer.mozilla.org/pt-BR/docs/Web/CSS, e, nessa pagina, voce vai clicar ali onde esta escrito referencia, em vermelho, https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Reference, com isso, voce vai ser levado para uma pagina de referencias de CSS, como voce pode ver, tem um monte de coisa ali que voce pode olhar, varios seletores, e varios atributos tambem.
+
+18. Okay? 
+
+19. Fim da Aula 01.004. Introducao ao CSS.
+
+-->

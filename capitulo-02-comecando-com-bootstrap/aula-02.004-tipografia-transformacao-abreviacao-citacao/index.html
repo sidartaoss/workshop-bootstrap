@@ -1,0 +1,263 @@
+<!-- 
+
+    Aula 02.004. Tipografia - Transformacao, Abreviacao e Citacao
+
+1. Okay, nos ja vimos, entao, Cabecalho, Tamanho Padrao do paragrafo, ja vimos Estilizacao e Indentacao.
+
+2. Vamos continuar com o nosso curso aqui. Vamos ver as classes que ele vai nos ajudar a Transformar o texto. Entao, nos temos uma classe que vai deixar o texto todo em minusculo, nos temos uma que vai deixar todo em maiusculo e temos essa classe aqui que vai deixar sempre a primeira letra de cada palavra em maiusculo, eh o que eles chamam de Capitalization.
+
+3. Okay? Aque estao elas, text-lowercase, lowercase eh caixa baixa em ingles, text-uppercase, que eh caixa alta, ou seja, maiusculo, em ingles, e text-capitalize, que eh aquilo que eu falei, as primeiras letras vao ficar em maiusculo.
+
+4. Okay, sobre esse text-capitalize, tem uma coisa importante, olha aqui, oh, tah vendo essa palavra aqui, deIxEi, que ficou com minusculos e maiusculos, entre as letras del:, entao, o Capitalize nao vai deixar o resto minusculo, olha, ele so vai deixar maiusculo a primeira letra.
+
+5. Mas ele nao vao deixar o resto minusculo, entao, a gente tem que prestar bastante atencao nisso.
+
+6. Vamos, entao, para a Abreviacao no Bootstrap. Para abreviar uma palavra, nos utilizamos a tag html <abbr>, que eh a abreviacao para abbreviation.
+
+7. Entao, a gente usa o <abbr>, a gente coloca um title aqui, so por padrao, para quando colocar o mouse em cima, oh, aparecer um tooltip ali, no Browser, avisando o significado,
+
+<abbr title="abreviação">abbr</abbr>
+
+8. Qual eh a estilizacao que o Bootstrap faz para o <abbr>?
+
+9. Ele colocar esse tracejado embaixo aqui, no Browser, e, quando a pessoa coloca o mouse em cima, aparece aquela interrogacao.
+
+10. Tambem existe um outro tipo de abreviacao que eh quando nos abreviamos um termo, por exemplo, aqui,
+
+<abbr title="Associação Brasileira Beneficente de Reabilitação" class="initialism">ABBR</abbr> também é a abreviação de Associação Brasileira Beneficente de Reabilitação.
+
+, Associação Brasileira Beneficente de Reabilitação. Nos estamos pegando a primeira letra de cada uma dessas palavras e fazendo essa abreviacao.
+
+11. Se a gente fizesse normalmente com abbr, o texto ficaria muito grande, entao, ele tem essa classe aqui que vai nos ajudar,
+
+class="initialism"
+
+, chamada initialism, e o que significa isso? Quer dizer que eh uma abreviacao feita com iniciais e isso vai dar um texto um pouquinho menor e, assim, vai ficar, oh, parecendo que esta do mesmo tamanho, nao vai ficar muito estranho.
+
+12. Okay? O resto eh tudo igual, a gente coloca o title aqui, e a estilizacao que ele vai dar eh a mesma.
+
+13. Okay. Vamos, entao, para a citacao com o Bootstrap. O padrao de citacao do Bootstrap eh esse aqui, oh, ele coloca essa barrinha cinza a esquerda, ele vai dar um espacamento aqui, e a citacao eh feita aqui, ele tem tambem essa parte debaixo, aqui, que eh onde nos colocamos a pessoa que falou aquilo, ou o livro, que voce achou aquilo.
+
+14. Entao, vamos ver como eh que nos vamos fazer para usar aqui, oh,
+
+<h2>Citação</h2>
+
+<p>
+    Veja a seguinte citação:<br>
+    <blockquote>
+        <p>Citações nos ajudam a entender, inspirar, motivar, esclarecer e mostrar nossa opinião sobre o que está à nossa volta. É por isso que as pessoas e eu adoramos citações.</p>
+        <footer>Takyou Allah Cheikh Malaynine</footer>
+    </blockquote>
+</p>
+
+<p>
+    Ou essa: <br>
+    <blockquote class="blockquote-reverse">
+        <p>Citação: A arte de repetir erroneamente as palavras de outrem.</p>
+        <footer>Ambrose Bierce</footer>
+    </blockquote>
+</p>
+
+15. Para fazer a citacao, a gente usa essa tag chamada <blockquote>, que significa bloco de citacao, em ingles, seria. Nesse blockquote, nos precisamos colocar a citacao dentro de um paragrafo, para que ele possa fazer a limitacao, aqui, bem arrumadinha, esse espaco, no Browser, e tudo mais.
+
+16. E, quando nos quisermos colocar a fonte, nos usamos esse <footer>, que vai dizer a fonte. <footer>, aqui, significa rodape, em ingles, okay?
+
+17. Temos, tambem, um jeito de fazer a citacao ficar do lado direito, alinhado a direita. Para isso, no blockquote, nos colocamos essa classe aqui, oh, blockquote-reverse, ou seja, bloco de citacao reverso. 
+
+18. Fim da Aula 02.004. Tipografia - Transformacao, Abreviacao e Citacao.
+
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tipografia</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>H1 Semibold (seminegrito) 40px <small>Texto Secundario</small></h1>
+        <h2>H2 Semibold (seminegrito) 32px <small>Texto Secundario</small></h2>
+        <h3>H3 Semibold (seminegrito) 28px <small>Texto Secundario</small></h3>
+        <h4>H4 Semibold (seminegrito) 24px <small>Texto Secundario</small></h4>
+        <h5>H5 Semibold (seminegrito) 20px <small>Texto Secundario</small></h5>
+        <h6>H6 Semibold (seminegrito) 16px <small>Texto Secundario</small></h6>
+    </div>
+
+    <div class="container">
+        <p class="h1">H1 Semibold (seminegrito) 36px <small>Texto Secundario</small></p>
+        <p class="h2">H2 Semibold (seminegrito) 30px <small>Texto Secundario</small></p>
+        <p class="h3">H3 Semibold (seminegrito) 24px <small>Texto Secundario</small></p>
+        <p class="h4">H4 Semibold (seminegrito) 18px <small>Texto Secundario</small></p>
+        <p class="h5">H5 Semibold (seminegrito) 14px <small>Texto Secundario</small></p>
+        <p class="h6">H6 Semibold (seminegrito) 12px <small>Texto Secundario</small></p>
+    </div>
+
+    <div class="container">
+        <h1>Texto</h1>
+
+        <h2>Tamanho Padrao</h2>
+
+        <p>
+            Tenho 16px, a linha tem 22px
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. In elementis mé pra quem é amistosis quis leo. Quem num gosta di mim que vai caçá sua turmis! Si num tem leite então bota uma pinga aí cumpadi!
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Quem manda na minha terra sou euzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+        </p>
+
+        <p class="lead">Eu me sobressaio, tenho 21px</p>
+
+        <p>Tem pequeno tambem: <small>eu sou pequeno, so tenho 80% do tamanho do texto onde eu for colocado</small>. <span class="small">Eu tambem.</span></p>
+
+        <h2>Estilizacao</h2>
+
+        <p>Temos textos em varios estilos: <mark>iluminado</mark>, <del>deletado</del>, <s>riscado</s>, <ins>inserido</ins>, <u>sublinhado</u>, <strong>forte</strong>, <b>negrito</b>, <em>enfatizado</em>, <i>italico</i></p>
+
+        <h2>Indentacao</h2>
+
+        <p class="text-left"><strong>Eu sou um texto alinhado a esquerda. </strong>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Detraxit consequat et quo num tendi nada. Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-right"><strong>Eu sou um texto alinhado a direita. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Pra lá , depois divoltis porris, paradis. Viva Forevis aptent taciti sociosqu ad litora torquent. Atirei o pau no gatis, per gatis num morreus.</p>
+
+        <p class="text-center"><strong>Eu sou um texto alinhado ao centro. </strong>Mussum Ipsum, cacilds vidis litro abertis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Mé faiz elementum girarzis, nisi eros vermeio. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+
+        <p class="text-justify"><strong>Eu sou um texto justificado. </strong>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-nowrap"><strong>Eu sou um texto sem quebra de linha. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Diuretics paradis num copo é motivis de denguis. Suco de cevadiss deixa as pessoas mais interessantis. Manduma pindureta quium dia nois paga.</p>
+
+        <h2>Transformacao</h2>
+
+        <p class="text-lowercase">Eu sou todo em MiNuScUlO</p>
+
+        <p class="text-uppercase">Eu sou todo em MaIuScUlO</p>
+
+        <p class="text-capitalize">minhas primeiras letras sao em maiusculo, o resto fica como eu deIxEi</p>
+
+        <h2>Abreviação</h2>
+
+        <p>A abreviação da palavra "abreviação" é <abbr title="abreviação">abbr</abbr></p>
+
+        <p><abbr title="Associação Brasileira Beneficente de Reabilitação" class="initialism">ABBR</abbr> também é a abreviação de Associação Brasileira Beneficente de Reabilitação.</p>
+
+        <h2>Citação</h2>
+
+        <p>
+            Veja a seguinte citação:<br>
+            <blockquote>
+                <p>Citações nos ajudam a entender, inspirar, motivar, esclarecer e mostrar nossa opinião sobre o que está à nossa volta. É por isso que as pessoas e eu adoramos citações.</p>
+                <footer>Takyou Allah Cheikh Malaynine</footer>
+            </blockquote>
+        </p>
+
+        <p>
+            Ou essa: <br>
+            <blockquote class="blockquote-reverse">
+                <p>Citação: A arte de repetir erroneamente as palavras de outrem.</p>
+                <footer>Ambrose Bierce</footer>
+            </blockquote>
+        </p>
+
+        <h2>Listas</h2>
+
+        <h3>Desordenadas</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ul>
+
+        <h3>Ordenadas</h3>
+        <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ol>
+
+        <h3>Sem estilo</h3>
+
+        <ul class="list-unstyled">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>            
+        </ul>
+
+        <h3>Alinhadas</h3>
+
+        <ul class="list-inline">
+            <li>Lorem ipsum dolor</li>
+            <li>Consectetur adipiscing</li>
+            <li>Integer molestie</li>
+        </ul>
+
+        <h3>Descritivas</h3>
+
+        <dl>
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Quem num gosta di mim que vai caçá sua turmis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Viva Forevis aptent taciti sociosqu ad litora torquent. Quem manda na minha terra sou euzis!</dd>
+
+            <dt>Mais um</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. A ordem dos tratores não altera o pão duris. Casamentiss faiz malandris se pirulitá. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.</dd>
+        </dl>
+
+        <h4>Descrição horizontal</h4>
+
+        <dl class="dl-horizontal">
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Casamentiss faiz malandris se pirulitá.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Manduma pindureta quium dia nois paga.</dd>
+
+            <dt>Mais um termo longo demais para caber</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Casamentiss faiz malandris se pirulitá. Detraxit consequat et quo num tendi nada. Quem manda na minha terra sou euzis!</dd>
+        </dl>
+
+    </div>   
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

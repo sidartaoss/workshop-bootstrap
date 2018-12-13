@@ -1,0 +1,274 @@
+<!-- 
+
+Aula 05.003. Fixando Elementos com Affix
+
+1. Hoje, nos vamos trabalhar com o scroll do navegador.
+
+2. A gente vai fixar os elementos usando esse atributo aqui, o Affix. Entao, vamos la. 
+
+3. O instrutor fez essa pagina aqui, ela tem um fundo cinza, o instrutor aumentou um pouco a margem, e criou esses 3 blocos aqui.
+
+4. Tudo isso nos ja aprendemos durante o nosso Workshop. Entao, o instrutor nao vai demorar muito nisso.
+
+5. Entao, nos vamos comecar criando um menu aqui a esquerda. Vamos la, vamos colocar um 'nav',
+
+    <div class="container">
+        <h1>Fixando Elementos com Affix</h1>
+
+        <nav></nav>
+
+        <div id="principal"></div>
+        <div id="perfil"></div>
+        <div id="mensagem"></div>
+    </div>
+
+6. Dentro desse 'nav', eu vou dar um 'id' para ele, menu,
+
+    <nav id="menu"></nav>
+
+7. Aqui dentro, nos vamos criar um 'ul', e vamos colocar aquilo que a gente aprendeu na aula de abas, vamos colocar uma classe 'nav nav-pills nav-stacked', 
+
+    <nav id="menu">
+        <ul class="nav nav-pills nav-stacked">
+
+        </ul>
+    </nav>
+
+, que eh para ele fazer ele ficar vertical. Vamos colocar, aqui, 3 'li's, com links,
+
+    <nav id="menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </nav>
+
+8. O link, aqui, vai ser para o principal, perfil e mensagem,
+
+    <nav id="menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#principal">Principal</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#mensagem">Mensagem</a></li>
+        </ul>
+    </nav>
+
+9. Vamos Recarregar a Pagina Html.
+
+10. Okay, esta exibindo o menu lateral.
+
+11. Agora, vamos dar uma estilizada no menu, aqui, vamos dar um fundo branco para ele, vamos dar uma largura, vamos dar um espacamento interno e, por ultimo, a borda arredondada,
+
+#menu {
+    width: 300px;    
+    padding: 5px;
+
+    background-color: #fff;
+    
+    border-radius: 5px;
+
+}
+
+12. Agora, vamos tira-lo dessa quebra aqui, entre o menu lateral e o bloco PRINCIPAL. Para isso, nos vamos clocar a propriedade 'position: absolute', isso vai fazer o Menu flutuar, e, ai, os outros elementos do documento podem se reajustar,
+
+#menu {
+    width: 300px;    
+    padding: 5px;
+    position: absolute;
+
+    background-color: #fff;
+    
+    border-radius: 5px;
+
+}
+
+13. Recarregar a Pagina Html. Okay, os outros blocos, PRINCIPAL, PERFIL, MENSAGEM, se reajustaram na tela, ou seja, subiram.
+
+14. So que, quando a gente da Scroll na tela, ele, o Menu, fica fixo, o Menu nao vai junto com o Scroll da tela.
+
+15. A gente vai, entao, ajustar isso aqui com Affix. Para isso, a gente vai vir aqui, nesse menu aqui,
+
+    <nav id="menu">
+        ...
+    </nav>
+
+, e vamos colocar o atributo 'data-spy', com o valor da classe 'affix',
+
+    <nav id="menu" data-spy="affix">
+        ...
+    </nav>
+
+16. O que que eu estou dizendo, com isso? 
+
+17. Esse 'data-spy aqui', ele diz para o Bootstrap que ele tem que espionar, ou seja, ficar de olho, no Scroll, aqui. Eu estou dizendo que ele vai aplicar esse 'affix' aqui conforme o Scroll.
+
+18. Para nos mostrar, nos vamos Recarregar a Pagina Html e nos vamos ver o que que eh esse 'affix' aqui. Inspecionar o elemento 'nav' no documento Html.
+
+19. No Html, podemos ver que eh aplicado essa classe 'affix' ao elemento 'nav',
+
+<nav id="menu" data-spy="affix" >>>class="affix"<<<>
+</nav>
+
+20. E essa classe tem, por padrao, uma propriedade 'position: fixed'. So que, como nos podemos ver, como foi definido, na classe menu, o 'positon: absolute', esta sobrepondo o 'position: fixed' na classe 'affix',
+
+#menu {
+    padding: 5px;
+    width: 300px;
+    position: absolute;
+
+    background-color: #fff;
+    
+    border-radius: 5px;
+}
+.affix {
+    -p-o-s-i-t-i-o-n-:--f-i-x-e-d-;-
+}
+
+21. Entao, a propriedade position, na classe 'affix', eh menos especifica do que a propriedade 'position' na classe menu.
+
+22. Agora, vamos, entao, ajeitar isso.
+
+23. Nos vamos pegar esse 'position: absolute' e remover, para nos vermos como eh que vai ficar,
+
+#menu {
+    padding: 5px;
+    width: 300px;
+    // position: absolute;
+
+    background-color: #fff;
+
+    border-radius: 5px;
+}
+
+24. Recarregar a Pagina Html. Agora, ao dar Scroll, o Menu nao fica mais fixo, ele tambem se move com o Scroll.
+
+25. So que, assim, conforme o instrutor, nao esta muito legal, porque esta aparecendo, aqui, acima do Menu, um espaco muito grande.
+
+26. Entao, vamos ajeitar isso daqui.
+
+27. Vamos colocar, aqui, uma propriedade 'top', de 10 pixels, para o Menu ficar no topo da tela,
+
+#menu {
+    padding: 5px;
+    width: 300px;
+    top: 10px;
+
+    background-color: #fff;
+
+    border-radius: 5px;
+}
+
+28. Recarregar a Pagina Html. 'Ah, mas, agora, ele esta passando por cima do Titulo'.
+
+29. O que a gente faz? Eh ai que entra esse atributo aqui, 'data-offset', com o valor de 80 pixels, que eh, mais ou menos, o espaco entre o inicio do bloco PRINCIPAL e o topo da tela,
+
+        <nav id="menu" data-spy="affix" data-offset="80">
+        </nav>
+
+30. O que que vai acontecer? Recarregar a Pagina Html.
+
+31. Ele so vai chamar o 'Affix' quando passar esses 80 pixels. Antes de dar Scroll, o Menu permanece com position: static, entao, os blocos ficam posicionados abaixo do Menu. Quando da os 80 pixels, com o Scroll, eh aplicado 'position: fixed' para Menu, com a classe 'affix'. Sendo assim, os blocos se reajustam na tela, ou seja, sobem. 
+
+32. So que essa quebra, aqui, ou seja, quando o bloco PRINCIPAL sobe, nao esta sendo legal, segundo o Instrutor.
+
+33. Eh por isso que o Bootstrap tem uma classe, aqui, que vai nos ajudar bastante, que eh a classe 'affix-top'.
+
+34. Antes dos 80 pixels, ele mantem a classe 'affix-top' e, depois, ele troca para 'affix'.
+
+35. Entao, a gente so vai vir aqui e colocar que o menu, com 'affix-top', vai ter um position absolute,
+
+#menu.affix-top {
+    position: absolute;
+}
+
+36. Recarregar a Pagina Html. Agora, a gente voltou com o mesmo problema em que o Menu esta sobrepondo o Titulo.
+
+37. Entao, a gente vai dizer que o menu, com 'affix-top', vai ter um top de 100 pixels,
+
+#menu.affix-top {
+    position: absolute;
+    top: 100px;
+}
+
+38. Recarregar a Pagina Html.
+
+39. Agora, esta bem alinhado o Menu com o bloco Principal. Quando passar os 80 pixels, aqui, no Scroll, o Menu Lateral permanece na tela e os blocos vao subindo, conforme o Scroll.
+
+40. Para encerrar, o instrutor ira nos mostrar mais uma funcionalidade do atributo 'data-spy'.
+
+41. Nos vamos vir aqui no body, e nos vamos aplicar nele, aqui, data-spy, com o valor scroll,
+
+    <body data-spy="scroll">
+        ...
+    </body>
+
+42. Esse data-spy="scroll" vai olhar o scroll e vai nos dar alguma funcionalidade, aqui, que o instrutor ira nos mostrar. Nos usamos um data-target, e vamos dar, como target, o nosso 'menu',
+
+    <body data-spy="scroll" data-target="#menu">
+        ...
+    </body>
+
+43. Pode ser qualquer elemento que esteja contendo um 'nav'.
+
+44. E, ai, olha o que vai acontecer. Recarregar a Pagina Html.
+
+45. Ele vai olhar o bloco em que eu estou e vai deixar selecionado o link daquele bloco. Para ele poder fazer isso um pouco antes, nos vamos botar um offset aqui tambem, data-offset, com o valor de 100 pixels,
+
+    <body data-spy="scroll" data-target="#menu" data-offset="100">
+        ...
+    </body>
+
+46. Recarregar a Pagina Html. Okay, agora, 100 pixels antes de eu chegar no bloco, ele ja seleciona o bloco para onde nos estamos indo.
+
+47. E, como logo no inicio, eu ja estou no PRINCIPAL, nos vamos fazer com que esse Menu ja comece com o PRINCIPAL ativado, aqui, vamos dar um class='active',
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#principal">Principal</a></li>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#mensagem">Mensagem</a></li>
+            </ul>
+
+48. Okay, temos, aqui, o nosso Menu fixo com 'Affix' e, ainda, aprendemos o Spy no Scroll para podermos fazer essa estilizacao aqui.
+
+49. Fim da Aula 05.003. Fixando Elementos com Affix.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Fixando Elementos com Affix</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css"
+</head>
+<body data-spy="scroll" data-target="#menu" data-offset="100">
+
+    <div class="container">
+        <h1>Fixando Elementos com Affix</h1>
+
+        <nav id="menu" data-spy="affix" data-offset="80">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#principal">Principal</a></li>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#mensagem">Mensagem</a></li>
+            </ul>
+        </nav>
+
+        <div class="col-sm-8 col-sm-offset-4 bloco" id="principal">
+            principal
+        </div>
+        <div class="col-sm-8 col-sm-offset-4 bloco" id="perfil">
+            perfil
+        </div>
+        <div class="col-sm-8 col-sm-offset-4 bloco" id="mensagem">
+            mensagem
+        </div>
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

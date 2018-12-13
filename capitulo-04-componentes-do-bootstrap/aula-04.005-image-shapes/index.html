@@ -1,0 +1,194 @@
+<!-- 
+
+Aula 04.005. Image Shapes
+
+1. Agora que nos ja criamos o nosso Dropdown, vamos dar uma incrementada nele, colocando um Avatar aqui ao lado esquerdo.
+
+2. Primeiro, vamos para o codigo. Aqui no codigo, vamos dividir direitinho essa div aqui, colocando 2 colunas, "col-sm-4", entao, essa coluna vai ocupar 1/3, aonde vai ficar o nosso Avatar. E o <ul>, abaixo, nos vamos colocar "col-sm-8", para ocupar os outros 2/3,
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4">
+
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+, dentro do div "col-sm-4", nos vamos colocar um <img>, e, nesse img, nos vamos colocar um Avatar de uma API que o instrutor gosta muito, que se chama Adorable Avatars, https://api.adorable.io/avatars/100/watchuru.png. Caso queira dar uma olhada depois, eh so entrar em api.adorable.io,
+
+                <div class="col-sm-4">
+                    <img src="https://api.adorable.io/avatars/100/watchuru.png">
+                </div>
+
+, o nome que se colocar aqui,
+
+https://api.adorable.io/avatars/100/>>>watchuru<<<.png
+
+, ele vai criar um avatar aleatorio. Vamos dar uma olhada, entao, como eh que ficou? Recarregar a Pagina Hmtl.
+
+3. A imagem ficou sobrepondo tudo por cima dos itens da lista. O que a gente tem que fazer?
+
+4. A gente tem que aumentar a largura da classe perfil aqui, vamos dar uma largura, aqui, agora, de 300 pixels,
+
+.perfil {
+    padding: 10px;
+    width: 300px;
+}
+
+5. Vamos ver como eh que fica. Recarregar a Pagina Html.
+
+6. Melhorou um pouco. Entao, para funcionar, tem que ter aquela classe img-responsive, 
+
+<div class="dropdown-menu perfil">
+    <div class="col-sm-4">
+        <img class="img-responsive" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+    </div>
+    ...
+</div>
+
+7. Vamos ver agora. Okay, agora, a imagem ficou do tamanho certo, sem sobrepor os demais itens da lista.
+
+8. Vamos colocar, agora, uma estilizacao nessa imagem aqui.
+
+9. Nos temos 3 tipos de estilizacao os quais nos podemos fazer, "img-rounded", que vai deixar os 4 cantos da imagem mais arredondados,
+
+<div class="col-sm-4">
+    <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+</div>
+
+10. Ao recarregar a Pagina, vemos que os 4 cantos da imagem ficaram mais arredondados.
+
+11. Temos a classe "img-circle", que vai tornar a imagem um circulo,
+
+<div class="col-sm-4">
+    <img class="img-responsive img-circle" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+</div>
+
+12. Ao Recarregar a Pagina Html, vemos que a imagem tornou-se um circulo.
+
+13. E temos a classe "img-thumbnail", que vai fazer uma bordinha branca aqui na imagem. O instrutor acha que, para essa imagem, o melhor eh optarmos pela classe "img-rounded".
+
+14. Agora, ficou muito grande o espaco entre o primeiro item da lista e os demais. Vamos diminui-lo para 5 pixels,
+
+.perfil li:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+15. Segundo o instrutor, melhorou um pouco, mas da para diminuir mais, vamos, entao, colocar 3 pixels,
+
+.perfil li:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+16. Ainda nao ficou bom, conforme opiniao do instrutor. Vamos alterar para 2 pixels,
+
+.perfil li:first-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+17. Okay, agora, ficou bom, conforme o instrutor, o espacamento entre o primeiro item da lista e os demais, no Dropdown.
+
+18. Quando nos diminuimos a tela, o Avatar fica em cima dos itens da lista no Dropdown. Entao, o que nos vamos fazer, aqui, eh remove-lo, quando for na Resolucao de Celular.
+
+19. Como eh que a gente vai fazer isso?
+
+20. Tem uma classe que nos colocamos aqui, oh,
+
+<div class="dropdown-menu perfil">
+    <div class="col-sm-4 >>><<<">
+        <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+    </div>
+    ...
+</div>
+
+, que eh "hidden-xs", ou seja, esta escondido quando for Breakpoint de Celular,
+
+<div class="dropdown-menu perfil">
+    <div class="col-sm-4 hidden-xs">
+        <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+    </div>
+    ...
+</div>
+
+21. Okay, agora, sim, ao diminuir o tamanho da tela para a Resolucao de Celular, e, ao clicar no Botao para abrir o Dropdown, o Avatar esta sendo escondido no Dropdown e, quando o tamanho da tela aumenta para Tablet e Desktop, o Avatar eh exibido ao abrir-se o Dropdown.
+
+22. Fim da Aula 04.005. Image Shapes.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <!-- Menu -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                                <!--img class="img-responsive img-circle" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru"-->
+                                <!--img class="img-responsive img-thumbnail" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru"-->  
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

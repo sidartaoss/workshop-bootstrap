@@ -1,0 +1,341 @@
+<!-- 
+    Aula 05.004. Criando um Carousel
+
+1. Okay, vamos para mais uma funcionalidade do nosso Bootstrap. Nesta aula, vamos aprender a fazer um Carousel.
+
+2. O Carousel eh um componente que eh usado em muitos sites, pricipalmente de loja, em que fica passando varios destaques, com um determinado tempo.
+
+3. Entao, vamos la para o nosso codigo.
+
+4. Primeiramente, temos que criar a nossa 'div', que vai conter o nosso carousel.
+
+5. Entao, vamos usar a classe 'carousel',
+
+    <div class="container">
+        <h1>Criando um Carousel</h1>
+        <div class="carousel">
+
+        </div>
+    </div>
+
+, e, ai, dentro desse 'carousel', nos vamos colocar os nossos slides.
+
+6. Entao, primeiro, vamos colocar, aqui, uma div, e vamos colocar, aqui, a classe 'carousel-inner', que eh para dizer que vai vir os slides, em seguida,
+
+    <div class="carousel">
+        <div class="carousel-inner">
+
+        </div>
+    </div>
+
+7. Cada slide tem uma classe chamada 'item',
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="item">
+
+            </div>
+        </div>
+    </div>
+
+8. E, ai, nos vamos colocar, aqui, uma imagem. E nos vamos usar aquela mesma API que nos aprendemos logo no inicio do Workshop, quando estavamos fazendo a tela de login, https://unsplash.it/1280/270?random,
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="item">
+                <img src="https://unsplash.it/1280/720?random">
+            </div>
+        </div>
+    </div>
+
+, resolucao de 1280 por 720 pixels.
+
+9. Vamos colocar, aqui, mais dois itens, mudando a resolucao em 1 pixel,
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="item">
+                <img src="https://unsplash.it/1280/720?random">
+            </div>
+            <div class="item">
+                <img src="https://unsplash.it/1279/720?random">
+            </div>
+            <div class="item">
+                <img src="https://unsplash.it/1278/720?random">
+            </div>                        
+        </div>
+    </div>
+
+10. Ao Recarregar a Pagina Html, nao apareceu nada. Eh porque, pelo menos, 1 desses itens ja tem que estar aqui 'active',
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="item >>>active<<<">
+                <img src="https://unsplash.it/1280/720?random">
+            </div>
+            <div class="item">
+                <img src="https://unsplash.it/1279/720?random">
+            </div>
+            <div class="item">
+                <img src="https://unsplash.it/1278/720?random">
+            </div>                        
+        </div>
+    </div>
+
+, senao, o carousel nao aparece.
+
+11. Vamos Recarregar a Pagina Html. Agora, exibiu a imagem.
+
+12. Agora, eh so esperar passar para outra imagem.
+
+13. Nao exibiu uma nova imagem. O que aconteceu?
+
+14. Eh porque nos temos que adicionar, aqui, nessa classe 'carousel', nos temos que colocar, tambem, a classe 'slide' e temos que colocar, tambem, o atributo data-ride, com o valor 'carousel',
+
+    <div class="carousel slide" data-ride="carousel">
+        ...
+    </div>
+
+15. Recarregar a Pagina Html. Agora, o nosso carousel esta exibindo as outras imagens, depois de um intervalo.
+
+16. Agora, vamos adicionar mais algumas coisas no nosso carousel.
+
+17. Antes, aqui, do 'carousel-inner', nos vamos colocar, agora, aquelas bolinhas que vao indicar em qual item nos estamos,
+
+        <div class="carousel slide" data-ride="carousel">
+
+            <ol>
+
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1279/720?random">
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1278/720?random">
+                </div>                                
+            </div>
+        </div>
+
+18. E, nesse 'ol', nos vamos usar uma classe 'carousel-indicators', ou seja, os indicadores do carousel. E, ai, nos vamos ter um 'li' aqui. E, nesse 'li', nos temos que ter um atributo data-target, valorando com um 'id' esse data-target, tem que dizer qual o carousel,
+
+        <div class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target=""></li>
+            </ol>
+
+            <div class="carousel-inner">
+                ...
+            </div>
+            ...
+        </div>
+
+19. Entao, vamos dar, aqui, um 'id' para o carousel, vamos chama-lo de 'Carrossel',
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel">
+            ...
+        </div>
+
+20. Entao, data-target, nos vamos valorar com "Carrossel",
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target=">>>#Carrossel<<<"></li>
+            </ol>
+
+21. E temos que dizer para qual slide que esse aqui vai, data-slide-to, vamos valorar, aqui, com 0,
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#Carrossel" data-slide-to="0">
+
+                </li>
+            </ol>
+
+22. Agora, vamos fazer outros aqui, valorando data-target-to com 0, 1, 2,
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#Carrossel" data-slide-to="0"></li>
+                <li data-target="#Carrossel" data-slide-to="1"></li>
+                <li data-target="#Carrossel" data-slide-to="2"></li>
+            </ol>
+
+, ou seja, nos iniciamos em 0.
+
+23. Por ultimo, nos temos que definir qual 'li' ficara ativo, entao, vamos colocar a classe 'active',
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#Carrossel" data-slide-to="0" class="active"></li>
+                <li data-target="#Carrossel" data-slide-to="1"></li>
+                <li data-target="#Carrossel" data-slide-to="2"></li>
+            </ol>
+
+24. Vamos Recarregar a Pagina Html, para vermos como eh que ficou.
+
+25. Okay, apareceram as bolinhas na tela, ao clicar na bolinha, eh exibida uma nova imagem.
+
+26. Vamos continuar adicionando mais funcionalidades no nosso Carousel. Vamos, agora, colocar um controle, que vai passar para frente e para tras.
+
+27. Entao, aqui, depois do div de 'carousel-inner', nos vamos colocar uma ancora. Nesse link, nos vamos dar uma classe 'left', que eh para a esquerda, 'left carousel-control', controle do carousel.
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1279/720?random">
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1278/720?random">
+                </div>                                
+            </div>
+            <a class="left carousel-control" href=""></a>    
+
+, e nos vamos dizer para qual carousel que eh, entao, a gente vai botar, aqui, o 'id', '#Carrossel',
+
+            <a class="left carousel-control" href="#Carrossel"></a>
+
+, e vamos dizer qual o comando, aqui, para qual slide que ele vai mandar, 'prev', que eh a abreviacao de 'previous', que eh o anterior,
+
+            <a class="left carousel-control" href="#Carrossel" data-slide="prev"></a>
+
+28. Vamos fazer um igual a esse, so que, aqui, a gente vai colocar a classe 'right', e, aqui, em data-slide, vamos valorar com 'next',
+
+            <a class="left carousel-control" href="#Carrossel" data-slide="prev"></a>
+            <a class="right carousel-control" href="#Carrossel" data-slide="next"></a>
+
+29. Vamos Recarregar a Pagina Html para vermos como ficou.
+
+30. Okay, ao movermos o mouse para a esquerda, o mouse muda para clicarmos. Ao clicar, muda a imagem. Ao movermos o mouse para a direita, o mouse muda para clicarmos. Ao clicar, muda a imagem.
+
+31. Agora, vamos adicionar, aqui, em 'left carousel-control, o iconezinho de anterior e proximo. Aqui dentro, nos vamos colocar um 'span', e vamos colocar, aqui, 'glyphicon glyphicon-chevron-left',
+
+            <a class="left carousel-control" href="#Carrossel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+, e, para 'right carousel-control', vamos adicionar o iconezinho de proximo,
+
+            <a class="right carousel-control" href="#Carrossel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+32. Recarregar a Pagina Html. Okay, esta exibindo os icones para Proximo e para Anterior.
+
+33. Agora, por que que a gente nao adiciona legendas, tambem, nessas imagens?
+
+34. Vamos la. Dentro, aqui, depois da imagem, nos vamos colocar uma div, com a classe 'carousel-caption', que significa legenda,
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+
+35. Vamos dar um titulo, aqui, por exemplo, 'Slide Um',
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                    <div class="carousel-caption">
+                        <h3>Slide Um</h3>
+                    </div>
+                </div>
+
+36. E uma descricao, ou seja, um 'p', 'Este eh um slide elegante.',
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                    <div class="carousel-caption">
+                        <h3>Slide Um</h3>
+                        <p>Este eh um slide elegante.</p>
+                    </div>
+                </div>
+
+37. Vamos Recarregar a Pagina Html. Agora, o Slide Um tem uma descricao. 
+
+38. Agora, para completar, vamos colocar alguns atributos, o que vai nos ajudar a customizar isso aqui.
+
+39. Vamos aqui no codigo. E, aqui, no "Carrossel",
+
+    <div id="Carrossel" class="carousel slide" data-ride="carousel">
+        ...
+    </div>
+
+, nos vamos colocar, por exemplo, data-interval. O que que eh isso? Ele vai dizer quanto tempo demora para um slide passar para o outro,
+
+    <div id="Carrossel" class="carousel slide" data-ride="carousel" data-interval="">
+        ...
+    </div>
+
+, vamos colocar, agora, aqui, 1000 milesimos, ou seja, 1 segundo,
+
+    <div id="Carrossel" class="carousel slide" data-ride="carousel" data-interval="1000">
+        ...
+    </div>
+
+40. Recarregar a Pagina Html. Agora, o carousel esta passando as imagens de 1 em 1 segundo.
+
+41. Fim da Aula 05.004. Criando um Carousel.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Minha Pagina</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Criando um Carousel</h1> 
+
+        <div id="Carrossel" class="carousel slide" data-ride="carousel" data-interval="1000">
+            <ol class="carousel-indicators">
+                <li data-target="#Carrossel" data-slide-to="0" class="active"></li>
+                <li data-target="#Carrossel" data-slide-to="1"></li>
+                <li data-target="#Carrossel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://unsplash.it/1280/720?random">
+                    <div class="carousel-caption">
+                        <h3>Slide Um</h3>
+                        <p>Este é um slide elegante.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1279/720?random">
+                </div>
+                <div class="item">
+                    <img src="https://unsplash.it/1278/720?random">
+                </div>                                
+            </div>
+            <a class="left carousel-control" href="#Carrossel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#Carrossel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

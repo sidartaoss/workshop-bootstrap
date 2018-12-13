@@ -1,0 +1,148 @@
+<!-- 
+
+    Aula 02.002. Criando uma Pagina Simples
+
+1. Okay, agora que nos ja fizemos uma revisao do Html, do CSS, nos ja preparamos o nosso ambiente para Desenvolvimento, e nos ja sabemos o que eh o Bootstrap, vamos, finalmente, comecar a colocar a mao na massa. 
+
+2. Entao, nos temos, aqui, o projeto que foi feito naquela aula onde nos preparamos o ambiente de desenvolvimento, e, agora, nos vamos fazer a nossa primeira pagina com Bootstrap.
+
+3. Entao, vai ser bem simples, so para mostrar para nos como que a gente insere o Bootstrap aqui. Entao, do jeito que esta aqui, oh, nos temos a pagina vazia, nao eh?, so o titulo aqui, Minha pagina, como esta aqui.
+
+4. Vamos, agora, inserir o Bootstrap.
+
+5. A primeira coisa que nos temos que fazer eh colocra o CSS ali, nao eh?. Entao, vamos la, vamos colocar aqui,
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+6. Okay, inserimos, aqui, o CSS. Agora, nos vamos inserir os scripts. Aqui, no <body>, colocar aqui,
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+7. Depois de colocar o jQuery, vamos colocar o Bootstrap. 
+
+8. Agora que inserimos os scripts, vamos identar aqui, para colocar dentro do body, tudo bonitinho, e vamos, agora, para o nosso site. 
+
+9. A primeira coisa que nos temos que fazer eh muito importante. Eh aqui, no head, nos temos que colocar mais uma dessas tags que a gente chama de <meta>, onde a gente define algumas regras para o navegador.
+
+10. Entao, vamos colocar, aqui, essa tag,
+
+<meta 
+
+, o nome dessa meta vai ser viewport,
+
+<meta name="viewport"
+
+, o que que a gente vai definir aqui? A gente vai dizer para o Navegador qual o tamanho da tela de visao. A gente vai dizer que o content,
+
+<meta name="viewport" content=""
+
+, dessa viewport, eh a largura,
+
+<meta name="viewport" content="width" 
+
+, vai ser igual a largura do dispositivo,
+
+<meta name="viewport" content="width=device-width,"
+
+, e a escala inicial eh igual a 1,
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+11. Mas o que que eu estou fazendo aqui?
+
+12. Entao, o que acontece eh que o Bootstrap, ele eh Responsivo. Isso significa que ele vai funcionar em diversas telas, pode ser tanto no computador, pode ser no tablet, no Smartphone, ou, ate, em varias resolucoes diferentes do computador.
+
+13. O que que eu estou definindo, aqui, 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+, eh que nao interessa o dispositivo que o Usuario tiver, ele vai manter o Zoom normal, 
+
+<meta name="viewport" content="width=device-width, >>>initial-scale=1<<<">
+
+, e vai fazer com que a largura do elemento seja a mesma largura do dispositivo,
+
+<meta name="viewport" content="width=>>>device-width<<<, initial-scale=1">
+
+14. Eh uma tag que nos temos que colocar para funcionar bem nos dispositivos moveis, okay?
+
+15. Vamos centralizar isso aqui, deixar bem separadinha, <meta>, <title>, <link>,
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,     initial-scale=1">
+
+    <title>Minha pagina</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+16. Agora, vamos para o nosso site. A primeira coisa que nos temos que fazer eh colocar, aqui, uma div, e vamos usar uma classe para ela chamada container,
+
+<body>
+
+    <div class="container">
+
+    </div>
+
+</body>
+
+, esse container aqui eh uma classe usada pelo Bootstrap para abranger todo o conteudo que nos precisamos colocar.
+
+17. Entao, vamos la. Dentro desse container, nos vamos colocar um titulo,
+
+    <div class="container">
+        <h1>Meu Titulo</h1>
+    </div>
+
+, e, ai, nos vamos colocar, aqui, um paragrafo,
+
+    <div class="container">
+        <h1>Meu Titulo</h1>
+        <p></p>
+    </div>
+
+, nesse paragrafo aqui, vamos pegar um servico aqui que eh muito legal, chamado 'mussum ipsum', o que esse 'mussum ipsum' faz?
+
+18. Ele, na verdade, ele gera um paragrafo aleatorio, com alguma coisa parecida com o que o Mussum falaria,
+
+    <div class="container">
+        <h1>Meu Titulo</h1>
+        <p>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mé, boa gentis num é. Interagi no mé, cursus quis, vehicula ac nisi. Leite de capivaris, leite de mula manquis sem cabeça. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</p>
+    </div>
+
+, entao, a gente cola aqui, ta vendo, a gente tem um paragrafo, com varias palavras, pontuacao, e tudo mais, e um pouco divertido tambem para a gente poder testar o nosso sistema aqui.
+
+19. Agora, beleza, tem, aqui, um titulo, e um paragrafo. Vamos salvar e ver como eh que fica isso, Recarregar a Pagina Html.
+
+20. Olha aqui, ta vendo, nos temos, aqui, o titulo completamente diferente daquela aula que nos vimos de Html, o Bootstrap ja colocou a fonte padrao dele, ja colocou um tamanho que ele definiu para o que eh um titulo e, aqui, nos temos um paragrafo, tudo bem espacadinho.
+
+21. Isso aqui, oh, que voces estao vendo, eles estao dentro do container. Isso quer dizer que, se eu modificar aqui, oh, a largura da tela, se eu tiver uma tela menor, ele se reajusta, oh, agora, estou em um tamanho de tela de um Tablet e, agora, de um Celular.
+
+22. O conteudo todo eh reajustado para poder caber direitinho na tela. Esse eh o efeito no nosso container. Isso tudo, sobre responsividade, sobre container, sobre outras coisas do Bootstrap, a gente vai aprender durante as proximas aulas.
+
+23. Esta aula era mesmo para a gente poder fazer a nossa primeira pagina.
+
+24. Fim da Aula 02.002. Criando uma Pagina Simples.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,     initial-scale=1">
+
+    <title>Minha pagina</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meu Titulo</h1>
+        <p>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mé, boa gentis num é. Interagi no mé, cursus quis, vehicula ac nisi. Leite de capivaris, leite de mula manquis sem cabeça. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</p>
+    </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

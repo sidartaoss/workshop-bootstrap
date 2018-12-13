@@ -1,0 +1,355 @@
+<!-- 
+
+Aula 04.012. Validando Formularios
+
+1. Agora, o instrutor ira nos ensinar como eh que nos vamos fazer a Validacao desses campos.
+
+2. O instrutor ira nos mostrar as classes que o Bootstrap tem para ajudar a mostrar os erros de Validacao dos formularios. Nos nao vamos fazer nada dinamico neste nosso Workshop aqui.
+
+3. Entao, vamos la para o codigo, paa o instrutor nos mostrar como eh que faz.
+
+4. Vamos pegar esse nosso textarea de Observacao aqui. Entao, digamos que a pessoa inseriu um valor incorreto aqui, nesse nosso textarea Observacao.
+
+5. Nos temos que fazer o seguinte, nos temos que dizer paa o Bootstrap que essa parte,
+
+<div class="form-group col-xs-12">
+    <label for="Observacao">Observação</label>
+    <textarea id="Observacao" class="form-control" rows="3"></textarea>
+</div>
+
+, tem um erro. E a gente faz isso com isso aqui, oh, no 'form-group', nos dizemos has-error,
+
+<div class="form-group has-error col-xs-12">
+    <label for="Observacao">Observação</label>
+    <textarea id="Observacao" class="form-control" rows="3"></textarea>
+</div>
+
+6. O que que ele ira fazer? Vamos la ver. Recarregar a Pagina Html.
+
+7. Ele vai deixar o textarea avermelhado. 
+
+8. Estamos percebendo, aqui, eh que so o textarea ficou avermelhado, mas era para a nossa label tambem ficar, o que sera que aconteceu?
+
+9. Toda a label do Bootstrap precisa ter uma classe, chamada 'control-label', para dizer que eh a Etiqueta, ou a label, desse controle, desse 'form-control',
+
+<div class="form-group has-error col-xs-12">
+    <label >>>class="control-label"<<< for="Observacao">Observação</label>
+    <textarea id="Observacao" >>>class="form-control"<<< rows="3"></textarea>
+</div>
+
+10. Quando nos colocamos essa classe, a label tambem eh estilizada para avermelhada.
+
+11. Recarregar a Pagina. Okay, a label, tambem, ficou avermelhada.
+
+12. Agora, devemos colocar 'control-label' em todos os nossos campos, okay?
+
+13. Agora, nos ja temos o 'control-label' em todas as nossas labels. Entao, quando eu coloco a classe 'has-error', eu estou dizendo para o Bootstrap que tem algum erro nisso, e ele vai deixar vermelho para avisar o Usuario de que tem algum erro.
+
+14. Tambem, posso dizer, ao contrario de ter erro, eu posso dizer que ele inseriu algo correto. Entao, eu coloco, aqui, has-success,
+
+<div class="row">
+    <div class="form-group has-success col-sm-4">
+        <label class="control-label" for="Valor">Valor</label>
+        <div class="input-group">
+            <div class="input-group-addon">R$</div>
+            <input type="text" name="valor" id="Valor" class="form-control">
+        </div>
+    </div>
+</div>
+
+15. Recarregar a Pagina Html.
+
+16. Ele deixou o campo Valor verdinho, dizendo que esta tudo Okay.
+
+17. Agora, se houver algum problema, mas que nao eh bem um erro, mas, talvez, algum aviso que eu tenha que dar, eu posso dizer has-warning,
+
+<div class="form group has-warning col-sm-7">
+    <label class="control-label" for="Servicos">Serviços</label>
+    <select id="Servicos" class="form-control">
+        <option value="">Selecione...</option>
+        <option value="1">Ajuste de Data/Hora</option>
+        <option value="2">Conserto de Engrenagem</option>
+        <option value="3">Troca de Bateria</option>
+    </select>
+</div>
+
+18. Recarregar a Pagina Html. E ele vai deixar amarelo, me dando um aviso de que tem algo que o Usuario tem que prestar atencao, aqui.
+
+19. Entao, essa eh a nossa validacao de formulario.
+
+20. Para teminar, nos ainda nao temos um botao 'X' de fechar a janela.
+
+21. Para fechar essa Modal, nos temos que clicar aqui do lado de fora. Vamos fazer o nosso botao de fechar, entao.
+
+22. Vamos la no nosso Cabecalho, 'modal-header' e vamos criar aqui, 'button', do tipo 'button', e vamos dar para ele uma propriedade chamada data-dismiss, ou seja, ele esta fechando algo, o que que ele esta fechando? Uma modal,
+
+<div class="modal-header">
+    <button data-dismiss="modal"></button>
+    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+</div>
+
+23. A classe que nos vamos colocar, aqui, eh chamada de 'close',
+
+<div class="modal-header">
+    <button data-dismiss="modal" class="close"></button>
+    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+</div>
+
+, e, ai, ele vai deixar ja no canto superior direito, tudo arrumadinho. E a gente vai dizer: o que que vai ser o que vai fechar aqui? Vai ser um 'span', e a gente vai colocar um codigo aqui que vai dar aquele 'X', que eh '&times;'
+
+<div class="modal-header">
+    <button type="button" data-dismiss="modal" class="close">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+</div>
+
+24. Recarregar a Pagina Html. Okay, esta aparecendo o 'X' para fechar a Modal. Clicando no 'X', a Modal eh fechada.
+
+25. Fim da Aula 04.012. Validando Formularios.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Ordens de Serviço</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row cabecalho">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Serviço</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="dados-os table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Cod.</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                        <th>Funcionário</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-primary">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-default">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-warning">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-danger">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"      ></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-success">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>                                                                
+                </tbody>
+            </table>    
+        </div>
+
+        <footer>
+            <div class="col-sm-6">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#NovaOS">Nova Ordem de Serviço</button>
+            </div>
+            <div class="col-sm-6 paginacao text-right">
+                <ul class="pagination">
+                    <li class="disabled"><a href=""><span><<</span></a></li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href=""><span>>></span></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    <div class="modal fade" id="NovaOS">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Código da OS</label>
+                                <p class="form-control-static">65151</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form group col-sm-5">
+                                <label class="control-label" for="Cliente">Cliente</label>
+                                <select id="Cliente" class="form-control">
+                                    <option value="">Selecione...</option>
+                                    <option value="1">Frodo Bolseiro</option>
+                                    <option value="2">Gandalf Cinzento</option>
+                                    <option value="3">Sauron de Mordor</option>
+                                </select>
+                            </div>
+                            <div class="form group has-warning col-sm-7">
+                                <label class="control-label" for="Servicos">Serviços</label>
+                                <select id="Servicos" class="form-control">
+                                    <option value="">Selecione...</option>
+                                    <option value="1">Ajuste de Data/Hora</option>
+                                    <option value="2">Conserto de Engrenagem</option>
+                                    <option value="3">Troca de Bateria</option>
+                                </select>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group has-error col-xs-12">
+                                <label class="control-label" for="Observacao">Observação</label>
+                                <textarea id="Observacao" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group has-success col-sm-4">
+                                <label class="control-label" for="Valor">Valor</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">R$</div>
+                                    <input type="text" name="valor" id="Valor" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!-- 
+
+Aula 03.003. Sistema de Grid
+
+1. Agora que nos ja aprendemos o que sao as Media Queries e como se faz um layout responsivo, nos vamos ver como eh que o Bootstrap aplica essas Media Queries para nos dar responsividade.
+
+2. Primeira coisa que nos vamos fazer eh mostrar para voces uma outra ferramenta que o Chrome DevTools tem que vai nos ajudar neste caso.
+
+3. Entao, vamos abrir o Chrome DevTools aqui, aqui, nos vamos colocar o Modo Device, Toggle device toolbar, e, ai, nos vamos no Botao Superior Direito de 3 pontos verticais, e selecionamos a opcao Show media queries. Selecionar, tambem, a opcao Responsive, no combo de Devices.
+
+4. Isso aqui vai me dar todas as Media Queries que estao sendo definidas dentro do CSS. Isso aqui eh legal para a gente poder entender melhor quais sao as Media Queries que o Bootstrap usa. E, quando nos clicamos em uma dessas Media Queries, ele, automaticamente, vai redidmensionar a janela para caber dentro dessa Media Query.
+
+5. Para que a gente possa trabalhar melhor, eu vou pegar isso aqui e colocar em uma nova janela, ou seja, clicar, no botao de 3 pontos verticais inferior, em Undock into separate window, e eu vou minimiza-la.
+
+6. Tambem vou apertar a tecla f11, que vai me dar a tela inteira do Chrome, Modo Tela Cheia.
+
+7. Okay, agora, a gente tem a tela toda para a gente poder trabalhar.
+
+8. Entao, vamos ara o codigo. Esse codigo aqui eh aquele que nos fizemos naquela aula sobre a Pagina Basica de Bootstrap.
+
+9. Okay? So vamos continuar utilizando ele. Voces lembra que a gente utilizou, aqui, um container?
+
+    <div class="container">
+    </div>
+
+10. Isso aqui eh uma das coisas que o Bootstrap usa para deixar Responsivo. Entao, para deixar mais explicadinho, eu vou colocar, aqui, um comentario. O Bootstrap usar 4 tamanhos de largura de tela como padrao na responsividade dele. Okay? Nos chamamos isso de Breakoints.
+
+11. Entao, ele tem o tamanho LG, ou seja, Largo, nao eh?, Large, e ele vai pegar todas as larguras que forem maiores ou iguais a 1200 pixels,
+
+    LG: >= 1200px
+
+12. Vai ter a MD, que seria Medio, nao eh?, que vai pegar todas as larguras que forem maiores ou iguais a 92 pixels e menores do que 1200 pixels,
+
+    LG: >= 1200px
+    MD: >= 992px < 1200
+
+13. Tem a SM, que eh a abreviacao de Small, que vai pegar todas as larguras que forem maiores ou iguais a 768 pixels e menores do que 992 pixels,
+
+    LG: >= 1200px
+    MD: >= 992px < 1200
+    SM: >= 768px < 992px
+
+14. E, por ultimo, XS, Extra Small, que seria mais para Celulares, mesmo, que vai pegar todas as larguras que forem menores do que 768 pixels, ou seja, todo o resto,
+
+    LG: .= 1200px
+    MD: >= 992px < 1200
+    SM: >= 768px < 992px
+    XS: < 768px
+
+15. Beleza, sabendo que os temos esses tamanos, vamos ver o que que ele faz aqui, no container.
+
+16. Esse, aqui, eh um breakpoint. Eh um breakpoint que vai de 768 pixels a 991 pixels. Voce pode ver que nao interessa a largura, se 768 pixels, ou se 991 pixels, dentro desse intervalo, ele vai continuar mantendo o container do mesmo tamanho.
+
+17. Aqui, nos temos um outro Breakpoint que vai fazer o mesmo, esse Breakpoint aqui vai de 992 pixels ate 1199 pixels, nao interessa a largura que eu tiver, se estiver em 992 pixels, ou se estiver em 1199 pixels, ele vai manter o nosso container do mesmo tamanho.
+
+18. Certo? Isso aqui eh feito usando as Media Queries. Eh so isso que o Bootstrap tem para poder fazer a responsividade?
+
+19. Nao.
+
+20. O Bootstrap trabalha com o Sistema de Grids, tambem conhecido, em ingles, como Grid System. Esse sistema de Grids, ele vai ser como se fosse uma tabela e vai ajudar a gente adispor os elementos ali dentro do nosso site.
+
+21. O instrutor ira mostrar para nos. Entao, aqui, nos temos esse container, nao eh?, tem o titulo e um paragrafo,
+
+  <div class="container">
+    <h1>Meu Título</h1>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Quem num gosta di mé, boa gente num é. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+    </p>
+  </div>
+
+, mas, agora, vamos colocar 3 paineis aqui dentro. A primeira coisa que o instrutor vou fazer eh, como o instrutor falou, eh como se fosse uma tabela, nao eh?, entao, o instrutor vai criar uma div aqui e, dentro dessa div, o instrutor vai colocar uma classe chamada row,
+
+  <div class="container">
+    <h1>Meu Título</h1>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Quem num gosta di mé, boa gente num é. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+    </p>
+
+    <div class="row">
+    <div>
+
+  </div>
+
+, que eh uma linha.
+
+22. Entao, essa eh a primeira linha da nossa tabela. Dentro dessa linha, eu vou colocar colunas.
+
+23. E as colunas sao o que? 
+
+24. Eh uma div, okay?, com a classe col-, e, ai, a gente vai dizer qual daquelas resolucoes, qual desses Breakpoints a gente quer abranger. Vamos comecar colocando esse XS aqui, para nos vermos como fica, 
+
+  <div class="container">
+    <h1>Meu Título</h1>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Quem num gosta di mé, boa gente num é. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+    </p>
+
+    <div class="row">
+        <div class="col-xs"
+    <div>
+
+  </div>
+
+, e, ai, eu digo a largura que eu quero que essa coluna tenha. O Bootstrap trabalha em um sistema como se fossem 12 colunas. Entao, imagina que nos temos essas 12 colunas aqui,
+
+| 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10  | 11  | 12  |
+
+, isso abrange a Pagina inteira.
+
+25. Entao, eu posso escolher o tamanho do elemento baseado no nmero de colunas que eu quero que ele tenha.
+
+26. Entao, vamos dizer que eu quero pegar a largura inteira daquela pagina. Entao, eu vou colocar as 12 colunas aqui, okay?, abrangeno as 12 colunas, e eu vou colocar um texto aqui qualquer,
+
+
+  <div class="container">
+    <h1>Meu Título</h1>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Quem num gosta di mé, boa gente num é. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+    </p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Casamentiss faiz malandris se pirulitá. Diuretics paradis num copo é motivis de denguis.            
+        </div>
+    <div>
+  </div>
+
+, okay, vamos, agora, olhar, na Pagina Html. Pegou a largura toda ali da tela, nao eh?.
+
+27. Mas, ai, agora, eu quero fazer esse texto ficar so na metade do tamanho.
+
+28. Okay, metade do tamanho, entao, das 12 colunas, eu quero pegar so 6 colunas, entao, assim, eu pego, aqui, a metade.
+
+29. Vamos la, "col-xs-6",
+
+    <div class="col-xs-6">
+        ...
+    </div>
+
+30. Recarregando a Pagina Html, agora, nos ele so pegou metade desse tamanho que a gente precisava.
+
+31. Mas qual o problema que nos temos aqui? Nos colocamos o tamanho XS. Isso quer dizer que ele vai manter esse tamanho de 6 colunas desde o Celular. E, se a gente colocar, aqui, o Celular, ou seja, selecionarmos a Media Query de Celular, ou seja, < 768 pixels, ele vai ficar muito apertadinho, principalmente, se a resolucao for menor ainda.
+
+32. Entao, o que que a gente pode fazer? Eh ai que vem a magica do Sistema de Grid do Bootstrap. Nos podemos dizer que, no Celular, ele vai ter 12 colunas, mas que, no Tablet, ele vai ter 6 colunas,
+
+    <div class="cols-xs-12 col-sm-6">
+    </div>
+
+33. Entao, quando a gente Recarregar a Pagina, o Celular, ou seja, para Media Query < 768 pixels, ele esta pegando as 12 colunas, mas, quando eu seleciono a Media Query de Tablet, ou seja, >= 768 pixels e < 992 pixels, agora, ele tem 6 colunas.
+
+34. E se eu quiser, entao, agora, em uma tela maior, eu ficar com ele ainda menor?
+
+35. Okay, vamos fazer assim, vamos fazer com que ele peue somente 4 colunas quando for a tela maior, entao, a gente vai pegar, aqui, "col-md-4",
+
+    <div class="cols-xs-12 col-sm-6 col-md-4">
+    </div>
+
+36. Recarregando a Pagina Html e passando para a tela maior, ou seja, selecionando a Media Query max-width: 1199px, min-width: 992px, ele pegou, agora, so 1/3 da nossa tela, que eh o equivalente a 4 colunas.
+
+37. Agora, eu quero pegar, se a tela for maior ainda, eu quero 1/4 so. Nao tem problema, 
+
+    <div class="cols-xs-12 col-sm-6 col-md-4 col-lg-3">
+    </div>
+
+, 3 eh 1/4 de 12.
+
+38. Vamos aumentar, aqui, ou seja, selecionar, nas Media Queries, min-width: 1200px. Beleza, pegou.
+
+39. E o que mais, entao, a gente pode fazer, entao, com isso aqui? Com isso aqui, nos podemos deixar as colunas umas do lado das outras. Isso vai fazer com que nos consigamos, atraves da responsividade, fazer os sites se adaptarem da melhor maneira.
+
+40. Vamos fazer um exemplo aqui. Nos vamos aplicar, aqui, uma div, vamos dar para ela uma classe, "panel",
+
+    <div class="row">
+        <div class="panel panel-primary">
+
+        </div>
+    </div>
+
+41. Dentro dessa div, nos vamos colocar, aqui, outra div, com a classe "panel-heading",
+
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+
+            </div>
+        </div>
+    </div>
+
+, e, depois desse panel-heading, nos vaos coocar outra div com a classe "panel-body",
+
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+
+42. Dentro desse panel-heading, nos vamos colocar um h3, e vamos dar, para esse h3, a classe "panel-title",
+
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+
+43. O que significa isso?
+
+44. Eu estou inserindo, aqui, um componente do Bootstrap chamado painel. Entao, vamos ver como eh que vai ficar aqui, Titulo do Painel, e, aqui, no body, eu vou colocar, de novo, um texto qualquer do Mussum,
+
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Titulo do Painel</h3>
+            </div>
+            <div class="panel-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+            </div>
+        </div>
+    </div>
+
+45. Salvei. Vamos la para a nossa Pagina Html. E, aqui esta o nosso painel. Olha como ele fica bonitinho, na Media Query de Celular, ou seja, XS.
+
+46. Beleza, agora, eu quero colocar 3 paineis, um do lado do outro. Como eh que eu vou fazer? Aqui, eu ja stou com a linha, nao eh?, agora, vamos criar, aqui, uma coluna, para a gente colocar esse painel dentro. Vamos colocar, aqui, primeiro, "xs-4"
+
+    <div class="row">
+
+        <div class="col-xs-4"></div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Titulo do Painel</h3>
+                </div>
+                <div class="panel-body">
+                    Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+, e, ai, a gente pega esse painel e coloca aqui dentro do div de coluna,
+
+<div class="row">
+    <div class="col-xs-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Titulo do Painel</h3>
+            </div>
+            <div class="panel-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+            </div>
+        </div>
+    </div>
+</div>
+
+47. Recarreguei a Pagina e, agora, ele esta do tamanho de 1/3 da tela. Agora, a gente pode reproduzir essa div de coluna mais 2 vezes, e nos vamos ter 3 paineis,
+
+<div class="row">
+    <div class="col-xs-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Titulo do Painel</h3>
+            </div>
+            <div class="panel-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Titulo do Painel</h3>
+            </div>
+            <div class="panel-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Titulo do Painel</h3>
+            </div>
+            <div class="panel-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+            </div>
+        </div>
+    </div>        
+</div>
+
+, aqui dentro da nossa tela.
+
+48. Mas como nos colocamos o XS, quando o Site estiver pequenininho, os paineis vao ficar todos esticados, nao eh? Entao, vamos ajeitar, agora, aqui, para so no Tablet el ficar com 3 paineis, mas, quando a gente passar para o Celular, ele ficar so com 2 paineis de cada vez.
+
+49. Como eh que a gente vai fazer isso? A gente faz, aqui, que, com "xs", ele seja tamanho 6, mas, que, com "sm", ele seja tamanho 4,
+
+    <div class="col-xs-6 col-sm-4">
+
+    </div>
+
+50. Ao Recarregarmos a Pagina, nos ja temos aqui, oh, no Tablet, eles sao Tamanho 4 colunas, no Celular, eles sao Tamanho 6 colunas e fica de 2 em 2 paineis.
+
+51. Entao, essa eh a base do Grid System do Bootstrap. Nos colocamos, aqui, uma linha,
+
+    <div class="row">
+
+    </div>
+
+, dentro dessa linha, nos colocamos colunas, nos agrupamos esses comandos de coluna para nos dar responsividade. Durante o nosso projeto, nos vamos estender essas funcionalidades.
+
+52. Fim da Aula 03.003. Sistema de Grid.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Minha Página</title>
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Meu Título</h1>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Quem num gosta di mé, boa gente num é. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+    </p>
+
+    <div class="row">
+        <!--div class="col-xs-12"-->
+        <!--div class="col-xs-6"-->
+        <!--div class="col-xs-12 col-sm-6"-->
+        <!--div class="col-xs-12 col-sm-6 col-md-4"-->
+        <!--div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Casamentiss faiz malandris se pirulitá. Diuretics paradis num copo é motivis de denguis
+            Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Casamentiss faiz malandris se pirulitá. Diuretics paradis num copo é motivis de denguis.
+        </div-->
+
+        <!--div class="col-xs-4"-->
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Título do Painel</h3>
+                </div>
+                <div class="panel-body">
+                    Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+                </div>
+            </div>
+        </div>
+        <!--div class="col-xs-4"-->
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Titulo do Painel</h3>
+                </div>
+                <div class="panel-body">
+                    Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+                </div>
+            </div>
+        </div>
+        <!--div class="col-xs-4"-->
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Titulo do Painel</h3>
+                </div>
+                <div class="panel-body">
+                    Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulitá. In elementis mé pra quem é amistosis quis leo. Mé faiz elementum girarzis, nisi eros vermeio.
+                </div>
+            </div>
+        </div>            
+    </div>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

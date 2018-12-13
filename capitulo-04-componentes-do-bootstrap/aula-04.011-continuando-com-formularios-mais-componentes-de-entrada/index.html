@@ -1,0 +1,553 @@
+<!-- 
+
+Aula 04.011. Continuando com Formularios: Mais Componentes de Entrada
+
+1. A gente ja tem bastante coisa na Modal aqui. Falta nos inserirmos os controles do formulario, aqui dentro. Entao, nesta aula, nos vamos aprender muito mais campos de entrada. Nos vamos mexer, tambem, com combos, 'select's, e com 'textarea'.
+
+2. Entao, vamos la para o codigo.
+
+3. Aqui dentro desse nosso 'body',
+
+    <div class="modal fade" id="NovaOS">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+                </div>
+                <form>
+                    >>><div class="modal-body"></div><<<
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+, nos vamos colocar uma 'div', com a classe 'row', para criarmos uma linha,
+
+    <form>
+        <div class="modal-body">
+            <div class="row">
+
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </form>
+
+4. Nessa linha, nos vamos colocar um 'form-group', e, aqui, nos vamos colocar uma 'label', chamada 'Codigo da OS'. Depois dessa 'label', nos vamos colocar, aqui, um paragrafo, 'p', e colocar, aqui, o Codigo, 65151,
+
+    <form>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group">
+                    <label>Codigo da OS</label> 
+                    <p>65151</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </form>
+
+5. Esse campo com o codigo '65151', nao eh editavel. E o Bootstrap tem uma classe que vai fazer ele ficar parecendo uma formatacao dentro de um campo dentro de um formulario, mas ele nao eh editavel, que eh a classe 'form-control-static',
+
+    <form>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group">
+                    <label>Codigo da OS</label> 
+                    <p class="form-control-static">65151</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </form>
+
+6. Vamos Recarregar a Pagina Html, para vermos como esta ficando.
+
+7. Okay, esta ficando como o esperado. 
+
+8. 'Se eu coloquei dentro de uma "row", com a margem esquerda que o Grid System coloca?'
+
+9. Eh porque, dentro de uma 'row', sempre tem que haver uma coluna, e nos nao colocamos nenhuma coluna.
+
+10. Entao, se eu quero que sempre fique ocupando 12 colunas, eu so vou colocar aqui, 'col-xs-12',
+
+<div class="row">
+    <div class="form-group col-xs-12">
+        <label>Codigo da OS</label> 
+        <p class="form-control-static">65151</p>
+    </div>
+</div>
+
+11. Vamos Recarregar a Pagina Html para ver como ficou. Colocando isso aqui, 'col-xs-12', ele vai entender que eu estou dentro do Grid System, e ele vai funcionar, ou seja, vai gerar uma margem esquerda.
+
+12. Entao, agora que ja temos o 'Codigo da OS', vamos para a nossa proxima linha. Entao, aqui, vamos adicionar <div class="row"></div>. Nessa outra linha, nos vamos ter um 'form-group', e esse 'form-group' vai ser somente um pedaco da tela, porque vai ser o nosso 'select' de clientes, e ficaria muito ruim se ele ocupasse toda a largura da tela, ate porque nos temos o campo de 'Servico' do lado direito.
+
+13. Entao, vamos dar para ele 'col-sm-5'. Vamos colocar 'sm', porque, ai, na Resolucao de Tablet, [a qual deve ser a mesma do Modal], ele ja divide em colunas,
+
+    <form>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group">
+                    <label>Codigo da OS</label> 
+                    <p class="form-control-static">65151</p>
+                </div>
+            </div>
+            <div class="row col-sm-5">
+
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </form>
+
+14. Agora, vamos adicionar uma 'label', nessa 'label', vamos colocar o atributo 'for', com o valor 'Cliente',
+
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="Cliente">Cliente</label>
+            </div>
+        </div>
+
+15. Agora, a gente tem que criar o campo. O campo vai ser um 'select'. E, ai, eu tenho que dar o 'id' que eu coloquei aqui na minha 'label', em 'for', ou seja, 'Cliente',
+
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="Cliente">Cliente</label>
+                <select id="Cliente"></select>
+            </div>
+        </div>
+
+16. Dentro desse 'select', vamos colocar algumas 'option's. A primeira nao vai ter valor nenhum, que vai ser o padrao, 'Selecione...'. Vamos colocar, aqui, agora, mais 3 'option's. Vamos ter o Cliente 'Frodo Bolseiro', 'Gandalf Cinzento', 'Sauron de Mordor',
+
+<div class="row">
+    <div class="form-group col-sm-5">
+        <label for="Cliente">Cliente</label>
+        <select id="Cliente">
+            <option value="">Selecione...</option>
+            <option value="1">Frodo Bolseiro</option>
+            <option value="2">Gandalf Cinzento</option>
+            <option value="3">Sauron de Mordor</option>
+        </select>
+    </div>
+</div>
+
+17. Vamos Recarregar a Pagina para vermos como eh que ficou o nosso 'select'.
+
+18. Ficou muito feio o 'select'. Eh porque a gente tem que fazer o Bootstrap entender de que esse eh um item dele. Como?
+
+19. Colocando aquela classe 'form-control',
+
+<div class="form group col-sm-5">
+    <label for="Cliente">Cliente</label>
+    <select id="Cliente" class="form-control">
+        <option value="">Selecione...</option>
+        <option value="1">Frodo Bolseiro</option>
+        <option value="2">Gandalf Cinzento</option>
+        <option value="3">Sauron de Mordor</option>
+    </select>
+</div>
+
+20. Vamos recarregar a Pagina Html para vermos, agora. De acordo com o instrutor, ficou bem mais bonito.
+
+21. Agora, vamos copiar o 'div' 'form-group' de Cliente e vamos fazer o 'select' de Servicos,
+
+<div class="row">
+    <div class="form group col-sm-5">
+        <label for="Cliente">Cliente</label>
+        <select id="Cliente" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">Frodo Bolseiro</option>
+            <option value="2">Gandalf Cinzento</option>
+            <option value="3">Sauron de Mordor</option>
+        </select>
+    </div>
+
+    <div class="form group col-sm-5">
+        <label for="Cliente">Cliente</label>
+        <select id="Cliente" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">Frodo Bolseiro</option>
+            <option value="2">Gandalf Cinzento</option>
+            <option value="3">Sauron de Mordor</option>
+        </select>
+    </div>
+</div>
+
+22. Para 'Servicos', se 'Cliente' ocupa 5 colunas, 'Servicos' deve ocupar as 7 colunas restantes,
+
+    <div class="form group col-sm-7">
+        <label for="Cliente">Cliente</label>
+        <select id="Cliente" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">Frodo Bolseiro</option>
+            <option value="2">Gandalf Cinzento</option>
+            <option value="3">Sauron de Mordor</option>
+        </select>
+    </div>
+
+23. Onde esta 'Cliente', vamos mudar para 'Servicos'.
+
+    <div class="form group col-sm-7">
+        <label for="Servicos">Servicos</label>
+        <select id="Servicos" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">Frodo Bolseiro</option>
+            <option value="2">Gandalf Cinzento</option>
+            <option value="3">Sauron de Mordor</option>
+        </select>
+    </div>
+
+24. E, nos Servicos, vamos alterar os 'option's para Servicos de Conserto de Relogios, 'Ajuste de Data/Hora', 'Conserto de Engrenagem', 'Troca de Bateria',
+
+    <div class="form group col-sm-7">
+        <label for="Servicos">Servicos</label>
+        <select id="Servicos" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">Ajuste de Data/Hora</option>
+            <option value="2">Conserto de Engrenagem</option>
+            <option value="3">Troca de Bateria</option>
+        </select>
+    </div>
+
+25. Vamos Recarregar a Pagina Html. Okay, esta exibindo os dois combos, Cliente, Servicos.
+
+26. Vamos para o nosso proximo campo. Primeiramente, vamos adicionar mais uma linha,
+
+    <div class="row">
+
+    </div>
+
+, e, nessa linha, nos vamos colocar a 'Observacao'. Entao, vamos la,
+
+    <div class="row">
+        <label for="Observacao">Observacao</label>
+
+    </div>
+
+, 'Por que que eu coloco o "for", aqui, como "id"?'. O instrutor ira nos mostrar, na sequencia.
+
+27. Vamos inserir, aqui, o nosso 'textarea',
+
+    <div class="row">
+        <label for="Observacao">Observacao</label>
+        <textarea id="Observacao"></textarea>
+    </div>
+
+28. Vamos Recarregar a Pagina Html, para vermos como esta ficando.
+
+29. Conforme o instrutor, esta feio, ainda.
+
+30. Quando eu ligo uma Etiqueta ao seu componente pelo 'id', quando eu clico na Etiqueta, eh a mesma coisa que eu estivesse clicando no componente, pois o foco do cursor vai direto para o componente.
+
+31. Para a gente deixar bonito o 'textarea' Observacao, vamos colocar a nossa classe 'form-control',
+
+    <div class="row">
+        <label for="Observacao">Observacao</label>
+        <textarea id="Observacao" class="form-control"></textarea>
+    </div>
+
+32. Recarregar a Pagina Html. Por que o 'textarea' ficou ocupando toda a largura da tela?
+
+33. Porque nos nao definimos coluna nenhuma, esquecemos do nosso 'form-group',
+
+    <div class="row">
+        <div class="form-group">
+            <label for="Observacao">Observacao</label>
+            <textarea id="Observacao" class="form-control"></textarea>
+        </div>
+    </div>
+
+, e temos que definir uma quantidade de colunas aqui,
+
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label for="Observacao">Observacao</label>
+            <textarea id="Observacao" class="form-control"></textarea>
+        </div>
+    </div>
+
+34. Recarregar a Pagina Html. Okay, agora, o 'textarea' esta respeitando as margens esquerda / direita da tela, pois foram definidas 12 colunas em que ele ira ocupar na tela.
+
+35. Vamos aumentar, agora, a tamanho da altura do 'textarea' Observacao.
+
+36. Para isso, nos vamos usar a propriedade rows do elemento html textarea, eh quantas linhas o textarea ja vai ter por padrao, vamos definir 3,
+
+    <textarea id="Observacao" class="form-control" rows=3></textarea>
+
+37. Recarregar a Pagina Html. Okay, aumentou a altura do textarea.
+
+38. Na proxima linha, nos teremos o Valor, entao, vamos la, iniciar com "row", depois, 'form-group' e 'col-sm-4', para ficar um pouco menor, e, ai, colocamos a nossa label,
+
+    <div class="row">
+        <div class="form-group col-sm-4">
+            <label for="Valor">Valor</label>
+        </div>
+    </div>
+
+39. E, aqui, nos vamos fazer um 'input-group'. O que que eh isso?
+
+40. Eh aquilo que a gente ja tinha visto em outras vezes. Eh isso aqui, vamos juntar     esses dois campos, 'R$' e 214,50.
+
+41. Entao, <div class="input-group"></div>, e, ai, vamos colocar 'input-group-addon', com o 'R$' e, depois, o nosso 'input' mesmo,
+
+    <div class="row">
+        <div class="form-group col-sm-4">
+            <label for="Valor">Valor</label>
+            <div class="input-group">
+                <div class="input-group-addon">R$</div>
+                <input type="text" name="valor" id="Valor" class="form-control">
+            </div>
+        </div>
+    </div>
+
+42. Vamos Recarregar a Pagina Html, para vermos como ficou.
+
+43. Beleza. Temos, ate aqui, o nosso formulario com diversos controles adicionados. Entao, nesta aula, nos colocamos select's, 1 textarea, e revimos o nosso 'input-group'.
+
+44. Fim da Aula 04.011. Continuando com Formularios: Mais Componentes de Entrada.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Ordens de Serviço</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row cabecalho">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Serviço</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="dados-os table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Cod.</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                        <th>Funcionário</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-primary">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-default">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-warning">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-danger">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"      ></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-success">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>                                                                
+                </tbody>
+            </table>    
+        </div>
+
+        <footer>
+            <div class="col-sm-6">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#NovaOS">Nova Ordem de Serviço</button>
+            </div>
+            <div class="col-sm-6 paginacao text-right">
+                <ul class="pagination">
+                    <li class="disabled"><a href=""><span><<</span></a></li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href=""><span>>></span></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    <div class="modal fade" id="NovaOS">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--Hello World-->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label>Código da OS</label>
+                                <p class="form-control-static">65151</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form group col-sm-5">
+                                <label for="Cliente">Cliente</label>
+                                <select id="Cliente" class="form-control">
+                                    <option value="">Selecione...</option>
+                                    <option value="1">Frodo Bolseiro</option>
+                                    <option value="2">Gandalf Cinzento</option>
+                                    <option value="3">Sauron de Mordor</option>
+                                </select>
+                            </div>
+                            <div class="form group col-sm-7">
+                                <label for="Servicos">Serviços</label>
+                                <select id="Servicos" class="form-control">
+                                    <option value="">Selecione...</option>
+                                    <option value="1">Ajuste de Data/Hora</option>
+                                    <option value="2">Conserto de Engrenagem</option>
+                                    <option value="3">Troca de Bateria</option>
+                                </select>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="Observacao">Observação</label>
+                                <textarea id="Observacao" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <label for="Valor">Valor</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">R$</div>
+                                    <input type="text" name="valor" id="Valor" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

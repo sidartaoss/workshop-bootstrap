@@ -1,0 +1,357 @@
+<!-- 
+
+Aula 04.010. Criando e Abrindo uma Modal
+
+1. Pronto. A nossa Tela Principal ja esta okay. Agora, vamos comecar a fazer o nosso botao de 'Nova Ordem de Servico', esse botao que abre essa modal aqui, 
+
+[Tela Modal exibida peo instrutor, com labels, combos, inputs e botoes]
+
+2. Nesta aula, nos vamos aprender a criar a modal, e a abri-la atraves do botao.
+
+3. Entao, vamos la. Vamos colocar aqui embaixo a nossa Modal, ou seja, embaixo do 'div' 'container',
+
+    <div class="modal">
+
+    </div>
+
+, e, para essa Modal, a gente da um ID. Vamos colocar, aqui, um ID 'NovaOS',
+
+    <div class="modal" id="NovaOS">
+
+    </div>
+
+4. Com isso, nos ja temos a nossa Modal existente.
+
+5. Agora, vamos criar a opcao para poder o botao abrir essa Modal.
+
+6. Entao, aqui, onde a gente tinha feito o botao 'Nova Ordem de Servico', nos temos que colocar o atributo 'data-toggle', e vamos dizer para o Bootstrap que ele vai abrir uma Modal, ou seja, atribuir o valor 'modal',
+
+    <div class="col-sm-6">
+        <button class="btn btn-rimary" data-toggle="modal">Nova Ordem de Servico</button>
+    </div>
+    <div class="col-sm-6 paginacao text-right">
+        ...
+    </div>
+
+7. E, no 'data-target', nos vamos dizer qual a Modal vai ser aberta. E a gente vai selecionar pelo ID que a gente deu para ela,
+
+    <div class="col-sm-6">
+        <button class="btn btn-rimary" data-toggle="modal" data-target="#NovaOS">Nova Ordem de Servico</button>
+    </div>
+    <div class="col-sm-6 paginacao text-right">
+        ...
+    </div>
+
+8. Vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+9. Okay, escureceu a tela ao clicar no botao 'Nova Ordem de Servico'. So que a nossa Modal ainda nao tem conteudo nenhum, por isso ela ainda nao apareceu. Entao, vamos colocar um conteudo nela.
+
+10. Para comecar, nos temos que colocar uma 'div', com uma classe chamada 'modal-dialog',
+
+    <div class="modal" id="NovaOS">
+        <div class='modal-dialog'>
+
+        </div>
+    </div>
+
+11. E, dentro desse modal-dialog, nos temos que ter um 'modal-content', que vai dar, para a gente, o conteudo dessa modal,
+
+    <div class="modal" id="NovaOS">
+        <div class='modal-dialog'>
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+
+12. Vamos colocar um conteudo aqui,
+
+    <div class="modal" id="NovaOS">
+        <div class='modal-dialog'>
+            <div class="modal-content">
+                Hello World
+            </div>
+        </div>
+    </div>
+
+13. Recarregar a Pagina Html. 
+
+14. Okay, ao clicar no botao, apareceu a modal com 'Hello World'. Agora, ela comecou a tomar forma.
+
+15. Dentro da nossa Modal, nos temos que ter um 'header', ou seja, um Cabecalho, um 'body', que eh o Corpo, e um 'footer', que eh o rodape, a parte debaixo da Modal, onde vao ficar os botoes.
+
+16. O instrutor esta nos exibindo a Modal na Versao Final do Prototipo, onde aparece o 'header', com o titulo da modal, o 'body', com os labels, combos, inputs, e o 'footer', com os botoes.
+
+17. Entao, vamos la, <div class="modal-header"></div>, e, nesse 'modal-header', vamos colocar um titulo, vamos colocar um 'h4', porque o tamanho dele eh mais ideal, e a gente vai dar uma classe para o 'h4', chamada 'modal-title',
+
+    <div class="modal" id="NovaOS">
+        <div class='modal-dialog'>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Nova Ordem de Servico</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+18. Vamos Recarregar a Pagina Html. Esta ali a nossa Modal. E, agora, ja tem um Titulo, 'Nova Ordem de Servico'.
+
+19. Vamos criar, agora, um formulario e, nesse formulario, vai conter o body e o footer. Vamos fazer, aqui, um 'form', e, dentro desse 'form', vamos colocar 1 'div', com a classe 'modal-body', e vamos colocar, aqui, tambem, 1 'div', com a classe 'modal-footer',
+
+    <div class="modal" id="NovaOS">
+        <div class='modal-dialog'>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Nova Ordem de Servico</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+20. Vamos Recarregar a Pagina Html, para vermos como ficou.
+
+21. Okay, esta exibindo o nosso 'modal-body' e o nosso 'modal-footer', apesar de eles estarem vazios.
+
+22. Agora, nesta aula, nos vamos criar o footer, com os dois botoes que nos temos aqui embaixo.
+
+23. Nos vamos criar, aqui, 1 button, type 'reset', ou seja, quando eu clicar nele, os campos do formulario vao ser todos limpos, com a classe 'btn btn-danger', ou seja, vai ficar vermelho o botao, que eh para o Usuario saber que eh perigoso clicar nesse botao sem prestar atencao,
+
+    <div class="modal-footer">
+        <button type='reset' class="btn btn-danger">Limpar</button>
+    </div>
+
+24. E, depois, nos vamos ter um 'button' do tipo 'submit', que vai enviar os dados do formulario, e, ai, nos vamos ter um 'btn btn-primary', aqui, mesmo, ou seja, Azul, e o nome 'Salvar',
+
+    <div class="modal-footer">
+        <button type='reset' class="btn btn-danger">Limpar</button>
+        <button type='submit' class='btn btn-primary'>Salvar</button>
+    </div>
+
+25. Vamos Recarregar a Pagina Html. Okay, ao exibir a Modal, foram exibidos os botoes 'Limpar', 'Salvar'.
+
+26. Para terminar, vamos fazer a Modal aparecer de um jeito mais bonito. Para isso, eh bem facil, nos so precisamos vir aqui no nosso codigo da 'div' 'modal' e adicionar a classe 'fade',
+
+    <div class="modal fade" id="NovaOS">
+        ...
+    </div>
+
+27. Com isso, ele ja vai fazer essa animacao da Modal ir aparecendo quando clicar no botao 'Nova Ordem de Servico'.
+
+28. Uma ultima revisada, entao, nos criamos essa 'div', chamada 'modal', colocamos a classe 'fade' para dar aquela animacao. Temos um ID, um identificador para ela e, por causa desse ID, nos conseguimos chama-la aqui no botao 'Nova Ordem de Servico'. A modal tem que ter um 'div' com a classe 'modal-dialog', e um 'div' com a classe 'modal-content'. Dentro dessa 'div' 'modal-content', ela vai ter uma outra 'div' com a classe 'modal-header' e um 'form' com as 'div's com as classes 'modal-body', 'modal-footer', respectivamente. Ou seja, Cabecalho, Corpo e Rodape para a Modal. E, ai, entao, nos temos a nossa Modal.
+
+29. Entao, na proxima aula, nos vamos construir o interior dessa Modal, que eh o formulario.
+
+30. Fim da Aula 04.010. Criando e Abrindo uma Modal.
+ 
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Ordens de Serviço</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row cabecalho">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Serviço</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="dados-os table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Cod.</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                        <th>Funcionário</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-primary">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-default">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-warning">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-danger">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"      ></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-success">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>                                                                
+                </tbody>
+            </table>    
+        </div>
+
+        <footer>
+            <div class="col-sm-6">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#NovaOS">Nova Ordem de Serviço</button>
+            </div>
+            <div class="col-sm-6 paginacao text-right">
+                <ul class="pagination">
+                    <li class="disabled"><a href=""><span><<</span></a></li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href=""><span>>></span></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    <div class="modal fade" id="NovaOS">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--Hello World-->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nova Ordem de Serviço</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

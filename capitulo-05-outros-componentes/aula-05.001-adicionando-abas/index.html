@@ -1,0 +1,272 @@
+<!-- 
+
+Aula 05.001. Adicionando Abas
+
+1. Nesta aula, o instrutor ira nos mostrar mais 4 coisas que o Bootstrap tem que vao ficar fora do nosso Projeto, mas que sao muito legais tambem.
+
+2. A primeira eh a 'Navegacao por Abas'. Vamos aprender a faze-la aqui. 
+
+3. Entao, vamos colocar aqui, agora, uma 'div'. Nessa 'div', a gente vai dar um nome para ela aqui qualquer,
+
+    <h1>Navegacao por Abas</h1>
+    <div class="navegacao-abas">
+
+    </div>
+
+, so para a gente ter um container, onde vai ter tudo aqui dentro.
+
+4. Vamos, primeiro, colocar o cabecalho desse nosso sistema de abas. Entao, vamos la, a gente faz assim, fazemos um 'ul', uma Lista Nao-Ordenada, e damos a ela uma classe chamada 'nav nav-tabs',
+
+    <div class="navegacao-abas">
+        <ul class="nav nav-tabs">
+
+        </ul>
+    </div>
+
+, ou seja, dizemos que eh uma navegacao por abas, aqui.
+
+5. Vamos salvar aqui e ver como eh que fica la na Pagina Html. 
+
+6. Okay, ele ja adicionou, abaixo do Titulo, uma Linha das Abas.
+
+7. Agora, vamos colocar as abas em si. Fazemos um 'li', e, nesse 'li', colocamos um link, por exemplo, Home,
+
+<div class="navegacao-abas">
+    <ul class="nav nav-tabs">
+        <li><a href="">Home</a></li>
+    </ul>
+</div>
+
+7. Recarregamos a Pagina Html. Okay, ja apareceu, na Pagina, a Aba Home.
+
+8. Vamos fazer outras abas, aqui.
+
+<div class="navegacao-abas">
+    <ul class="nav nav-tabs">
+        <li><a href="">Home</a></li>
+        <li><a href="">Perfil</a></li>
+        <li><a href="">Mensagem</a></li>
+    </ul>
+</div>
+
+9. Recarregamos a Pagina Html. Temos, ali, agora, as abas Perfil, Mensagem.
+
+10. Para a gente deixar uma Aba ativa, a gente coloca aqui uma classe no 'li' chamada 'active', que a gente ja usou algumas vezes,
+
+    <li class="active"><a href="">Home</a></li>
+
+10. Recarregamos a Pagina Html. Okay, esta exibindo a Aba Home como a aba ativa.
+
+11. Existe, tambem, um outro tipo de navegacao, que eh parecido com o de abas, mas que nao tem esse risquinho aqui, eh o de Navegacao por Pilulas. A gente vai so trocar isso aqui, oh,
+
+    <ul class="nav nav->>>tabs<<<">
+
+, para 'nav-pills',
+
+    <ul class="nav nav-pills">
+    </ul>
+
+12. E, ai, fica desse jeito, ta vendo?, ou seja, sem o risquinho, fica como se fossem pilulas, com os botoes.
+
+13. E um outro tipo de 'nav-pills' que nos temos eh quando elas estao 'stacked', ou seja, uma em cima da outra. O instrutor ira nos mostrar, aqui,
+
+    <ul class="nav nav-pills nav-stacked">
+    </ul>
+
+14. Recarregamos a Pagina Html. Agora, elas ficam em pilulas uma em cima da outra.
+
+15. Agora, vamos voltar, aqui, para a nossa Aba, ou seja, 'nav nav-tabs', onde as nossas abas podem ficar assim, uma pertinho da outra, ou, tambem, elas podem ficar justificadas. A gente vai adicionar, aqui, a classe 'nav-justify',
+
+    <ul class="nav nav-tabs nav-justified">
+    </ul>
+
+16. Recarregamos a Pagina Html. Elas, agora, vao ocupar a largura inteira da nossa tela.
+
+17. Isso vale, tambem, para as pilulas,
+
+    <ul class="nav nav-pills nav-justified">
+    </ul>
+
+18. Recarregamos a Pagina Html. Elas, agora, vao ocupar a largura inteira da nossa tela em pilulas.
+
+19. Agora, vamos voltar para a nossa Aba padrao,
+
+    <ul class="nav nav-tabs">
+    </ul>
+
+20. E vamos criar, agora, o conteudo. Para o conteudo, nos vamos criar, aqui, uma 'div', chamada 'tab-content', ou seja, o conteudo da aba,
+
+        <div class="navegacao-abas">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="">Home</a></li>
+                <li><a href="">Perfil</a></li>
+                <li><a href="">Mensagem</a></li>
+            </ul>
+            <div class="tab-content">
+
+            </div>
+
+21. Quando a gente coloca essa classe 'tab-content', ainda nao eh renderizado nada na Pagina Html. Agora, vamos colocar os nossos conteudos dentro da 'div'.
+
+22. Fazemos uma nova 'div' para cada aba, e colocamos a classe 'tab-pane', ou seja, esse eh um painel da aba, e temos que dar um 'id' para ele, entao, vamos colocar o 'id' desse, por exemplo, '#home',
+
+        <div class="navegacao-abas">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="">Home</a></li>
+                <li><a href="">Perfil</a></li>
+                <li><a href="">Mensagem</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="#home">
+
+                </div>
+            </div>
+
+23. E, aqui, a gente coloca um texto,
+
+            <div class="tab-content">
+                <div class="tab-pane" id="#home">
+                    Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+            </div>
+
+24. Recarregamos a Pagina Html. Nao apareceu o texto. Por que?
+
+25. Porque ele nao esta ativo. Quando ele aparece, a gente tem que dar aqui, por exemplo, uma classe active,
+
+            <div class="tab-content">
+                <div class="tab-pane >>>active<<<" id="#home">
+                    Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+            </div>
+
+26. Recarregamos a Pagina Html. Agora, nos podemos ver o texto ativo, aqui, sendo exibido dentro da Aba Home. Esse eh o painel, esse eh o conteudo da Aba.
+
+27. Agora, vamos fazer o mesmo para as outras duas abas,
+
+<div class="tab-content">
+    <div class="tab-pane active" id="home">
+        Home Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+    </div>
+
+    <div class="tab-pane" id="perfil">
+        Perfil Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+    </div>
+
+    <div class="tab-pane" id="mensagem">
+        Mensagem Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+    </div>
+</div>
+
+, pronto, so vai aparecer a aba que esta ativa, i.e., a aba 'Home'.
+
+28. Vamos fazer, agora, esses botoes, aqui, ou seja, os botoes que correspondem as abas Perfil, Mensagem, ativarem os nossos paineis.
+
+29. Aqui no ancora, nos colocamos o id, e, aqui, sim, nos colocamos com o jogo-da-velha, #home, #perfil, #mensagem,
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#home">Home</a></li>
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#mensagem">Mensagem</a></li>
+</ul>
+
+, e damos um comando, aqui, no ancora, para dizer que ele vai abrir a nossa aba. A gente vai usar aquele que a gente ja usou bastante, 'data-toggle', e vamos dizer que eh uma aba,
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle='tab'>Home</a></li>
+    <li><a href="#perfil" data-toggle='tab'>Perfil</a></li>
+    <li><a href="#mensagem" data-toggle='tab'>Mensagem</a></li>
+</ul>
+
+30. Vamos Recarregar a Pagina Html, para vermos como ficou. Okay, ao clicar em cada Aba, esta abrindo o conteudo de cada Aba que foi selecionada.
+
+31. Se quiser mudar para o estilo 'pilula', a gente so vai ter que trocar, aqui, onde esta 'tab' por pilula,
+
+<ul class="nav nav-pills">
+    <li class="active"><a href="#home" data-toggle='pill'>Home</a></li>
+    <li><a href="#perfil" data-toggle='pill'>Perfil</a></li>
+    <li><a href="#mensagem" data-toggle='pill'>Mensagem</a></li>
+</ul>
+
+32. Vamos Recarregar a Pagina para vermos como que ficou. Okay, mudou o estilo das Abas para 'pilula'.
+
+33. Vamos voltar para o estilo 'Abas Padrao', e vamos para uma ultima coisa que nos vamos adicionar, um efeito na hora de abrir painel, nos vamos colocar aqui, a classe 'fade in',
+
+            <div class="tab-content">
+                <div class="tab-pane >>>fade in<<<< active" id="home">
+                    Home Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+
+34. Como eh que vai ser isso?
+
+35. No momento em que clicar na Aba com 'fade in', vai dar um efeito de enfraquecer. Agora, vamos adicionar esse 'fade' nas outras duas Abas.
+
+            <div class="tab-content">
+                <div class="tab-pane >>>fade in<<< active" id="home">
+                    Home Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+
+                <div class="tab-pane >>>fade<<<" id="perfil">
+                    Perfil Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+
+                <div class="tab-pane >>>fade<<<" id="mensagem">
+                    Mensagem Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>                                
+            </div>
+
+36. Recarregamos a Pagina Html. Agora, ao clicar em cada aba, da um efeito de enfraquecer. Conforme o instrutor, ficou mais bonito.
+
+37. Lembrando que eh necessario que tenha essa classe 'in' na aba que estiver aberta no inicio, porque, senao, se nos removemos, o conteudo nao vai ficar visivel na aba inicial. Entao, nao podemos esquecer dessa classe 'in', na aba que estiver ativa por padrao.
+
+38. Fim da Aula 05.001. Adicionando Abas.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Minha página</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Navegação por Abas</h1>
+        <div class="navegacao-abas">
+            <!--ul class="nav nav-tabs"-->
+            <!--ul class="nav nav-pills"-->
+            <!--ul class="nav nav-pills nav-stacked"-->
+            <!--ul class="nav nav-tabs nav-justified"-->
+            <!--ul class="nav nav-pills nav-justified"-->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+    <li><a href="#perfil" data-toggle="tab">Perfil</a></li>
+    <li><a href="#mensagem" data-toggle="tab">Mensagem</a></li>
+</ul>
+<!--ul class="nav nav-pills">
+    <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+    <li><a href="#perfil" data-toggle="pill">Perfil</a></li>
+    <li><a href="#mensagem" data-toggle="pill">Mensagem</a></li>
+</ul-->
+
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    Home Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+
+                <div class="tab-pane fade" id="perfil">
+                    Perfil Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>
+
+                <div class="tab-pane fade" id="mensagem">
+                    Mensagem Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Per aumento de cachacis, eu reclamis. Suco de cevadiss deixa as pessoas mais interessantis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+                </div>                                
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

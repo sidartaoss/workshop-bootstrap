@@ -1,0 +1,311 @@
+<!-- 
+
+Aula 04.003. Criando uma Barra de Navegacao
+
+1. Ja fizemos a nossa pagina de login.
+
+2. Agora, esta na hora de a gente fazer a nossa pagina principal, onde tem a Lista e a Pesquisa de Ordens de Servico.
+
+3. Entao, vamos la.
+
+4. A primeira coisa que temos que fazer eh essa barra de navegacao aqui, conhecida como NavBar.
+
+5. Aqui, o codigo que o instrutor esta nos mostrando eh igualzinho aquele que a gente tinha antes, tambem, eh so a Pagina Basica.
+
+6. Aquela pagina de login, nos mudamos para login.html, e colocamos aqui na referencia do arquivo CSS, index.css,
+
+    <link rel="stylesheet" href="css/index.css">
+
+7. Entao, vamos la. Vamos, aqui, fazer um elemento do html chamado nav, e a gente vai dar para ele uma classe navbar,
+
+    <nav class="navbar "></nav>
+
+8. Como nos queremos uma barra de navegacao que seja preta, entao, vamos colocar aqui "navbar navbar-inverse". E queremos que ela fique ali no topo, nao eh?, entao, vamos colocar "navbar navbar-inverse navbar-static-top",
+
+    <nav class="navbar navbar-inverse navbar-static-top"></nav>
+
+9. Okay, dentro da nossa barra de navegacao, nos temos que colocar um container.
+
+10. Entao, vamos colocar, aqui, uma div,
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+
+        </div>
+    </nav>
+
+11. E, ai, nesse container, vamos colocar o cabecalho dessa barra de navegacao.
+
+12. Entao, adicionar mais uma div,
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+            </div>
+        </div>
+    </nav>    
+
+13. Beleza. Agora, aqui, nesse cabecalho, podemos colocar um link que vai direcionar para a nossa index.html, a pagina principal,
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html"></a>
+            </div>
+        </div>
+    </nav>    
+
+14. E, ai, a gente vai colocar o Logo aqui. Vamos colocar, aqui, uma classe navbar-brand, 
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+
+                </a>
+            </div>
+        </div>
+    </nav>    
+
+, e vamos colocar, aqui, a nosssa imagem,
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/watchguru.png">   
+                </a>
+            </div>
+        </div>
+    </nav>    
+
+15. Caso o Usuario esteja escolhendo a navegacao em imagens, ou, entao, estiver por um leitor de tela, eh bom sempre a gente colocar esse atributo alt, aqui, e a gente diz o que que eh essa imagem. Neste caso, eu vou so dizer o que estava escrito nela,
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+        </div>
+    </nav>    
+
+16. Vamos ver como eh que vai ficar.
+
+17. Oh, a imagem ficou enorme ali na nossa barra, nao eh?
+
+18. Entao, agora, a gente vai ter que aplicar um estilo para esse titulo aqui.
+
+19. Vamos colocar uma classe aqui nesse link chamada logotipo,
+
+    <a href="index.html" class="navbar-brand logotipo">
+    </a>
+
+20. E vamos mexer nessa classe aqui,
+
+.logotipo {
+
+}
+
+21. Vamos selecionar a imagem, e colocar uma altura dela de 30 pixels,
+
+.logotipo img {
+    height: 30px;
+}
+
+22. Definindo a altura, ela mesma vai se ajustar para colocar a largura certa.
+
+23. Entao, vamos inspecionar a imagem para ver como eh que ficou, esta ali, no Box Model, a altura da imagem de 30 pixels.
+
+24. So que esse padding aqui esta muito grande. Entao, vamos dar uma diminuida nele, vamos pegar, aqui, so a classe logotipo e vamos dar um padding para ele de 10 pixels, 
+
+.logotipo {
+    padding: 10px;
+}
+
+25. Recarregar a Pagina Html.
+
+26. Pronto. Agora, esta bem centralizado o nosso Logotipo.
+
+27. E vamos adiante. Vamos dar uma margin-right aqui na classe logotipo, que vai dar um espacamento de 20 pixels em relacao ao proximo conteudo que a gente vai colocar, que eh aquele menu,
+
+.logotipo {
+    margin-right: 20px;
+    padding: 10px;
+}
+
+28. Vamos continuar aqui, entao.
+
+29. Depois do desse navbar-header, nos vamos colocar, aqui, uma lista nao ordenada, ou seja, um <ul>, e vamos colocar na classe, aqui, que ele eh uma navegacao, e eh uma navegacao da navbar,
+
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+
+            </ul>
+
+30. Dentro desse <ul>, nos vamos colocar, aqui, 4 Itens de Lista, ou seja, 4 li's, que sao os nossos itens. E, dentro de cada <li>, tem que ficar um link, nao eh?,
+
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="">Ordens de Servico</a></li>
+                <li><a href="">Clientes</a></li>
+                <li><a href="">Funcionarios</a></li>
+                <li><a href="">Servicos</a></li>
+            </ul>    
+
+31. Entao, vamos la, 'Ordens de Servico', 'Clientes', 'Funcionarios', 'Servicos'.
+
+32. Okay, vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+33. Esta ali, os nossos itens de menu.
+
+34. Agora, vamos ver como eh que ele fica em outras resolucoes.
+
+35. Vamos diminuindo a tela, ate que os itens de menu sao movidos para o menu lateral esquerdo, verticalmente. O menu lateral esquerdo ficou grande, conforme o instrutor.
+
+36. Para nos podermos ativar a Responsividade dessa Navbar, nos temos que fazer o seguinte, a primeira coisa eh nos colocarmos esse <ul> dentro de um 'collapse'. Entao, a gente coloca, aqui, div, com a classe 'collapse', e a gente diz que esse aqui eh um navbar-collapse,
+
+            <div class="collapse navbar-collapse"></div>
+            <ul class="nav navbar-nav">
+                <li><a href="">Ordens de Servico</a></li>
+                <li><a href="">Clientes</a></li>
+                <li><a href="">Funcionarios</a></li>
+                <li><a href="">Servicos</a></li>
+            </ul>
+
+37. Agora, a gente coloca esse <ul> dentro dessa div,
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Servico</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionarios</a></li>
+                    <li><a href="">Servicos</a></li>
+                </ul>
+            </div>
+
+, e temos que dar um id aqui para o div 'collapse'. Vamos nomear esse id com 'menu', pode ser, na verdade, qualquer nome de id,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Servico</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionarios</a></li>
+                    <li><a href="">Servicos</a></li>
+                </ul>
+            </div>
+
+38. Salvar e Re-testar.
+
+39. Agora, ao diminuir o tamanho da tela, o menu lateral esquerdo desaparece.
+
+40. Agora, a gente vai colocar aquele botaozinho para expandir o menu lateral esquerdo.
+
+41. Aquele botaozinho a gente vai colocar aqui no header. Vamos la, button, do tipo button mesmo, ou seja, ele nao vai ter nenhuma funcionalidade especial, vamos botar, aqui, classe 'navbar-toggle', ou seja, ele vai ser o botao que vai gerar uma acao de abrir aquele nosso menu,
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"></button
+        </div>
+
+42. O botao vai abrir o que? O que estiver 'collapsed',
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"></button
+        </div>
+
+43. Agora, a gente vai colocar, aqui, data-toggle, e a gente vai dizer qual o toggle ele esta fazendo, que eh o 'collapse'. E, no data-target, nos vamos dizer quem que ele vai abrir, vamos pegar aquele ID menu que a gente colocou,
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu"></button
+        </div>
+
+44. Dentro desse button, a gente vai botar, aqui, a palavra Menu,
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                Menu
+            </button>
+        </div>
+
+45. Vamos ver. Recarregar a Pagina Html.
+
+46. Ao diminuir a tela, a palavra Menu eh inserida no lado superior direito da tela. Ao clicar, expande o menu lateral esquerdo. Ao clicar novamente, o menu lateral esquerdo estreita.
+
+47. So que ficou muito estranho, porque a palavra Menu ficou em preto, e nao esta aparecendo, porque o fundo eh preto tambem.
+
+48. Para isso, vamos colocar, entao, no lugar da palavra 'Menu', um span com a classe 'icon-bar',
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+49. Isso vai dar, para a gente, uma barra. Recarregar a Pagina Html.
+
+50. Okay, foi exibida a barra. Entao, vamos adicionar mais duas barras,
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+51. E nos temos aquele icone de menu. Ao clicar, abre e fecha o menu lateral esquerdo. Pronto. Essa eh a nossa NavBar Responsiva. 
+
+52. Fim da Aula 04.003. Criando uma Barra de Navegacao.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <!-- Menu -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!-- 
+
+    Aula 02.003. Tipografia - Cabecalhos e Estilizacao de Texto
+
+1. Nesta aula, agora, nos vamos aprender um pouco sobre a Tipografia no Bootstrap, para mostrar como ele estiliza os textos, e tudo mais.
+
+2. Entao, vamos comecar com os cabecalhos.
+
+3. Olha aqui oh, para cabecalho, nos temos 6 tags, elas vao de h1 ate h6. O Bootstrap estiliza da seguinte forma, o h1 tem 40 pixels, o h2 tem 32 pixels, h3 tem 28 pixels, h4 tem 24 pixels, h5 tem 20 pixels, e h6 tem 16 pixels.
+
+4. Pode ver que a diferenca entre eles, de 16 para 20 pixels, sao 4 pixels, de 20 pixels para 24 pixels, sao 4 pixels, de 24 para 28 pixels, sao 4 pixels, de 28 para 32, sao 4 pixels e, de 32 para 40, sao 8 pixels. Isso faz com que consigamos ter um titulo Primario, Secundario, Terciario, de uma maneira bem definida.
+
+5. Isso vai ficar bem claro para nos mais embaixo, onde o instrutor utiliza esses titulos para separar os topicos desta aula.
+
+6. Beleza? Okay, entao, como eh que a gente faz? Aqui, oh, eh so inserir o h1, e ele ja coloca aquela estilizacao de h1,
+
+<h1>H1 Semibold (seminegrito) 40px <small>Texto Secundario</small></h1>
+
+Em seguida, insere o h2, e ele ja coloca a estilizacao de h2,
+
+<h2>H2 Semibold (seminegrito) 32px <small>Texto Secundario</small></h2>
+
+7. O Bootstrap, tambem, para os titulos, ele tem um texto secundario aqui, oh,
+
+<small>Texto Secundario</small>
+
+, nos fazemos ele com a tag small, entao, ele faz assim, oh, o Texto Secundario, ele fica em cinza, e um pouquinho menor.
+
+8. Tambem existe uma outra maneira de fazer essa estilizacao dos cabecalhos. Entao, aqui, por exemplo, eu estou usando paragrafos,
+
+<div class="container">
+        <p class="h1">H1 Semibold (seminegrito) 40px <small>Texto Secundario</small></p>
+</div>
+
+, mas o Bootstrap, ele da para a gente uma classe chamada 'h1', 'h2', 'h3', 'h4', 'h5', que vai fazer essa simulacao do elemento.
+
+9. Nos podemos ver que fica igualzinho, aqui, oh, quando Carregamos a Pagina Html, no nosso Documento Html, ta vendo?, os dois sao bem iguais.
+
+10. Okay, passamos, entao, pela parte de cabecalhos, vamos para o texto.
+
+11. Olha aqui, oh, o h1 e o h2 sendo usados aqui,
+
+        <h1>Texto</h1>
+
+        <h2>Tamanho Padrao</h2>
+
+, entao, nos temos o tamanho padrao do texto. O padrao dele, no Bootstrap, eh 16 pixels, 
+
+<p>Tenho 16px, a linha tem 22px</p>
+
+, e a linha, ela tem cerca de 1.4 vezes o tamanho do texto. Entao, neste caso, se o tamanho eh 16 pixels, a linha vai ter 22 pixels e alguma coisa, e o navegador vai arredondar para 22 pixels.
+
+12. Entao, aqui, oh, nos temos 3 paragrafos,
+
+        <p>
+            Tenho 16px, a linha tem 22px
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. In elementis mé pra quem é amistosis quis leo. Quem num gosta di mim que vai caçá sua turmis! Si num tem leite então bota uma pinga aí cumpadi!
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Quem manda na minha terra sou euzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+        </p>
+
+, beleza?
+
+13. Okay, Entao, agora, vamos mostrar para voces essa classe aqui,
+
+<p class="lead">Eu me sobressaio, tenho 20px</p>
+
+, essa classe 'lead', em um paragrafo, eh feita para o texto se sobressair, ficar um pouco maior.
+
+14. Entao, se a gente olhar aqui, oh, na Pagina Html, esse eh um texto feito com a classe lead, pode ver que ele vai ficar com 20 pixels, okay?
+
+15. E tambem tem um jeito de fazer o texto ficar menor, eh utilizando a tag <small>. O small faz com que o texto fique apenas 80% do tamanho de onde ele esta sendo colocado.
+
+16. Entao, se o small esta sendo colocado onde tem 16 pixels, ele vai ficar 80% de 16 pixels, ou seja, 12.8 pixels. Se ele estiver sendo colocado em um paragrafo que foi estilizado para ter 20 pixels, ele vai ter 80% daqueles 20 pixels, ele vai ter, entao, 16 pixels, beleza?
+
+17. Entao, vamos, agora, para a estilizacao de texto.
+
+18. Nos temos diversos estilos, feitos sob padrao, para o Bootstrap. Entao, atraves dessa tag <mark>, nos temos o texto iluminado, ou seja, em amarelo.
+
+19. Nos temos, tambem, o texto deletado, com a tag <del>, e riscado, com a tag <s>. Se voce ver, eles tem o mesmo estilo. 'Ah, entao, qual eh a diferenca, por que usar um e nao usar outro? Qual que eu escolho para usar?'
+
+20. Eh ai que nos usamos a semantica do Html. <del> eh usado para quando o texto for excluido. Isso, muitas vezes, eh utilizado caso nos tenhamos versoes de um texto e a gente queira mostrar o que que foi removido pelo autor.
+
+21. Entao, nos vamos usar <del>, nos estamos informando o proposito daquele risco.
+
+22. E o <s>, ele ja eh uma tag usada para se nos quisermos aplicar o estilo de texto riscado, ai, pode ser para varias coisas, se voce acha que aquilo nao eh tao relevante, voce risca, e diversos outros motivos.
+
+23. Mas, podemos ver que <del> e <s> tem o mesmo estilo.
+
+24. A mesma coisa eh aqui no <ins>inserido</ins> e <u>sublinhado</u>. Entao, no inserido, ele vai ter essa tag <ins>, que eh a abreviacao para inserted, e tem essa tag <u>, que eh a abreviacao de underline, que vai dar, realmente, o estilo de sublinhado.
+
+25. Entao, aqui, <ins>inserido</ins>, eh quando o texto foi inserido, como o instrutor falou, se tiverem varias versoes do texto, e para mostrar o que foi inserido no texto e, aqui, em <u>sublinhado</u>, eh, no caso de sublinhado, se nos quisermos fazer por qualquer motivo.
+
+26. Okay? Temos, tambem, <strong>forte</strong>, e <b>negrito</b>, mesma utilizacao, dois motivos diferentes.
+
+27. O <strong>, entao, a gente vai usar quando a gente quer fazer com que aquele pedaco do texto seja algo forte dentro do paragrafo.
+
+28. Agora, o <b></b>, que nos temos aqui, nos vamos usar apenas para deixar ele negrito, seja qual for o outro motivo.
+
+29. E temos, tambem, o texto em italico, que segue, tambem, esse padrao de semantica, <em>enfatizado</em>, o <em>, aqui, a abreviacao de emphasis, ou seja, quando nos tivermos um trecho em que queremos dar enfase naquele paragrafo, nos usamos o <em>. Agora, se a gente so quiser dar italico, por diversos motivos tambem, digamos que eh uma palavra em latim, ou em outro idioma, nos colocamos o <i> aqui, que ele vai aplicar esse italico.
+
+30. Okay. Passamos pela estilizacao, vamos, agora, para a Indentacao do texto.
+
+31. Olha aqui, o Bootstrap tem classes que vao nos ajudar a indentar a esquerda, a direita, ao centro, fazer o texto fica justificado e, tambem, fazer esse texto sem quebrar linha, que vai passar do container dele.
+
+32. Entao, vamos ver como que faz aqui. Olha, para faze esse tipo de indentacao, nos usamos 4 classes, que sao essas aqui, text-left, para ficar indentado a esquerda, text-right para ficar indentado a direita, text-center para o texto ficar centralizado, text-justify para o texto ficar justificado, isso eh quando o texto vai ter sempre a largura completa do container dele, entao, ele vai ser espacado, as palavras vao ser espacadas entre elas para poder caber direitinho na largura do container, e temos aquele text-nowrap, que eh para ele nao quebrar a linha.
+
+33. Entao, essas sao as indentacoes do Bootstrap.
+
+34. Fim da Aula 02.003. Tipografia - Cabecalhos e Estilizacao de Texto.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tipografia</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>H1 Semibold (seminegrito) 40px <small>Texto Secundario</small></h1>
+        <h2>H2 Semibold (seminegrito) 32px <small>Texto Secundario</small></h2>
+        <h3>H3 Semibold (seminegrito) 28px <small>Texto Secundario</small></h3>
+        <h4>H4 Semibold (seminegrito) 24px <small>Texto Secundario</small></h4>
+        <h5>H5 Semibold (seminegrito) 20px <small>Texto Secundario</small></h5>
+        <h6>H6 Semibold (seminegrito) 16px <small>Texto Secundario</small></h6>
+    </div>
+
+    <div class="container">
+        <p class="h1">H1 Semibold (seminegrito) 36px <small>Texto Secundario</small></p>
+        <p class="h2">H2 Semibold (seminegrito) 30px <small>Texto Secundario</small></p>
+        <p class="h3">H3 Semibold (seminegrito) 24px <small>Texto Secundario</small></p>
+        <p class="h4">H4 Semibold (seminegrito) 18px <small>Texto Secundario</small></p>
+        <p class="h5">H5 Semibold (seminegrito) 14px <small>Texto Secundario</small></p>
+        <p class="h6">H6 Semibold (seminegrito) 12px <small>Texto Secundario</small></p>
+    </div>
+
+    <div class="container">
+        <h1>Texto</h1>
+
+        <h2>Tamanho Padrao</h2>
+
+        <p>
+            Tenho 16px, a linha tem 22px
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. In elementis mé pra quem é amistosis quis leo. Quem num gosta di mim que vai caçá sua turmis! Si num tem leite então bota uma pinga aí cumpadi!
+        </p>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Quem manda na minha terra sou euzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+        </p>
+
+        <p class="lead">Eu me sobressaio, tenho 21px</p>
+
+        <p>Tem pequeno tambem: <small>eu sou pequeno, so tenho 80% do tamanho do texto onde eu for colocado</small>. <span class="small">Eu tambem.</span></p>
+
+        <h2>Estilizacao</h2>
+
+        <p>Temos textos em varios estilos: <mark>iluminado</mark>, <del>deletado</del>, <s>riscado</s>, <ins>inserido</ins>, <u>sublinhado</u>, <strong>forte</strong>, <b>negrito</b>, <em>enfatizado</em>, <i>italico</i></p>
+
+        <h2>Indentacao</h2>
+
+        <p class="text-left"><strong>Eu sou um texto alinhado a esquerda. </strong>Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Detraxit consequat et quo num tendi nada. Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-right"><strong>Eu sou um texto alinhado a direita. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Pra lá , depois divoltis porris, paradis. Viva Forevis aptent taciti sociosqu ad litora torquent. Atirei o pau no gatis, per gatis num morreus.</p>
+
+        <p class="text-center"><strong>Eu sou um texto alinhado ao centro. </strong>Mussum Ipsum, cacilds vidis litro abertis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Mé faiz elementum girarzis, nisi eros vermeio. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+
+        <p class="text-justify"><strong>Eu sou um texto justificado. </strong>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Copo furadis é disculpa de bebadis, arcu quam euismod magna.</p>
+
+        <p class="text-nowrap"><strong>Eu sou um texto sem quebra de linha. </strong>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Diuretics paradis num copo é motivis de denguis. Suco de cevadiss deixa as pessoas mais interessantis. Manduma pindureta quium dia nois paga.</p>
+
+        <h2>Transformacao</h2>
+
+        <p class="text-lowercase">Eu sou todo em MiNuScUlO</p>
+
+        <p class="text-uppercase">Eu sou todo em MaIuScUlO</p>
+
+        <p class="text-capitalize">minhas primeiras letras sao em maiusculo, o resto fica como eu deIxEi</p>
+
+        <h2>Abreviação</h2>
+
+        <p>A abreviação da palavra "abreviação" é <abbr title="abreviação">abbr</abbr></p>
+
+        <p><abbr title="Associação Brasileira Beneficente de Reabilitação" class="initialism">ABBR</abbr> também é a abreviação de Associação Brasileira Beneficente de Reabilitação.</p>
+
+        <h2>Citação</h2>
+
+        <p>
+            Veja a seguinte citação:<br>
+            <blockquote>
+                <p>Citações nos ajudam a entender, inspirar, motivar, esclarecer e mostrar nossa opinião sobre o que está à nossa volta. É por isso que as pessoas e eu adoramos citações.</p>
+                <footer>Takyou Allah Cheikh Malaynine</footer>
+            </blockquote>
+        </p>
+
+        <p>
+            Ou essa: <br>
+            <blockquote class="blockquote-reverse">
+                <p>Citação: A arte de repetir erroneamente as palavras de outrem.</p>
+                <footer>Ambrose Bierce</footer>
+            </blockquote>
+        </p>
+
+        <h2>Listas</h2>
+
+        <h3>Desordenadas</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ul>
+
+        <h3>Ordenadas</h3>
+        <ol>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>
+        </ol>
+
+        <h3>Sem estilo</h3>
+
+        <ul class="list-unstyled">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+            <li>Integer molestie lorem at massa</li>
+            <li>Facilisis in pretium nisl aliquet</li>
+            <li>
+                Nulla volutpat aliquam velit
+                <ul>
+                    <li>Phasellus iaculis neque</li>
+                    <li>Purus sodales ultricies</li>
+                    <li>Vestibulum laoreet porttitor sem</li>
+                    <li>Ac tristique libero volutpat at</li>
+                </ul>
+            </li>
+            <li>Faucibus porta lacus fringilla vel</li>
+            <li>Aenean sit amet erat nunc</li>
+            <li>Eget porttitor lorem</li>            
+        </ul>
+
+        <h3>Alinhadas</h3>
+
+        <ul class="list-inline">
+            <li>Lorem ipsum dolor</li>
+            <li>Consectetur adipiscing</li>
+            <li>Integer molestie</li>
+        </ul>
+
+        <h3>Descritivas</h3>
+
+        <dl>
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Quem num gosta di mim que vai caçá sua turmis! Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Viva Forevis aptent taciti sociosqu ad litora torquent. Quem manda na minha terra sou euzis!</dd>
+
+            <dt>Mais um</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. A ordem dos tratores não altera o pão duris. Casamentiss faiz malandris se pirulitá. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.</dd>
+        </dl>
+
+        <h4>Descrição horizontal</h4>
+
+        <dl class="dl-horizontal">
+            <dt>Termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl. Casamentiss faiz malandris se pirulitá.</dd>
+
+            <dt>Segundo termo</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Manduma pindureta quium dia nois paga.</dd>
+
+            <dt>Mais um termo longo demais para caber</dt>
+            <dd>Mussum Ipsum, cacilds vidis litro abertis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Casamentiss faiz malandris se pirulitá. Detraxit consequat et quo num tendi nada. Quem manda na minha terra sou euzis!</dd>
+        </dl>
+
+    </div>   
+
+</body>
+</html>

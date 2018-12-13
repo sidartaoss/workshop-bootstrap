@@ -1,0 +1,471 @@
+<!-- 
+
+Aula 04.009. Fazendo Paginacao
+
+1. Okay, nos estamos quase terminando a nossa Pagina de Pesquisa. Em breve, a gente vai passar para a nossa ultima pagina do nosso projeto.
+
+2. Entao, vamos fazer, agora, o rodape.
+
+3. Essa parte aqui, oh, em que o instrutor esta mostrando um Botao do lado esquerdo, para abrir uma Pagina Modal, e, do lado direito, a Paginacao.
+
+4. Vamos la. Aqui embaixo, depois da tabela, e depois da div responsiva, nos vamos colocar um elemento 'footer' com uma linha,
+
+    <footer class="row">
+
+    </footer>
+
+5. Dentro dessa linha, nos vamos colocar duas colunas, dividido ao meio,
+
+    <footer class="row">
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </footer>
+
+, 'col-sm-6', ou seja, so para Resolucoes de Tablet's para cima, considerar somente 6 colunas.
+
+6. Na primeira coluna, vamos colocar o nosso botao, que vai abrir a Modal futuramente,
+
+    <footer class="row">
+        <div class="col-sm-6">
+            <button class="">
+                
+            </button>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </footer>
+
+, button, com a classe 'btn btn-primary', para ficar Azul,
+
+    <footer class="row">
+        <div class="col-sm-6">
+            <button class="btn btn-primary">Nova Ordem de Servico</button>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </footer>
+
+7. E, na segunda coluna, vamos fazer a Paginacao. Antes, vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+8. Foi exibido o nosso botao, 'Nova Ordem de Servico'.
+
+9. Vamos la, entao, fazer a paginacao.
+
+10. Primeiramente, vamos definir uma Lista Nao-Ordenada, 'ul' e, nesse 'ul', nos colocamos uma classe pagination,
+
+    <footer class="row">
+        <div class="col-sm-6">
+            <button class="btn btn-primary">Nova Ordem de Servico</button>
+        </div>
+        <div class="col-sm-6">
+            <ul class="pagination">
+
+            </ul>
+        </div>
+    </footer>    
+
+11. Dentro desse 'ul', nos vamos ter um 'li' para cada botao da paginacao. Entao, se a gente olhar aqui na Versao Final do Prototipo do Instrutor, o primeiro botao eh '<<', depois, o numero '1' ate o '5' e, depois, esse outro botao '>>'. Vamos la,
+
+    <footer class="row">
+        <div class="col-sm-6">
+            <button class="btn btn-primary">Nova Ordem de Servico</button>
+        </div>
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li></li>
+            </ul>
+        </div>
+    </footer>    
+
+, dentro do 'li', um link,
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+
+, e, dentro desse link, vamos colocar um 'span', com o simbolo '<<'
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""><span><<</span></a></li>
+            </ul>
+        </div>
+
+12. Agora, outro 'li', outro link, vamos repetir isso 5 vezes,
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""><span><<</span></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+
+, e, aqui no final, vamos adicionar '<li><a href=""><span>>></span></a></li>',
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""><span><<</span></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""><span>>></span></a></li>
+            </ul>
+        </div>
+
+13. Vamos ver como eh que ficou. Regarregar a Pagina Html.
+
+14. Okay, apareceu a Paginacao. Agora, vamos colocar o numero de cada Pagina, 1, 2, 3, 4, 5,
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""><span><<</span></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href=""><span>>></span></a></li>
+            </ul>
+        </div>
+
+15. Okay, esta aparecendo a Paginacao com os numeros das paginas.
+
+16. Agora, vamos fazer com que o numero 1 esteja ativo, porque nos estamos na Pagina 1. Para isso, a gente vem aqui no 'li', a gente coloca uma classe 'active',
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li><a href=""><span><<</span></a></li>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href=""><span>>></span></a></li>
+            </ul>
+        </div>
+
+17. Recarregar a Pagina Html. Okay, esta exibindo a Pagina 1 como ativada. Agora, como a gente esta na Pagina 1, a gente nao precisa mover para a esquerda, ou seja, clicar no item de pagina '<<'. Entao, nesse item de lista, <li><a href=""><span><<</span></a></li>, nos vamos colocar uma classe 'disabled',
+
+        <div class="col-sm-6">
+            <ul class="pagination">
+                <li class="disabled"><a href=""><span><<</span></a></li>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href=""><span>>></span></a></li>
+            </ul>
+        </div>
+
+18. Recarregar a Pagina Html. Ao passar o mouse por cima de '<<', exibe 0, ou seja, indica que nao esta habilitado.
+
+19. Agora, so o que falta eh nos alinharmos a nossa paginacao.
+
+20. Vamos inspecionar a Lista de Paginacao.
+
+21. Entao, nos temos esse 'ul' da Lista de Paginacao, que ele tem uma margem bem alta, a margem eh de 20 pixels em cima e 20 pixels embaixo, enquanto o nosso botao do lado esquerdo nao tem margem nenhuma.
+
+22. Isso esta fazendo com que fiquemos desalinhados. Entao, vamos fazer o seguinte, vamos usar uma classe para essa paginacao, vamos selecionar, aqui, o elemento pai, ou seja, o 'div', e vamos usar o nome de paginacao,
+
+        <div class="col-sm-6 paginacao">
+            <ul class="pagination">
+                ...
+            </ul>
+        </div>
+
+23. 'Ah, por que que eu nao seleciono o "pagination"'? Porque, se eu selecionar direto ele aqui, toda vez que nos colocarmos uma paginacao, essa regra vai ser aplicada.
+
+24. Entao, o melhor eh a gente ter uma classe propria para ele. Entao, vamos, agora, criar a classe 'paginacao', com a classe descendente 'pagination', e vamos dar para ele uma margem 0,
+
+.paginacao .pagination {
+    margin: 0;
+}
+
+25. Recarregar a Pagina Html. 
+
+26. Pronto, removeu a margem. Agora, precisamos alinhar a Paginacao a direita. Vamos fazer como?
+
+27. Pegando aqui, o container da Paginacao, e adicionando a classe 'text-right',
+
+        <div class="col-sm-6 paginacao text-right">
+            <ul class="pagination">
+                ...
+            </ul>
+        </div>
+
+28. Recarregar a Pagina Html.
+
+29. Pronto, a nossa Paginacao esta alinhada a direita.
+
+30. Agora, nos so temos um problema. Como nos alinhamos a direita, quando nos diminuimos o tamanho da tela, a Paginacao tambem vai ficar alinhada a direita.
+
+31. E, ai, nao fica legal. Entao, o que que a gente tem que fazer?
+
+32. A gente tem que vir aqui, na Media Query, e, dentro dela, nos vamos definir a classe paginacao, e vamos colocar a propriedade CSS text-align: center, ou seja, vamos centralizar,
+
+@media (max-width: 767px) {
+    .perfil {
+        color: #fff;
+        background-color: rgba(0, 0, 0, .9);
+    }
+
+    .perfil a {
+        display: block;
+        padding: 5px 0;
+
+        color: #9d9d9d;
+    }
+
+    .perfil a:hover {
+        text-decoration: none;
+
+        color: #fff;
+    }
+
+    .paginacao {
+        text-align: center;
+    }
+}
+
+33. Ao Recarregar a Pagina Html, vemos que esta centralizando a paginacao ao diminuir a largura da tela. 
+
+34. So o que esta faltando para ficar bom eh nos voltarmos com aquela margem que estava antes, ou, pelo menos, colocar uma margem no topo, de forma que a Paginacao nao encoste no botao.
+
+35. Entao, vamos la, 
+
+@media (max-width: 767px) {
+    .perfil {
+        color: #fff;
+        background-color: rgba(0, 0, 0, .9);
+    }
+
+    .perfil a {
+        display: block;
+        padding: 5px 0;
+
+        color: #9d9d9d;
+    }
+
+    .perfil a:hover {
+        text-decoration: none;
+
+        color: #fff;
+    }
+
+    .paginacao {
+        text-align: center;
+    }
+
+    .paginacao .pagination {
+        margin-top: 20px;
+    }
+}
+
+36. Recarregar a Pagina Html. Retestar, diminuindo a largura da tela.
+
+37. Conforme instrutor, esta bem melhor.
+
+38. Vamos ver, agora, como ficaria em um Celular Galaxy S5, clicar em 'Toggle device toolbar'.
+
+39. Conforme instrutor, ficou legal.
+
+40. Fim da Aula 04.009. Fazendo Paginacao.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Ordens de Serviço</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row cabecalho">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Serviço</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="dados-os table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Cod.</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Valor</th>
+                        <th>Funcionário</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-primary">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-default">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-warning">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-danger">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"      ></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>51351</td>
+                        <td>05/05/2015</td>
+                        <td>Marcio Saad</td>
+                        <td>800,00</td>
+                        <td>Jorge</td>
+                        <td><span class="label label-success">Em Andamento</span></td>
+                        <td class="text-center">
+                            <a href="" data-toggle="tooltip" title="Finalizar"><span class="glyphicon glyphicon-ok text-success"></span></a>
+                            <a href="" data-toggle="tooltip" title="Editar"><span class="glyphicon glyphicon-pencil text-warning"></span></a>
+                            <a href="" data-toggle="tooltip" title="Excluir"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                        </td>
+                    </tr>                                                                
+                </tbody>
+            </table>    
+        </div>
+
+        <footer>
+            <div class="col-sm-6">
+                <button class="btn btn-primary">Nova Ordem de Serviço</button>
+            </div>
+            <div class="col-sm-6 paginacao text-right">
+                <ul class="pagination">
+                    <li class="disabled"><a href=""><span><<</span></a></li>
+                    <li class="active"><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href=""><span>>></span></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

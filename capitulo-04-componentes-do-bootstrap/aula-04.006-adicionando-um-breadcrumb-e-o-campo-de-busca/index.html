@@ -1,0 +1,388 @@
+<!-- 
+
+Aula 04.006. Adicionando um Breadcrumb e Campo de Busca 
+
+1. Ta bom, ja terminamos, entao, o nosso Header aqui, a nossa NavBar, nao eh?, colocamos os links, fizemos o Dropdown, colocamos a imagem no Dropdown. Agora, vamos para o nosso conteudo.
+
+2. Vamos la. Logo depois da <nav>, aqui, nos vamos inserir um "container",
+
+    <div class="container">
+
+    </div>
+
+3. Dentro desse container, o que nos vamos colocar eh um Breadcrumb. O que significa Breadcrumb?
+
+4. Significa, em ingles, Migalhas de Pao. Entao, esse Breadcrumb aqui diz para a gente de onde a gente veio, e onde a gente esta neste momento,
+
+Inicio / Ordens de Servico / Pesquisa
+
+5. Podemos ver, entao, que aqui, nos temos o Inicio do Site,
+
+>>>Inicio<<< / Ordens de Servico / Pesquisa
+
+, ai, nos vamos para Ordens de Servico,
+
+Inicio / >>>Ordens de Servico<<< / Pesquisa
+
+, e, ai, entao, nos estamos na Pesquisa de Ordens de Servico.
+
+6. Isso aqui eh muito util em sistemas, porque, facilmente, nos podemos voltar para o estado anterior.
+
+7. Neste nosso sistema aqui, nos nao temos as paginas anteriores, nao eh? Como isso aqui eh so um exemplo, mas, quando voce for fazer um Sistema Profissional, seu, voce vai precisar bastante disso daqui, os clientes demandam muito.
+
+8. Entao, vamos la, para fazer esse Breadcrumb, na verdade, eh muito facil. Nos so precisamos colocar uma Lista Ordenada, i.e., <ol>, e a gente da essa classe para ela, breadcrumb,
+
+    <div class="container">
+        <ol class="breadcrumb">
+
+        </ol>
+    </div>
+
+9. Por que uma Lista Ordenada, ao inves de uma Lista Nao-Ordenada?
+
+10. Porque nos viemos primeiro pela Pagina Inicio, depois, pela Pagina Ordens de Servico e, entao, chegamos na Pagina Pesquisa.
+
+11. Entao, eh muito melhor nos termos essa Lista Ordenada, porque mostra, realmente, a ordem onde a gente apareceu.
+
+12. Para alguem que nao estiver visualizando o Design, mas sim, por exemplo, estiver com um Leitor de Tela para Acessibilidade, o Leitor de Tela vai ler [1, Inicio], [2, Ordem de Servico], [3, Pesquisa]. Entao, vai ajudar bastante, em termos de Acessibilidade.
+
+13. Vamos la, o proximo passo eh adicionar 1 <li>, esse <li> vai ter uma ancora, onde colocamos o titulo, Inicio, depois, Ordens de Servico e, por ultimo, o ativo, Pesquisa,
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Inicio</a></li>   
+            <li><a href="#">Ordens de Servico</a></li>
+            <li>Pesquisa</li>
+        </ol>
+    </div>
+    
+14. Vamos ver. Recarregar a Pagina Html.
+
+15. Okay, certinho. A cor da fonte em Pesquisa esta mais escura do que a cor da fonte na versao final do prototipo do instrutor.
+
+16. Eh porque tem uma classe que nos precisamos colocar para dizer que Pesquisa eh o item ativo, a classe "active",
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Inicio</a></li>   
+            <li><a href="#">Ordens de Servico</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+    </div>
+
+17. Okay, ao Recarregarmos a Pagina Html, vemos que a cor da fonte de Pesquisa ficou mais claro.
+
+18. Agora, nos temos o noss Breadcrumb.
+
+19. Vamos, agora, fazer o Cabecalho da Tabela.
+
+20. Vamos colocar o Titulo e o Campo de Busca.
+
+21. Depois do Breadcrumb, nos vamos adicionar uma div, com a classe row, ou seja, uma Linha,
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Inicio</a></li>   
+            <li><a href="#">Ordens de Servico</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row">
+
+        </div>
+    </div>
+
+22. E, nessa linha, nos vamos adicionar 2 colunas, uma com o Titulo, 'Ordens de Servico', e a outra com o Campo de Busca, 
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Inicio</a></li>   
+            <li><a href="#">Ordens de Servico</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row">
+            <div class="col-">
+
+            </div>
+            <div class="col-">
+
+            </div>
+        </div>
+    </div>
+
+23. Entao, vamos la. Entao, para a primeira coluna, quando for Resolucao de Celulares, vai ocupar 12 colunas, ou seja, a tela inteira. Quando a Resolucao for de Desktops, vai ocupar somente metade da tela,
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+
+            </div>
+            <div class="col-">
+
+            </div>
+        </div>
+
+
+24. Vamos continuar, vamos adicionar o Titulo 'Ordens de Servico' na Primeira Coluna,
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-">
+
+            </div>
+        </div>
+
+
+25. Recarregamos a Pagina Html e vemos que o Titulo foi adicionado a Pagina.
+
+26. Agora, na nossa outra coluna, definimos as Resolucoes conforme abaixo,
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+
+            </div>
+        </div>
+
+27. Por que nos adicionamos esse 'empurrador', i.e., offset, aqui, tambem?
+
+28. Eh porque, senao, o campo se ele ocupasse a outra metade aqui, ele iria ficar muito grande, entao, nos damos uma empurradinha de 2 colunas aqui, e colocamos o input com um espaco menor, aqui.
+
+29. Dentro da segunda coluna, vamos adicionar outra div, com a class "input-group",
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+                <div class="input-group">
+
+                </div>
+            </div>
+        </div>
+
+30. Dentro dessa div, nos teremos o nosso input, type 'text', name 'busca', classe 'form-control', lembra?, para dizer que eh um controle de formulario do Bootstrap, placeholder 'Pesquisar por nome do cliente',
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                </div>
+            </div>
+        </div>
+
+31. Agora, vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+32. O input foi exibido no canto superior direito, mas acima do Titulo 'Ordens de Servico'.
+
+33. Vamos continuar. Vamos, agora, adicionar um span, com a classe 'input-group-btn',
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+, ou seja, aqui, agora, eu estou agrupando a um botao. Nao eh que nem aquele outro, que era o 'input-addon'. E, nesse 'btn', eu vou colocar, aqui, oh, button, type 'button', com a classe 'btn', e, aqui, a gente vai colocar 'btn btn-default', que vai dar aquela cor branca para o botao,
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+34. Dentro desse botao, nos vamos colocar um icone, <span class="glyphicon glyphicon-search"></span>, que eh o icone de busca,
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Servico</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+35. Vamos ver. Recarregar a Pagina Html. Beleza, ali esta o nosso controle. Agora, vamos dar uma alinhada nesse controle aqui.
+
+36. Vamos inspecionar o h1 para vermos o que esta deixando o input de busca desalinhado. Vemos que o h1 esta com a margem muito grande.
+
+37. Entao, vamos ajeitar isso daqui. O que nos temos que fazer eh pegar esse cabecalho aqui,
+
+ <div class="row">
+     ...
+ </div>
+
+, e dar para ele uma classe para a gente poder trabalhar. Vamos dar "cabecalho", entao,
+
+ <div class="row cabecalho">
+     ...
+ </div>
+
+ 38. Agora, vamos vir aqui no index.css, e vamos colocar, aqui,
+
+ .cabecalho h1 {
+
+ }
+
+ , e vamos dar margem 0 para ele,
+
+ .cabecalho h1 {
+    margin: 0;
+ }
+
+ 39. E agora? A primeira div, do Titulo, esta com uma altura de 39.2 pixels, e a segunda div, do Input de Busca, esta com uma altura de 34.4 pixels.
+
+ 40. Entao, vamos deixar as duas alturas iguais. Vamos dar para a segunda div, do Input de Busca, uma classe 'busca', 
+            <div class="col-xs-12 col-md-6">
+                ...
+            </div>
+             <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                 ...
+             </div>
+ 
+ e vamos fazer com que essa busca tenha uma margin-top, considerando que 39 - 34 = 5, uma margin-top de 5 pixels,
+
+ .busca {
+     margin-top: 5px;
+ }
+
+ 41. Recarregar a Pagina Html.
+
+ 42. Pronto. Colocamos, agora, o Input de Busca bem alinhado ao Titulo.
+
+ 43. So que o Titulo 'Ordens de Servico' nao esta muito impactante. Vamos aumentar esse titulo um pouco. Entao, vamos colocar, aqui, font-size: 3em, ou seja, 3 vezes o tamanho da fonte padrao do site, ou seja, 42 pixels,
+
+ .cabecalho h1 {
+     margin: 0;
+     font-size: 3em;
+ }
+
+ 44. Recarregar a Pagina Html. Conforme opiniao do instrutor, ficou muito melhor.
+
+ 45. So que, agora, o Titulo esta ocupando esta ocupando uma altura maior, agora, o elemento pai, ou seja, o div, tem 45.6 pixels. E outro div, do Input de Busca, tem 34.4 pixels, 45.6 - 34.4 = 11.2 pixels, ou seja, devemos corrigir o margin-top para 11.2 pixels,
+
+ .busca {
+     margin-top: 11.2px;
+ }
+
+ 46. Recarregar a Pagina Html.
+
+ 47. E vemos que estamos alinhados novamente.
+
+ 48. Fim da Aula 04.006. Adicionando um Breadcrumb e Campo de Busca.
+
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <!-- Menu -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <div class="col-sm-4 hidden-xs">
+                                <img class="img-responsive img-rounded" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru">
+                                <!--img class="img-responsive img-circle" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru"-->
+                                <!--img class="img-responsive img-thumbnail" src="https://api.adorable.io/avatars/100/watchuru.png" alt="Imagem Avatar WatchGuru"-->  
+                            </div>
+                            <ul class="list-unstyled col-sm-8">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Ordens de Serviço</a></li>
+            <li class="active">Pesquisa</li>
+        </ol>
+        <div class="row cabecalho">
+            <div class="col-xs-12 col-md-6">
+                <h1>Ordens de Serviço</h1>
+            </div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2 busca">
+                <div class="input-group">
+                    <input type="text" name="busca" class="form-control" placeholder="Pesquisar por nome do cliente">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

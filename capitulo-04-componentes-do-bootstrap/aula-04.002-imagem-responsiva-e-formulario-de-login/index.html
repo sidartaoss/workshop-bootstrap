@@ -1,0 +1,440 @@
+<!-- 
+
+Aula 04.002. Imagem Responsiva e Formulario de Login
+
+1. Vamos terminar, entao, o nosso formulario de login. Vamos entrar aqui, e vamos mudar o fundo para preto,
+
+.login-form {
+    margin-top: 50vh;
+    height: 300px;
+
+    background-color: rgba(0, 0, 0, .9);
+
+    transform: translateY(-50%);
+}
+
+, rgba(0, 0, 0, .9), e, no ultimo argumento, nos colocamos a porcentagem de transparencia, na qual nos vamos colocar 90%.
+
+2. Vamos ver como eh que fica, Recarregar a Pagina Html.
+
+3. Okay, ja temos, aqui, o nosso formulario. Agora, vamos tirar essa altura que a gente tinha colocado como exemplo,
+
+.login-form {
+    margin-top: 50vh;
+    >>>height: 300px;<<<
+
+    background-color: rgba(0, 0, 0, .9);
+
+    transform: translateY(-50%);
+}
+
+, e vamos colocar um espacamento interno, aqui, de 20 pixels em cima e embaixo, e 30 pixels dos lados direito e esquerdo,
+
+.login-form {
+    margin-top: 50vh;
+    padding: 20px 30px;
+
+    background-color: rgba(0, 0, 0, .9);
+
+    transform: translateY(-50%);
+}
+
+4. E vamos colocar que a cor da fonte-padrao eh branca, 
+
+.login-form {
+    margin-top: 50vh;
+    padding: 20px 30px;
+
+    background-color: rgba(0, 0, 0, .9);
+    color: #fff;
+
+    transform: translateY(-50%);
+}
+
+5. Okay, vamos, agora, continuar com o nosso login. Nos vamos, primeiro, colocar esse cabecalho aqui, o qual o instrutor esta exibindo no slide.
+
+6. Entao, vamos aqui no codigo html, colocamos um <header>,
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header></header>
+
+    </div>
+
+</body>
+
+, header significa cabecalho. Dentro do <header>, vamos definir o <h1>, e o <h1> vai ser uma imagem,
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img src="img/watchguru.png"></h1>
+        </header>
+
+    </div>
+
+</body>    
+
+, vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+7. Ficou bem grande aqui a imagem. O que que a gente tem que fazer? A gente vai usar uma classe do Bootstrap chamada img-responsive. Isso faz com que a imagem tenha sempre 100% da largura do seu pai. Ela vai, entao, se ajustar de acordo com a tela que a gente estiver,
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img class="img-responsive" src="img/watchguru.png"></h1>
+        </header>
+
+    </div>
+
+</body> 
+
+8. Depois, vamos colocar, aqui, um h2, e, nesse h2, vamos colocar aquela mensagem: 'Entre com seu ', vamos colocar, aqui, um negrito, 
+
+    <h2>Entre com seu <b>usuario</b> e <b>senha</b></h2>
+
+9.
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img class="img-responsive" src="img/watchguru.png"></h1>
+            <h2>Entre com seu <b>usuario</b> e <b>senha</b></h2>
+        </header>
+
+    </div>
+
+</body> 
+
+10. Vamos centralizar esse texto, fazendo aquilo que o instrutor ja mostrou para nos na aula de Tipografia,
+
+<h2 class="text-center">Entre com seu <b>usuario</b> e <b>senha</b></h2>
+
+11. Agora, vamos diminuir um pouco do espacamento e do tamanho dessa letra aqui.
+
+12. Vamos, aqui, no nosso CSS, 
+
+.login-form h1 {
+
+}
+
+, nesse h1, vamos colocar uma margem,  0 0 5px,
+
+.login-form h1 {
+    margin: 0 0 5px;
+}
+
+13. Quando eu tenho 3 parametros aqui, esse primeiro eh para o topo, esse segundo fica a direita e a esquerda e o terceiro parametro e para baixo.
+
+14. Entao, estou zerando todas as margens, menos para baixo, em que estou colocando 5 pixels.
+
+15. Vamos ver como eh que ficou. Recarregar a Pagina Html.
+
+16. Agora, 
+
+.login-form h2 {
+
+}
+
+, vamos colocar, tambem, uma margem zerada, mas, embaixo, vamos colocar 30 pixels.
+
+.login-form h2 {
+    margin: 0 0 30px;
+}
+
+17. Recarregar a Pagina Html. Okay.
+
+18. Agora, vamos ajustar o tamanho da fonte para ficar o mesmo tamanho de fonte que o elemento pai, ou seja, 14 pixels,
+
+.login-form h2 {
+    margin: 0 0 30px;
+    font-size: 1em;    
+
+    color: #fff;
+}
+
+19. Okay. Ja temos parte do formulario pronto.
+
+20. Vamos, entao, para o formulario.
+
+21. Vamos colocar, aqui, um <form>,
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img class="img-responsive" src="img/watchguru.png"></h1>
+            <h2>Entre com seu <b>usuario</b> e <b>senha</b></h2>
+        </header>
+        <form>
+                         
+        </form>
+
+    </div>
+
+</body>    
+
+22. Dentro desse form, vamos inserir uma div com uma classe form-group,
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img class="img-responsive" src="img/watchguru.png"></h1>
+            <h2>Entre com seu <b>usuario</b> e <b>senha</b></h2>
+        </header>
+        <form>
+
+            <div class="form-group">
+
+            </div>
+                         
+        </form>
+
+    </div>
+
+</body>
+
+, form-group significa um agrupamento de inputs no formulario.
+
+23. Como nos queremos fazer isso aqui, oh, 
+
+        [Instrutor exibe slide com o formulario com 2 inputs, Usuario e Senha]
+
+, a gente tem que usar uma div, aqui, tambem, com uma classe input-group,
+
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+
+            </div>
+        </div>
+    </form>
+
+, para agrupar os 2 elementos que vao ser colocados ali.
+
+24. Depois desse input-group, nos vamos criar esse pedacinho aqui,
+
+    [Instrutor exibe slide com o formulario com 2 inputs, Usuario e Senha e mostra com o mouse uma imagem junto ao canto esquerdo do input de Usuario]
+
+25. Isso aqui chama-se input-group-addon. Entao, vamos la,
+
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+, e, dentro desse input-group-addon, eu vou colocar um <span>,
+
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+26. O <span> eh, tambem, um elemento neutro, eh feito para ser estilizado, so que ele eh inline, ao contrario da div, que eh em bloco. Para esse <span>, nos vamos colocar uma classe aqui e, ai, nos vamos inserir um icone,
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class=""></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+, com relacao ao icone, o Bootstrap tem varios icones aqui ja inseridos nele, https://getbootstrap.com/docs/3.3/components/. Tudo o que a gente precisa fazer eh colocar isso aqui, glyphicon glyphicon-user, como uma classe que a gente vai ter. Como a gente vai usar esse aqui, glyphicon glyphicon-user, nos vamos pegar essas duas classes aqui,
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+, entao, glyphicon glyphicon-user. Vamos ver como eh que vai ficar. Recarregar Pagina Html.
+
+27. Vamos ver como eh que vai ficar.
+
+28. Ta ali ele, oh. Agora, depois desse addon, vamos inserir o nosso input,
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>
+            <input type="text" name="usuario">
+        </div>
+    </div>
+</form>
+
+, e temos que dar uma classe para dizer para o Bootstrap que esse campo eh um campo do Bootstrap. Nos vamos definir, aqui, "form-control",
+
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>
+            <input type="text" name="usuario" class="form-control">
+        </div>
+    </div>
+</form>
+
+29. Vamos ver como eh que ficou. Recarregar a Pagin Html.
+
+30. Okay. Agora, vamos inserir esse textinho aqui, dizendo que eh 'Usuario'. Isso aqui eh um atributo do html chamado placeholder,
+
+<input type="text" name="usuario" class="form-control" placeholder="Usuario">
+
+31. Okay. Mesma coisa para o campo Senha. Copia e colar o campo Usuario, alterando, conforme necessario, para Senha,
+
+32. Para o icone do campo senha, vamos alterar para glyphicon glyphicon-option-horizontal.
+
+33. E o nosso input, agora, eh do tipo 'password'.
+
+34. Ta bom, temos o Usuario e Senha, agora, no formulario. Agora, vamos para a parte debaixo do nosso formulario.
+
+35. Aqui, vamos colocar um <footer>, ou seja, um rodape. Vamos colocar um botao para enviar,
+
+    <div class="form-group">
+        ...
+    </div>
+    <div class="form-group">
+        ...
+    </div>
+    <footer>
+    
+    </footer>    
+
+, entao, <button>, type submit, que eh para enviar, vamos colocar, aqui, 'Entrar'
+
+    <footer>
+        <button type="submit">Entrar</button>
+    </footer>
+
+, ta feio o botao, oh. Agora, vamos dizer para o Bootstrap que esse eh um botao dele, eh o botao do Bootstrap. A gente vai usar 'btn', e vamos colocar, aqui, 'btn-primary', para printa-lo da cor primaria do Bootstrap, que eh um azul,
+
+    <footer>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </footer>
+
+36. Vamos ver. Recarregar a Pagina Html. Okay.
+
+37. Agora, vamos colocar aquela parte de lembrar a senha. Vamos inserir, aqui, antes do botao, uma div. Como a gente vai colocar um checkbox, a gente tem que dizer para o Bootstrap que vai ter um checkbox aqui, a gente colocar uma classe chamada checkbox,
+
+    <footer>
+        <div class="checkbox"></div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </footer>
+
+, e, ai, vamos colocar uma label, com o input do tipo checkbox, nome 'lembrar', e, aqui dentro, nos colocamos o texto,
+
+    <footer>
+        <div class="checkbox">
+            <label><input type="checkbox" name="lembrar">Lembrar de mim</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </footer>
+
+38. Ta um em cima e um embaixo. Agora, o instrutor vai nos mostrar como eh que a gente vai alinhar.
+
+39. Aqui na classe checkbox, nos vamos colocar pull-left, ele vai empurrar esse aqui, o checkbox, para a esquerda,
+
+    <footer>
+        <div class="checkbox pull-left">
+            <label><input type="checkbox" name="lembrar">Lembrar de mim</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </footer>
+
+40. E, aqui, no botao, eu vou colocar pull-right, que vai empurrar o botao para a direita,
+
+    <footer>
+        <div class="checkbox pull-left">
+            <label><input type="checkbox" name="lembrar">Lembrar de mim</label>
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Entrar</button>
+    </footer>
+
+41. Vamos ver como eh que vai ficar. Recarregar a Pagina Html.
+
+42. Pronto. Temos, aqui, entao, o nosso formulario de login.
+
+43. Fim da Aula 04.002. Imagem Responsiva e Formulario de Login.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+        <header>
+            <h1><img class="img-responsive" src="img/watchguru.png"></h1>
+            <h2 class="text-center">Entre com seu <b>usuário</b> e <b>senha</b></h2>
+        </header>
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <input type="text" name="usuario" class="form-control" placeholder="Usuário">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                    </div>
+                    <input type="password" name="senha" class="form-control" placeholder="Senha">
+                </div>
+            </div>
+            <footer>
+                <div class="checkbox pull-left">
+                    <label><input type="checkbox" name="lembrar">Lembrar de mim</label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Entrar</button>
+            </footer>            
+        </form>
+    </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!-- 
+
+Aula 04.004. Criando uma Drowpdown
+
+1. Vamos, agora, continuar a nossa navbar, fazendo essa parte aqui, oh, 'Minha Conta', com esse Dropdown.
+
+2. Vamos para o Codigo.
+
+3. Aqui esta a nossa NavBar,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+            </div>
+
+4. Para fazer o Dropdown, nos vamos criar mais um <ul> aqui,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul></ul>
+
+            </div>
+
+, com a classe "nav navbar-nav ", e, dessa vez, a gente vai colocar mais uma classe aqui, "navbar-right", que eh para ficar do lado direito,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+
+            </div>
+
+5. Aqui, nos vamos colocar um <li>, e esse <li> vai conter o botao que vai abrir o nosso Dropdown. 
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li></li>
+                </ul>
+
+            </div>
+
+6. Entao, nos colocamos o elemento ancora, com a classe "dropdown-toggle", data-toggle = "dropdown"
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+                    </li>
+                </ul>
+
+            </div>
+
+7. Beleza. Aqui, dentro desse ancora, nos vamos escrever "Minha Conta", e vamos colocar, aqui, um span, com uma classe chamada "caret", que eh uma classe do Bootstrap para ajudar a gente, colocando aquela setinha para baixo de quando tem uma Dropdown,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+8. Vamos ver como que esta ate agora. 
+
+9. Okay, apareceu a direita da barra de navegacao "Minha Conta", com o caret.
+
+10. Agora, vamos fazer a nossa Dropdown para ele abrir.
+
+11. Depois da ancora, fazemos uma div, e a classe dela vai ser drowdown-menu,
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+12. Dentro desse div, vamos colocar um <ul> e, dentro desse <ul>, nos vamos colocar 3 <li>'s, 1 com o nome 'Fulano de Tal', outro com o link "Alterar Perfil", e o outro com o Botao de Sair.
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+13. Recarregar a Pagina Html. Okay, esta exibindo o Dropdown ao clicarmos em "Minha Conta".
+
+14. Pronto. Agora, vamos tirar o estilo desse <ul>, ou seja, vamos remover as bolinhas, com a classe "list-unstyled",
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul class="list-unstyled">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+15. Recarregar a Pagina Html. Okay, removeu as bolinhas para os itens da lista. Agora, vamos colocar uma estilizacao para os itens da lista. Vamos dar o nome para o nosso menu com a classe, que iremos criar, de "perfil",
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <ul class="list-unstyled">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+16. Agora, vamos ate o nosso arquivo index.css, para criarmos a classe perfil,
+
+.perfil {
+    
+}
+
+, colocamos um padding de 10 pixels, para dar um espacamento interno maior para os itens da lista,
+
+.perfil {
+    padding: 10px;
+}
+
+17. Agora, a gente vai pegar o seletor descendente li de perfil, e vamos pegar o primeiro li, com o pseudo-elemento :first-child,
+
+.perfil li:fist-child {
+
+}
+
+, nos vamos colocar o font-size com 1.3em, isso quer dizer 1.3 vezes o tamanho da fonte do elemento pai,
+
+.perfil li:first-child {
+    font-size: 1.3em;
+}
+
+18. Vamos colocar um font-weight bold, para ele ficar negrito. Vamos ver como ele vai ficar la, Recarregar a Pagina Html,
+
+.perfil li:fist-child {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+19. Agora, vamos dar um espacamento para os itens da lista, a partir do primeiro elemento da lista, 'Fulano de Tal',
+
+.perfil li:fist-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+20. Vamos ver, agora, quando a gente diminuir a largura da tela. Para o instrutor, ficou diferente ao abrir o Menu Dropdown quando se diminui o tamanho da tela.
+
+21. Vamos ajeitar, entao. Para isso, a gente vai precisar de uma Media Query. Entao, vamos la fazer a nossa Media Query, max-width: 767, ou seja, somente para Celulares,
+
+@media (max-width: 767px) {
+
+}
+
+, a gente vai pegar o perfil e vai dizer que a cor dele eh branca. Vamos pegar o seletor descendente ancora de perfil, e dar a cor dele a mesma cor que os outros links tem, ou seja, #9d9d9d, e vamos faze-la se tornar um bloco, para pegar toda a largura, e vamos dar um espacamento interno aqui, vamos colocar em cima e embaixo 5 pixels, dos lados, 0,
+
+@media (max-width: 767px) {
+    .perfil {
+        color: #fff;
+    }
+
+    .perfil a {
+        color: #9d9d9d;
+        display: block;
+        padding: 5px 0;
+    }
+}
+
+22. Vamos ver como eh que vai ficar. Recarregar a Pagina Html.
+
+23. Agora, a gente so tem que remover o underline ao passar o mouse pelos links e fazer ficar branco quando passa o mouse.
+
+24. Vamos la, o :hover eh um pseudo-elemento para quando o mouse estiver colocado em cima. Nos vamos colocar, aqui, text-decoration: none, que vai tirar o sublinhado. E vamos colocar o color dele como branco,
+
+@media (max-width: 767px) {
+    .perfil {
+        color: #fff;
+    }
+
+    .perfil a {
+        color: #9d9d9d;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .perfil a:hover {
+        text-decoration: none;
+
+        color: #fff;
+    }
+}
+
+25. Vamos ver? Recarregar a Pagina Html. Okay, esta exibindo o Dropdown sem o underline nos links e, ao passar o mouse por cima das ancoras, a cor muda para branco.
+
+26. Agora, nos temos esse Dropdown funcionando em todas as resolucoes.
+
+27. Fim da Aula 04.004. Criando uma Drowpdown.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <!-- Menu -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand logotipo">
+                    <img src="img/watchguru.png" alt="Watch Guru">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="">Ordens de Serviço</a></li>
+                    <li><a href="">Clientes</a></li>
+                    <li><a href="">Funcionários</a></li>
+                    <li><a href="">Serviços</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Minha Conta
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu perfil">
+                            <ul class="list-unstyled">
+                                <li>Fulano de Tal</li>
+                                <li><a href="">Alterar Perfil</a></li>
+                                <li><a href="">Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

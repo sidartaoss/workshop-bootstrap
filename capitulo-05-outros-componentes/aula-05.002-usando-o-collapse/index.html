@@ -1,0 +1,388 @@
+<!-- 
+
+Aula 05.002. Usando o Collapse
+
+1. Entao, vamos, aqui, nesta aula, aprender a usar uma funcionalidade Javascript do Bootstrap que o instrutor acha muito legal, e que eh muito util, tambem, eh o Collapse.
+
+2. Essa funcionalidade faz as coisas aparecerem e sumirem. 
+
+3. O instrutor ira nos mostrar como eh que a gente faz ele e tambem vai dar alguns exemplos de utilizacao dele, como fazer um accordion.
+
+4. Entao, primeiramente, o mais basico. Vamos ver o que que a gente precisa para fazer funcionar um Collapse.
+
+5. Vamos precisar de um elemento em bloco, no caso, vamos usar, aqui, um paragrafo. E, na classe dele, vamos colocar 'collapse',
+
+    <p class="collapse">
+
+    </p>
+
+6. E vamos colocar colocar algum conteudo aqui,
+
+    <p class="collapse">
+        Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.   
+    </p>
+
+7. Pronto. Com isso, a gente ja pode dar uma olhada aqui, na Pagina Html.
+
+8. O conteudo, ou seja,
+
+            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.   
+
+, nao esta aparecendo na Pagina Html, o conteudo esta fechado.
+
+9. Agora, se a gente for fazer so via classe e o conteudo aparecer, eh so nos colocarmos a classe 'in',
+
+    <p class="collapse in">
+        Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.   
+    </p>
+
+, e o conteudo ja vai aparecer na Pagina Html.
+
+10. Agora, vamos fazer o conteudo da Pagina Html aparecer e sumir atraves de um botao. Vamos fazer, aqui, um botao,
+
+    <a href=""></a>
+    <p class="collapse">
+        ...
+    </p>
+
+, e vamos colocar um link, aqui. Nesse 'href', nos temos que dar um 'id', dizendo qual eh o elemento que esta abrindo e fechando. Entao, vamos dar, aqui, no 'collapse', um 'id' para ele, e vamos colocar o nome 'collapse' mesmo, tanto faz, pode ser qualquer nome,
+
+    <p class="collapse" id="collapse">
+        ...
+    </p>
+
+11. E, aqui no ancora do botao, nos selecionamos o elemento com 'id' 'collapse',
+
+    <a href="#collapse"></a>
+    <p class="collapse" id="collapse">
+        ...
+    </p>
+
+, e, ai, nos usamos o 'data-toggle' e dizemos que vamos 'dar toggle' em um 'collapse',
+
+    <a href="#collapse" data-toggle="collapse"></a>
+    <p class="collapse" id="collapse">
+
+    </p>
+
+, e, aqui, damos um nome ao botao, 'Abrir / Fechar'
+
+    <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>
+    <p class="collapse" id="collapse">
+        ...
+    </p>
+
+12. Vamos ver ele funcionando. Recarregar a Pagina Html.
+
+13. Okay, vimos que esta abrindo / fechando a exibicao do conteudo.
+
+14. Esse eh o comportamento basico do 'collapse'.
+
+15. Agora, vamos aprender a coloca-lo dentro de um painel.
+
+16. Entao, um painel, ele eh bem parecido em estrutura com a Modal, so que ele fica dentro do elemento mesmo, ele nao vai aparecer por cima, como Modal.
+
+17. Entao, vamos la. A gente vai colocar, aqui, uma 'div', e vamos dar para ela a classe 'panel',
+
+    <div class='panel'>
+
+    </div>
+    
+    <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>
+    <p class="collapse" id="collapse">
+        ...
+    </p>
+
+, e temos que dar a cor do 'panel', no caso, aqui, vamos colocar 'panel-default', mesmo.
+
+    <div class='panel panel-default'>
+
+    </div>
+    
+    <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>
+    <p class="collapse" id="collapse">
+        ...
+    </p>
+
+18. Depois, nos vamos precisar de um 'heading'. Entao, inserir head e body, ou seja, a div 'panel-heading', e a div 'panel-body',
+
+    <div class='panel panel-default'>
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body">
+
+        </div>
+    </div>
+
+19. Aqui no body, nos vamos colocar o nosso conteudo,
+
+        <p class="collapse" id="collapse">
+            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+        </p>
+
+, ou seja,
+
+    <div class='panel panel-default'>
+        <div class="panel-heading">
+
+        </div>
+        <div class="panel-body">
+            <p class="collapse" id="collapse">
+                Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+            </p>
+        </div>
+    </div>    
+
+20. E, aqui, no heading, vamos colocar um 'h4', vamos dar uma classe para ele, 'panel-title', e vamos colocar o nosso link aqui dentro,
+
+        <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>
+
+, ou seja,
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>                    
+                </h4>
+            </div>
+            <div class="panel-body">
+                <p class="collapse" id="collapse">
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                </p>
+            </div>
+        </div>
+
+21. Vamos ver como eh que vai ficar. Recarregar a Pagina Html. Okay, esta exibindo o collapse conforme desejado, com heading e body.
+
+22. Se a gente quiser fazer a parte do body tambem sumir por completo, e nao so o conteudo, nos temos que adicionar so mais um elemento. Vamos la ver no codigo.
+
+23. A gente vai vir aqui, onde esta o 'p' com a classe 'collapse' e o 'id', 
+
+<p class="collapse" id="collapse">
+        Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+</p>
+
+, e nos vamos remover 'class="collapse" id="collapse"', e, por cima do 'panel-body', aqui, nos vamos criar mais uma div, com a classe 'panel-collapse collapse', e temos que devolver aquele 'id="collapse"' tambem,
+
+            <div class="panel-collapse collapse" id="collapse">
+
+            </div>
+            <div class="panel-body">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                </p>
+            </div>
+
+24. E, ai, vamos colocar o 'panel-body' e o paragrafo aqui dentro,
+
+<div class="panel-collapse collapse" id="collapse">
+    <div class="panel-body">
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+        </p>
+    </div>
+</div>
+
+25. Vamos ver, agora, como eh que ficou. Recarregar a Pagina Html.
+
+26. Agora, ele abre e fecha como um painel.
+
+27. Vamos estender, agora, um pouquinho essa funcionalidade e fazer um accordion, com um grupo de paineis.
+
+28. Entao, o que eu so preciso fazer eh, por cima desse painel aqui,
+
+    <div class="panel panel-default">
+        ...
+    </div>
+
+, nos vamos criar uma div, com a classe 'panel-group',
+
+    <div class="panel-group"></div>
+    <div class="panel panel-default">
+        ...
+    </div>
+
+
+, e vamos dar um id para essa div. Nesse caso aqui, eu vou dar o id 'accordion', mas poderia ser qualquer nome,
+
+    <div class="panel-group" id="accordion"></div>
+    <div class="panel panel-default">
+        ...
+    </div>        
+
+29. Okay? Esse id eh muito importante, mais para frente, o instrutor ira nos mostrar.
+
+30. Vamos, agora, colocar o painel 'panel-default' dentro de 'panel-group',
+
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            ...
+        </div>
+    </div>
+
+31. Agora, vamos trocar esse nome, aqui, '#collapse',
+
+    <a href=">>>#collapse<<<" data-toggle="collapse">Abrir / Fechar</a>
+
+, para a gente poder fazer 3 dele. Entao, esse aqui nos vamos colocar #PainelUm, 
+
+    <a href="#PainelUm" data-toggle="collapse">Abrir / Fechar</a>
+
+, trocar aqui tambem,
+
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#PainelUm" data-toggle="collapse">Abrir / Fechar</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id=">>>PainelUm<<<">
+
+, e, aqui, tambem,
+
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#collapse" data-toggle="collapse">>>>Painel Um <<<</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="collapse">
+
+32. Agora, a gente copia esse painel aqui,
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#PainelUm" data-toggle="collapse">Painel Um</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="PainelUm">
+                    <div class="panel-body">
+                        <p>
+                            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+, e cola-o mais 3 vezes, abaixo e, onde tem Um, a gente troca para Dois e Tres.
+
+33. Vamos recarregar a Pagina Html, para vermos como eh que ficou.
+
+34. Okay, esta exibindo tres paineis e, quando clicamos no link, abre-se um texto. 
+
+35. Mas, para o Accordion, quando se abre um, os demais fecham.
+
+36. Para tanto, vamos usar aquele id 'accordion', o qual definimos anteriormente. Esse id nos vamos colocar ele bem aqui, onde esta o data-toggle 'collapse', com data-parent, valorando com quem eh o pai desse grupo aqui, vai ser aquele id 'accordion'
+
+    <a href="#PainelUm" data-toggle="collapse" data-parent="#accordion">Painel Um</a>
+
+37. Okay, vamos ver como ficou, Recarregar a Pagina Html.
+
+38. Okay, agora, esta funcionando o Accordion com Collapse do Bootstrap.
+
+39. Se voce quiser fazer ele comecar aberto, a gente so tem que adicionar aquela classe, la, a classe 'in', bem aqui,
+
+    <div class="panel-collapse collapse in" id="PainelUm">
+    ...
+    </div>
+
+40. Vamos Recarregar a Pagina Html.
+
+41. Okay, o Painel Um esta iniciando aberto, ou seja, exibindo o texto do painel.
+
+42. Fim da Aula 05.002. Usando o Collapse.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Usando o Collapse</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Usando o collapse</h1>
+        <!--p class="collapse in"-->
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <!--a href="#collapse" data-toggle="collapse">Abrir / Fechar</a-->
+                        <a href="#PainelUm" data-toggle="collapse" data-parent="#accordion">Painel Um</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse in" id="PainelUm">
+                    <div class="panel-body">
+                        <p>
+                            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#PainelDois" data-toggle="collapse" data-parent="#accordion">Painel Dois</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="PainelDois">
+                    <div class="panel-body">
+                        <p>
+                            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#PainelTres" data-toggle="collapse" data-parent="#accordion">Painel Três</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="PainelTres">
+                    <div class="panel-body">
+                        <p>
+                            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                        </p>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+        <!--div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapse" data-toggle="collapse">Abrir / Fechar</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse">
+                <div class="panel-body">
+                    <p>
+                        Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                    </p>
+                </div>
+            </div-->
+            <!--div class="panel-body">
+                <!--p class="collapse" id="collapse">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+                </p>
+            </div>
+        </div-->
+
+        <!--a href="#collapse" data-toggle="collapse">Abrir / Fechar</a-->
+        <!--p class="collapse" id="collapse">
+            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. Manduma pindureta quium dia nois paga. Detraxit consequat et quo num tendi nada. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.            
+        </p-->
+    </div>
+
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

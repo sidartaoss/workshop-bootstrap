@@ -1,0 +1,135 @@
+<!-- 
+
+    Aula 06.001. Customizando o Bootstrap
+
+1. Agora, o instrutor ira nos dar uma importante dica.
+
+2. Quando o instrutor nos ensinou a fazer o Download, o instrutor nos ensinou a vir por aqui, https://getbootstrap.com/docs/4.1/getting-started/introduction/, e fazer  Download da versao pronta.
+
+3. Nesta aula, o instrutor vai nos ensinar como nos vamos modificar a versao padrao do Bootstrap.
+
+4. Vamos clicar na aba Customize, https://getbootstrap.com/docs/3.3/customize/. Aqui, nos vamos poder modificar o Bootstrap, para que ele possa servir a todas as nossas necessidades.
+
+5. Entao, a gente pode deixar outra cor, a gente pode mudar o tamanho das coisas, e tudo mais.
+
+6. Entao, ele comeca, aqui, dizendo, 'Se os tivermos um arquivo de configuracao, a gente pode mandar para ca, e ele vai arrumar tudinho ali'.
+
+7. Como nos nao temos, vamos continuar aqui.
+
+8. Oh, entao, a gente ja comeca podendo escolher quais coisas do Bootstrap nos vamos querer, nesse nosso arquivo.
+
+9. 'Ah, entao, no meu site, eu nao vou usar Navbar', entao, é so desmarcar o checkbox, ou seja, eu nao vou inseri-la aqui, para o que que eu vou ficar deixando ali, sendo que eu nao vou precisar dela?
+
+10. Entao, eu posso desativar qualquer estilizacao (Common CSS), qualquer componente (Components), e os componentes Javascript (JavaScript components), aqui, tambem.
+
+11. Alem disso, eu escolho, tambem, quais plugins do jQuery vao entrar aqui, https://getbootstrap.com/docs/3.3/customize/#plugins.
+
+12. Por exemplo, nao vou usar Carousel, entao, tambem nao vou precisar fazer o Carousel funcionar, nao preciso desse plugin aqui.
+
+13. Lembrando que eh sempre importante que o jQuery esteja instalado la quando a gente fizer funcionar, se a gente tiver esses plugins aqui.
+
+14. Outra coisa que ele tem eh o seguinte, em https://getbootstrap.com/docs/3.3/customize/#colors, isso aqui que ele da sao as variaveis que mudam quase tudo no nosso sistema, no Bootstrap.
+
+15. Entao, por exemplo, aqui, @gray-base, ele da o cinza-base, entao, ele deu aqui o valor, que eh preto, #000, 
+
+16. 'Ah, entao, eu uero que o cinza base, no meu site, seja, na verdade, esse aqui, #333'.
+
+17. Pronto, mudando isso aqui, tudo que for usar esse cinza-base vai ser alterado, baseado nisso aqui.
+
+18. Por exemplo, esse aqui, oh, 
+
+@gray-dark
+lighten(@gray-base, 20%)
+
+, cinza-escuro, ele vai iluminar esse cinza-base, aqui, em 20%.
+
+19. E o cinza-claro vai iluminar esse cinza-base em 93.5%,
+
+@gray-lighter
+lighten(@gray-base, 93.5%)
+
+20. E o cinza, aqui, vai iluminar esse cinza-base, aqui, em 33.5%,
+
+@gray
+lighten(@gray-base, 33.5%)
+
+21. E, assim, vai. Entao, aqui, eu posso mudar as cores, posso mudar as coisas principais, por exemplo, o fundo do meu body, 
+
+@body-bg
+#fff
+
+, posso mudar a cor de quando boto o mouse em cima de um link,
+
+@link-hover-color
+darken(@link-color, 15%)
+
+, posso mudar se ele vai ter underline,
+
+@link-hover-decoration
+underline
+
+, a cor do texxto padrao,
+
+@text-color
+@gray-dark
+
+, a cor do link padrao,
+
+@link-color
+@brand-primary
+
+22. Posso mudar a fonte padrao, posso mudar varias coisas sobre fonte, aqui, o tamanho da fonte, em cada coisa, aqui.
+
+23. Os icones, a pasta onde eu vou deixar os meus icones.
+
+24. Aqui, em https://getbootstrap.com/docs/3.3/customize/#components, em Components, eu mudo o padding de cada cmponente, a altura da linha.
+
+25. Em https://getbootstrap.com/docs/3.3/customize/#tables, altero as tabelas.
+
+26. Em https://getbootstrap.com/docs/3.3/customize/#buttons, altero os botoes.
+
+27. Em https://getbootstrap.com/docs/3.3/customize/#forms, altero os formularios.
+
+28. Altero os Dropdowns, em https://getbootstrap.com/docs/3.3/customize/#dropdowns.
+
+29. Altero os breakpoints de Media queries, em https://getbootstrap.com/docs/3.3/customize/#media-queries-breakpoints, ou seja, eu quero, por exemplo, que o celular, na verdade, nao tenha a largura de 480 pixels, mas eu quero que seja de 400 pixels, pronto, mudando aqui, ele vai mudar la.
+
+30. Aqui, em https://getbootstrap.com/docs/3.3/customize/#grid-system, mexemos, tambem, no Grid system, 'Ah, eu nao quero um grid de 12 colunas, eu quero um Grid de 16 colunas', para poder controlar melhor ainda. E eu quero um espaco entre as colunas de 10 pixels. Pronto, esta aqui, ele vai alterar.
+
+31. O tamanho do Container, em https://getbootstrap.com/docs/3.3/customize/#container-sizes.
+
+32. A Navbar, em https://getbootstrap.com/docs/3.3/customize/#navbar.
+
+33. As navegacoes, aqui, aquele menu que a gente fez, em https://getbootstrap.com/docs/3.3/customize/#navs.
+
+34. As abas, em https://getbootstrap.com/docs/3.3/customize/#tabs, e em https://getbootstrap.com/docs/3.3/customize/#pills.
+
+35. A Paginacao, em https://getbootstrap.com/docs/3.3/customize/#pagination.
+
+36. O Jumbotron, que deixa o Titulo bem grande, em https://getbootstrap.com/docs/3.3/customize/#jumbotron.
+
+37. Os estados e alertas de formularios, em https://getbootstrap.com/docs/3.3/customize/#form-states-and-alerts.
+
+38. Os tooltips, em https://getbootstrap.com/docs/3.3/customize/#tooltips.
+
+39. Os popovers, que sao umas tooltips maiores, em https://getbootstrap.com/docs/3.3/customize/#popovers.
+
+40. Labels, em https://getbootstrap.com/docs/3.3/customize/#labels.
+
+41. Entao, ele permite que voce edite tudo aqui. Depois que voce mexeu no que voce queria aqui, e so vir aqui embaixo e clicar em 'Compile and Download'.
+
+42. E aqui esta o nosso arquivo.
+
+43. Quando nos abrimos ele aqui, ele vai ter bootstrap.css, e a versao mimificada de bootstrap.css, bootstrap.min.css. E o arquivo de tema, bootstrap-theme.css, e a sua versao mimificada tambem, bootstrap-theme.min.css.
+
+44. E, aqui, no javascript, o bootstrap.js e a versao mimificada, tambem, bootstrap.min.js.
+
+45. Ele tambem vai dar para a gente, esse arquivo config.json, que eh exatamente o que ele pede la no inicio da pagina, que, se a gente tiver ess e config, a gente ja pode botar ele aqui, dentro do arquivo zipado produzido, e, ai, ele vai ja inserir todas as coisas que precisa aqui para serem importados pelo Link 'manually upload', na pagina https://getbootstrap.com/docs/3.3/customize/.
+
+46. Com isso, nos podemos ter o nosso Bootstrap totalmente customizado. Nos podemos aplicar diferentes tecnicas de design, design patterns, por exemplo, nos podemos ter um Bootstrap com aparencia de Material Design, https://material.io/design/, isso nos eh definimos. Podemos deixar com aparencia do Metro, https://designmodo.com/metro-ui/, que eh essa aparencia do Windows, e tudo mais.
+
+47. Fim da Aula 06.001. Customizando o Bootstrap.
+
+
+
+-->

@@ -1,0 +1,279 @@
+<!-- 
+
+Aula 04.001. Imagem Rotativa e Centralizacao Vertical
+
+1. Finalmente, nos vamos para o nosso Projeto.
+
+2. Vamos comecar fazendo essa tela de login, que o instrutor que exibindo.
+
+3. Voce deve pensar, 'Por que que o background dessa tela de login esta diferente daquela outra vez que o instrutor mostrou?'
+
+4. O que acontece eh que esse background aqui muda a cada vez que recarregamos a pagina.
+
+5. O instrutor vai nos mostra como eh que nos fazemos isso e a gente vai fazer algumas outras coisinhas aqui nessa tela de login, durante esta aula.
+
+6. Okay? Entao, vamos la.
+
+7. Aqui, eh o mesmo codigo daquela aula em que o instrutor ensinou a fazer uma Pagina Basica com Bootstrap.
+
+8. Okay? O instrutor so adicionou esse aqui, oh,
+
+<link rel="stylesheet" href="css/login.css">
+
+, esse login.css, que esta vazio.
+
+9. Entao, aqui, nos temos a nossa Pagina.
+
+10. A primeira coisa que nos temos que fazer, para podermos ter isso aqui direitinho, eh a gente mexer na altura do body, aqui, oh, ta vendo que ele esta ali com uma altura de 0?, Guia Styles do Chrome DevTools, Box Model.
+
+11. A gente tem que fazer ele sempre se encaixar na tela. Como eh que a gente vai fazer isso?
+
+12. Nos vamos selecionar ele aqui,
+
+body {
+
+}
+
+, no CSS, nos vamos dar um min-height, ou seja, a altura minima dele vai ser essa daqui, oh, 100vh, o que significa essa unidade vh?
+
+13. Eh a abreviacao para Viewport Height, ou seja, a altura da tela,
+
+body {
+    min-height: 100vh;
+}
+
+14. Esse 100 aqui, eh como se fosse em %, entao, se eu colocar 90vh, ele vai ficar 90% da altura da tela, e assim vai.
+
+15. Entao, eu vou colocar aqui 100vh, e, agora, quando eu atualizar aqui, o nosso body vai estar completo, se a gente olhar aqui no Box Model, ele tem o tamanho total da altura da tela.
+
+16. Beleza? Agora, a gente vai colocar um background-color cinza aqui, para poder ficar parecido com a imagem e, ai, antes de a imagem abrir, a gente tem uma cor parecida.
+
+17. E, vamos, finalmente, colocar aquele nosso truque da imagem que muda.
+
+18. Vamos colocar, aqui, 
+
+background-image:
+
+, e a gente vai usar um servico bem interessante,
+
+background-image: url('')
+
+, chamado, 
+
+background-image: url('https://unsplash.it/')
+
+, e a gente coloca um tamanho de resolucao, por exemplo, vamos colocar aqui, 1500 por 800 pixels,
+
+background-image: url('https://unsplash.it/1500/800')
+
+19. 
+
+body {
+    min-height: 100vh;
+    background-color: #ccc;
+    background-image: url('https://unsplash.it/1500/800')
+}
+
+20. Quando eu salvar, e recarregar a Pagina Html, apareceu colorido.
+
+21. Entao, a gente adiciona, aqui, um 'g', aqui, antes, e ele so vai me dar, agora, fotos em escala de cinza,
+
+body {
+    min-height: 100vh;
+    background-color: #ccc;
+    background-image: url('https://unsplash.it/g/1500/800');
+}
+
+22. Okay, mas eu estou recarregando e o servico esta trazendo sempre a mesma foto.
+
+23. Mais uma coisa que nos temos que fazer. Vamos colocar, aqui, uma interrogacao, e escrever random,
+
+body {
+    min-height: 100vh;
+    background-color: #ccc;
+    background-image: url('https://unsplash.it/1500/800?random');
+}
+
+24. Agora, ele vai nos dar varias fotos diferentes.
+
+25. Beleza. Entao, temos, agora, o nosso background dinamico. Se quiser aprender um pouco mais sobre isso, acesse esse site aqui, https://unsplash.it, e ele vai explicar melhor.
+
+26. Agora, vamos centralizar o nosso formulario de login. Ta vendo que ele esta aqui, no slide do instrutor, bem no centro da tela?
+
+27. Nao interessa se eu diminuir ou aumentar o tamanho da tela, o formulario de login vai permanecer no centro.
+
+28. Okay? Entao, vamos la ver como isso eh feito.
+
+29. A primeira coisa que nos vamos fazer eh criar este formulario de login aqui.
+
+30. Primeira coisa, abrimos uma tag div, e damos uma classe para ela,
+
+<body>
+
+    <div class=""></div>
+
+</body>
+
+, vamos chamar essa classe de login-form,
+
+<body>
+
+    <div class="login-form">
+
+    </div>
+
+</body>
+
+, significa formulario de login. Isso aqui eh so para a gente poder estilizar, okay?, nao eh nada do Bootstrap.
+
+31. E, agora, vamos fazer, aqui, o nosso Grid para a gente poder centralizar ele, okay?, vamos colocar aqui, "col-xs", ou seja, para Celulares, ele vai ter uma largura de 10 colunas, ou seja, nao vai ocupar o espaco todo,
+
+<body>
+
+    <div class="login-form col-xs-10">
+
+    </div>
+
+</body>
+
+32. "col-sm-", ou seja, nos tablets, "col-sm-6", ou seja, ele ja vai ocupar metade da tela,
+
+<body>
+
+    <div class="login-form col-xs-10 col-sm-6">
+
+    </div>
+
+</body>
+
+33. E "col-md-", nas resolucoes de Desktops, ou Notebooks, ou seja, resolucoes de PC's menores, para frente, nao vamos colocar "-lg", ele vai ocupar 1/3 da tela, ou seja, 4 colunas,
+
+<body>
+
+    <div class="login-form col-xs-10 col-sm-6 col-md-4">
+
+    </div>
+
+</body>
+
+34. Vamos ver como eh que vai ficar isso daqui.
+
+35. Recarregamos a Pagina Html. Cade a nossa div? O que acontece eh que ela ficou bem pequenininha ali, nao eh?
+
+36. Entao, para a gente poder ver ela melhor, vamos seleciona-la aqui no CSS, vamos dar uma altura para ela, de teste aqui, 300 pixels, e vamos dar um background-color branco aqui, para a gente poder enxerga-la, okay?,
+
+.login-form {
+    height: 300px;
+    background-color: #fff;
+}
+
+37. Recarregamos a Pagina Html. Agora, a div apareceu na tela. Se a gente   diminuir a tela, ela vai se redimensionando do jeito que a gente pediu la para fazer.
+
+38. Agora, vamos centralizar a div horizontalmente. Como que a gente faz isso?
+
+39. No Grid System, tem uma propriedade chamada offset, que eh como se fosse um espaco em branco. Entao, vamos ver aqui, primeiro, nessa tela grande. Nos vamos dar aqui, oh, "col-md-offset-", e, ai, eu quero que ele coloque, de espaco em branco, 4 colunas,
+
+<body>
+
+    <div class="login-form col-xs-10 col-sm-6 col-md-4 col-md-offset-4">
+
+    </div>
+
+</body>
+
+, ou seja, as primeiras 4 colunas vao ficar em branco. Ele vai ocupar 4 colunas, entao, ele vai ficar aqui no meio, entao, eh um jeito de a gente centralizar.
+
+40. Como essa div tem 1/3 de largura, e nos colocamos 1/3 de espaco, ele vai ficar centralizado aqui na Pagina Html.
+
+41. Okay? Agora, vamos arrumar isso nas outras resolucoes, por exemplo, quando for a Resolucao para Tablets, ou seja, de metade da tela, col-sm-6.
+
+42. Nessa resolucao de metade da tela, eu voucolocar "col-offset-3", 
+
+<body>
+
+    <div class="login-form col-xs-10 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+    </div>
+
+</body>
+
+, por que?
+
+43. Eu nao estou usando 6 colunas aqui, na Resolucao para Tablets?
+
+44. Sobraram, entao, 6 colunas. Entao, eu vou pegar 3 colunas e botar do lado esquerdo e, ai, vai sobrar outras 3 colunas do lado direito e, ai, vai deixar centralizado, vamos ver?
+
+45. Entao, agora, a gente ja tem ele centralizado para Desktops e para Tablets.
+
+46. Agora, com a tela menorzinha ainda, ou seja, apar Celulares. Nos ja usamos 10 colunas, 
+
+"col-xs-10"
+
+, sobraram 2 colunas. Entao, para mim centralizar aqui, eu vou colocar "col-xs-offset-1",
+
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+    </div>
+
+</body>
+
+, e, ai, eu empurro 1 para cada lado aqui e vai ficar centralizado.
+
+47. Ta, agora, a gente precisa centralizar isso verticalmente. Para centralizar verticalmente, nos vamos fazer isso daqui, oh, nos vamos colocar um margin-top de 50vh,
+
+.login-form {
+    margin-top: 50vh;
+
+    height: 300px;
+
+    background-color: #fff;
+}
+
+, isso quer dizer que ele vai pegar 50% do tamanho da tela e vai dar de margin-top aqui.
+
+48. ficou muito embaixo, nao eh? Como que a gente vai fazer, agora?
+
+49. Nos vamos usar uma propriedade chamada transform, e, nesse transform, nos vamos colocar translateY, que eh essa parte vertical no plano cartesiano, vamos colocar -50%,
+
+.login-form {
+    margin-top: 50vh;
+    height: 300px;
+
+    background-color: #fff;
+
+    transform: translateY(-50%);
+}    
+
+50. O que que isso daqui faz? Ele vai traduzir a posicao vertical do nosso elemento para metade do tamanho que ele tiver. Quando a gente atualizar aqui, oh, a Pagina Html, pronto, esta centralizado verticalmente a nossa div.
+
+51. Por que que o instrutor fez assim? Porque, dessa forma, nao interessa o tamanho que a nossa div chegar, ele vai sempre centraliza-la aqui.
+
+52. Hoje, nos aprendemos a fazer esse fundo dinamico e a centralizar o nosso login horizontalmente e verticalmente.
+
+53. Fim da Aula 04.001. Imagem Rotativa e Centralizacao Vertical.
+
+
+-->
+<!DOCTYPE tml>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="login-form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+    </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
